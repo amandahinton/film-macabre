@@ -39,7 +39,6 @@ CREATE TABLE "shelves" (
   "id" SERIAL PRIMARY KEY,
   "status" varchar,
   "userId" integer,
-  "movieId" integer,
   "createdAt" timestamp,
   "updatedAt" timestamp
 );
