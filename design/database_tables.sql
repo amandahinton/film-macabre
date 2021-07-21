@@ -4,6 +4,7 @@ CREATE TABLE "users" (
   "firstName" varchar,
   "lastName" varchar,
   "email" varchar,
+  "age" integer,
   "password" varchar,
   "createdAt" timestamp,
   "updatedAt" timestamp
@@ -37,7 +38,7 @@ CREATE TABLE "movies_tags" (
 
 CREATE TABLE "shelves" (
   "id" SERIAL PRIMARY KEY,
-  "status" varchar,
+  "name" varchar,
   "userId" integer,
   "createdAt" timestamp,
   "updatedAt" timestamp
