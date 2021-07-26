@@ -1,0 +1,34 @@
+extends layout.pug
+
+block content
+    if errors
+        div(class="errors")
+        ul
+            each error in errors
+                li= error 
+
+    form(action="/users/register", method="post")
+        input(type="hidden" name="_csrf" value= csrfToken)
+
+        label(for="firstName") First Name
+        input(type="text" name="firstName" required)
+
+        label(for="lastName") Last Name
+        input(type="text" name="lastName" required)
+
+        label(for="email") Email
+        input(type="text" name="email" required)
+
+        label(for="username") Username
+        input(type="text" name="username" required)
+
+        label(for="age") Age
+        input(type="number" name="age" required)
+
+        label(for="password") Password
+        input(type="password" name="password" required)
+
+        label(for="confirmPassword") Confirm Password
+        input(type="password" name="confirmPassword" required)
+
+        button(type="submit") Register
