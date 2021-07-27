@@ -28,6 +28,8 @@ module.exports = (sequelize, DataTypes) => {
 			otherKey: 'moveId',
 			foreignKey: 'id',
 		};
+
+		Movie.belongsToMany(models.Movie_shelf, shelfMaps);
 	};
 	return Movie;
 };
