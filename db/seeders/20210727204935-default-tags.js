@@ -8,7 +8,7 @@ module.exports = {
         { name: 'supernatural' },
         { name: 'monster' },
         { name: 'slasher' },
-        { name: 'splatter' },
+        { name: 'elevated' },
         { name: 'psychological' },
         { name: 'comedy' },
         { name: 'classic' },
