@@ -1,0 +1,52 @@
+navbar
+	logo, login/register | logout, user profile,
+
+each movie title or image it’s clickable to go to that movies details
+
+/
+hero image and pitch
+register button
+4 shelves with 6 movies each and show more
+	shelf title
+        each movie: image, title, star rating, # of favorites
+
+/register
+	page with form
+        try to replace with popup or some other inline login
+
+/login
+	page with form
+	try to replace with popup or some other inline login
+
+/users/:id
+	3+ shelves with 6 movies each and show more
+		shelf title
+        	each movie: image, title, star rating, # of favorites
+		way to create a new playlist shelf
+
+shelves/new
+	form to create a new custom playlist shelf
+
+/movies
+	tiles like shelves but without shelves to separate
+
+/movies/:id
+	all the details for each movie
+		title, year, description, director, director, image
+		number of times favorited
+		star rating
+		tags
+	list of all reviews with star rating and truncated text
+
+/movies/:id/new
+	form to fill out to review the movie
+        show movie image and title
+
+/reviews/:id - TBD on whether we actually need to show this page
+	all the details for each movie
+		title, year, description, director, director, image
+		number of times favorited
+		star rating
+	full text of the review
+        button to edit or delete
+	
