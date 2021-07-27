@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+    if errors
+        div(class="errors")
+        ul
+            each error in errors
+                li= error 
+
+    form(action="/movies/:id/reviews/new", method="post")
+        input(type="hidden" name="_csrf" value= csrfToken)
+
+        label(for="score") Score
+        input(type="number" name="score" required)
+
+        label(for="body")
+        textarea(name="body", cols="30", rows="10" placeholder="Write your review here." required) 
+
+        button(type="submit") Submit Review
