@@ -5,4 +5,13 @@ html
         title #{title}
         link(rel='stylesheet' href='/stylesheets/reset.css')
   body
+    if locals.authenticated
+      div
+        p Welcome #{locals.user.username} :D
+        form(action="/users/logout" method="post")
+          button(type="submit") Logout
+    else
+      div
+        a(href="/users/login") Login
+        a(href="/users/register") Register
     block content
