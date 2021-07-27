@@ -311,7 +311,7 @@ module.exports = {
           year: 1997,
           description: 'Very much a Korean version of "Tootsie"....Park Jin-Wu, is a handsome young Korean playboy/womanizer who dreams of becoming a model/actor. However, his role is behind the scenes...working ...',
           director: 'Gyeong-min Lee',
-          cover: 'N/A'
+          cover: 'https://upload.wikimedia.org/wikipedia/en/3/32/Audition-1999-poster.jpg'
         },
         {
           title: 'Scary Stories to Tell in the Dark',
@@ -737,7 +737,7 @@ module.exports = {
           title: 'Requiem',
           year: 2018,
           description: "When her mother commits suicide, a cellist's life is turned upside down by mysterious questions raised about her past.",
-          director: 'N/A',
+          director: 'Mahalia Belo',
           cover: 'https://m.media-amazon.com/images/M/MV5BMzQyOTA0NWEtZmNiNC00YjdkLThlZmQtMmJlY2E3NjYyZjc0XkEyXkFqcGdeQXVyNzQ2NTg4NzI@._V1_SX300.jpg'
         },
         {
