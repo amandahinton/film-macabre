@@ -7,13 +7,13 @@ block content
             each error in errors
                 li= error 
 
-    form(action="/movies/:id/reviews/new", method="post")
+    form(action="/movies/:#{review.movieId}/reviews/new", method="post")
         input(type="hidden" name="_csrf" value= csrfToken)
 
         label(for="score") Score
-        input(type="number" name="score" required)
+        input(type="number" name="score" value= review.score required)
 
-        label(for="body")
-        textarea(name="body", cols="30", rows="10" placeholder="Write your review here." required) 
+        label(for="body") Write your review here
+        textarea(name="body", cols="30", rows="10" placeholder="Write your review here." value= review.body required) 
 
         button(type="submit") Submit Review
