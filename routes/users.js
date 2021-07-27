@@ -139,6 +139,43 @@ const loginUser = (req, res, user) => {
 	};
 };
 
+const logoutUser = (req, res) => {
+	delete req.session.auth;
+  };
+
+router.post('/logout', (req, res) => {
+	logoutUser(req, res)
+	req.session.save(error =>{
+		if (error) {
+			next(error)
+		} else {
+			res.redirect('/')
+		}
+	})
+});
+
+
+const restoreUser = async (req, res, next) => {
+	if (req.session.auth) {
+		const { userId } = req.session.auth;
+		try{
+		const user = await db.User.findByPk(userId);
+
+		if (user) {
+			res.locals.authenticated = true;
+			res.locals.user = user;
+			next();
+		  }
+		} catch (err) {
+		  res.locals.authenticated = false;
+		  next(err);
+		}
+	  } else {
+		res.locals.authenticated = false;
+		next();
+	  }
+	};
+
 router.post(
 	'/login',
 	csrfProtection,
@@ -173,4 +210,4 @@ router.post(
 	})
 );
 
-module.exports = router;
+module.exports = {router, restoreUser};
