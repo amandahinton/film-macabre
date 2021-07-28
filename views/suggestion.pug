@@ -1,0 +1,28 @@
+extends layout.pug
+
+block content
+    if errors
+        div(class="errors")
+        ul
+            each error in errors
+                li= error
+
+    form(action=`/movies/new`, method="post")
+        input(type="hidden" name="_csrf" value= csrfToken)
+
+        label(for="title") Title
+        input(type="text" name="title" required)
+
+        label(for="year") Year released
+        input(type="number" name="year" required)
+
+        label(for="description") Description
+        textarea(name="description" placeholder="Brief description of movie" required)
+
+        label(for="director") Director
+        input(type="text" name="director" required)
+
+        label(for="cover") Link to movie poster
+        input(type="text" name="cover" placeholder="URL for movie poster" required)
+
+        button(type="submit") Submit Suggestion
