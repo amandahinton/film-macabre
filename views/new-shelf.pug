@@ -1,0 +1,11 @@
+extends layout.pug
+
+block content
+    h2(class="title") Create New Shelf
+    form(action="/shelves", method="post")
+        input(type="hidden" name="_csrf" value=csrfToken)
+
+        label(for="shelfName") Shelf Name
+        input(type="text" name="shelfName" required)
+
+        button(type="submit") Create Shelf

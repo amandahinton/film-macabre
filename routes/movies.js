@@ -47,7 +47,7 @@ router.post('/:id(\\d+)/reviews/new', reviewValidators, csrfProtection, asyncHan
         userId: res.locals.user.id,
         rating,
         body,
-        movieId 
+        movieId
     })
     const validatorErrors = validationResult(req);
     // console.log("WEEEEEEE", validationErrors)
