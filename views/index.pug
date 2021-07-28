@@ -1,4 +1,5 @@
 extends layout
+include utils
 
 append head
   //- add page specific styles by appending to the head
@@ -7,5 +8,12 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1= title
-  p Welcome to your Project Skeleton
+    div(id="splash")
+        h1= "face your fears."
+        h2= "Curate a blood-curdling collection of horror movies while discovering new favorites"
+        form(action="/users/register", method="get")
+            button(type="submit") GET STARTED
+        small= "Already a member? "
+            a(href="/users/login")= "Log in >>"
+    div(id="featured-shelves")
+        +showShelves(shelves, true)

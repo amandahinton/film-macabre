@@ -3,9 +3,9 @@ extends layout.pug
 block content
 
     each movie in movies
-        div
+        div.movie-tile
             img(src=movie.cover, alt="movie poster")
             p #{movie.title}
             each review in reviews
-                p #{review.rating}
-
+                if review.movieId === movie.id
+                    p #{review.rating}

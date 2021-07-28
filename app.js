@@ -7,14 +7,14 @@ const { sequelize } = require('./db/models');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
-const {router:usersRouter, restoreUser} = require('./routes/users');
-const {router:moviesRouter} = require('./routes/movies')
 const {router:reviewsRouter} = require('./routes/reviews')
+const { router: usersRouter, restoreUser } = require('./routes/users');
+const { router: moviesRouter } = require('./routes/movies');
+const { router: shelvesRouter } = require('./routes/shelves.js');
 const { db } = require('./config/index.js');
 const { sessionSecret } = db;
 
 const app = express();
-
 
 // view engine setup
 app.set('view engine', 'pug');
@@ -40,11 +40,12 @@ app.use(
 // create Session table if it doesn't already exist
 store.sync();
 
-app.use(restoreUser)
+app.use(restoreUser);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/movies', moviesRouter);
 app.use('/reviews', reviewsRouter);
+app.use('/shelves', shelvesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
