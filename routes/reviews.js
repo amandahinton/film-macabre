@@ -16,6 +16,7 @@ const reviewValidators = [
         .isInt({min:0})
         .withMessage("Please do not provide a score less than 0")
 ]
+
 //get a single review
 router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req,res) => {
     const id = parseInt(req.params.id, 10)
@@ -59,17 +60,16 @@ router.post('/:id(\\d+)', csrfProtection, reviewValidators,
   }));
 
     router.post('/:id(\\d+)/delete', csrfProtection, reviewValidators, asyncHandler(async (req, res) => {
-    const id = parseInt(req.params.id, 10);
-    const review = await db.Review.findByPk(id);
-    if (review) {
-        await review.destroy();
-        res.status(204).end()
-    } else {
-        res.send("review not found")
-    }
-    
-        
-
+        const id = parseInt(req.params.id, 10);
+        const review = await db.Review.findByPk(id);
+        const movieId = review.movieId
+        if (review) {
+            await review.destroy();
+            res.redirect(`/movies/${movieId}`)
+        // res.status(204).end()
+        } else {
+            res.send("review not found")
+     }
 }));
 
 
