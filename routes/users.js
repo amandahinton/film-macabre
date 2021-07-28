@@ -6,6 +6,19 @@ const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const e = require('express');
 
+async function generateShelf(name, userId) {
+	try {
+		const newShelf = await db.Shelf.build({
+			name,
+			userId,
+		});
+		await newShelf.save();
+		return newShelf;
+	} catch (err) {
+		throw new Error(err);
+	}
+}
+
 const userValidators = [
 	check('firstName')
 		.exists({ checkFalsy: true })
@@ -79,6 +92,7 @@ const loginValidators = [
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
+	// console.log(res.locals.user.id);
 	res.send('respond with a resource');
 });
 
@@ -123,6 +137,12 @@ router.post(
 			const hashedPassword = await bcrypt.hash(password, 12);
 			user.password = hashedPassword;
 			await user.save();
+
+			// Generates the three default user shelves on registration.
+			generateShelf('My Top 10', user.id);
+			generateShelf('Watched', user.id);
+			generateShelf('Want to Watch', user.id);
+
 			loginUser(req, res, user);
 			res.redirect('/');
 		}
@@ -141,40 +161,39 @@ const loginUser = (req, res, user) => {
 
 const logoutUser = (req, res) => {
 	delete req.session.auth;
-  };
+};
 
 router.post('/logout', (req, res) => {
-	logoutUser(req, res)
-	req.session.save(error =>{
+	logoutUser(req, res);
+	req.session.save((error) => {
 		if (error) {
-			next(error)
+			next(error);
 		} else {
-			res.redirect('/')
+			res.redirect('/');
 		}
-	})
+	});
 });
-
 
 const restoreUser = async (req, res, next) => {
 	if (req.session.auth) {
 		const { userId } = req.session.auth;
-		try{
-		const user = await db.User.findByPk(userId);
+		try {
+			const user = await db.User.findByPk(userId);
 
-		if (user) {
-			res.locals.authenticated = true;
-			res.locals.user = user;
-			next();
-		  }
+			if (user) {
+				res.locals.authenticated = true;
+				res.locals.user = user;
+				next();
+			}
 		} catch (err) {
-		  res.locals.authenticated = false;
-		  next(err);
+			res.locals.authenticated = false;
+			next(err);
 		}
-	  } else {
+	} else {
 		res.locals.authenticated = false;
 		next();
-	  }
-	};
+	}
+};
 
 router.post(
 	'/login',
@@ -210,22 +229,66 @@ router.post(
 	})
 );
 
-router.post('/login/demo', asyncHandler(async(req, res, next) => {
-	const { username } = req.body
-	const demoUser = await db.User.findOne({
-		where: {username}
+router.post(
+	'/login/demo',
+	asyncHandler(async (req, res, next) => {
+		const { username } = req.body;
+		const demoUser = await db.User.findOne({
+			where: { username },
+		});
+		if (username === 'demo') {
+			loginUser(req, res, demoUser);
+			return req.session.save((error) => {
+				if (error) {
+					next(error);
+				} else {
+					return res.redirect('/');
+				}
+			});
+		}
+		return res.redirect('/');
 	})
-	if (username === "demo") {
-		loginUser(req, res, demoUser)
-		return req.session.save(error =>{
-			if (error) {
-				next(error)
-			} else {
-				return res.redirect('/')
-			}
-		})
-	}
-	return res.redirect('/');
-}));
+);
 
-module.exports = {router, restoreUser};
+router.get(
+	'/my-profile',
+	asyncHandler(async (req, res) => {
+		const user = res.locals.user;
+		if (user) {
+			const userShelves = await db.Shelf.findAll({
+				where: {
+					userId: user.id,
+				},
+			});
+
+			res.render('my-profile', { user, userShelves });
+		} else {
+			res.redirect('/users/login');
+		}
+	})
+);
+
+router.get(
+	'/:id',
+	asyncHandler(async (req, res) => {
+		const { id } = req.params;
+		const user = await db.User.findByPk(id);
+		const shelves = await db.Shelf.findAll({
+			where: {
+				userId: id,
+			},
+			include: db.Movie,
+		});
+		const reviews = await db.Review.findAll({
+			where: {
+				userId: id,
+			},
+			include: db.Movie,
+		});
+		console.log(reviews);
+		console.log(shelves);
+		res.render('user-profile', { user, shelves, reviews });
+	})
+);
+
+module.exports = { router, restoreUser };

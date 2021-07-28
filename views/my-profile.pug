@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+    if user
+        h1 #{user.firstName} #{user.lastName}'s profile
+            ul
+                li First Name: #{user.firstName}
+                li Last Name: #{user.lastName}
+                li Age: #{user.age}
+            if userShelves
+                h2 #{user.firstName}'s Shelves:
+                ul
+                    each shelf in userShelves
+                        li #{shelf.name}
+                            ul
+                                each movie in shelf.movies
+                                    li #{movie}

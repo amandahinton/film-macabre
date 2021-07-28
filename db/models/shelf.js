@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
 
 		const maps = {
 			through: 'Movie_shelf',
-			otherKey: 'shelfId',
-			foreignKey: 'id',
+			otherKey: 'movieId',
+			foreignKey: 'shelfId',
 		};
 
-		Shelf.belongsToMany(models.Movie_shelf, maps);
+		Shelf.belongsToMany(models.Movie, maps);
 	};
 	return Shelf;
 };
