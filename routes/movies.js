@@ -7,10 +7,10 @@ const { check, validationResult } = require('express-validator');
 
 
 const reviewValidators = [
-    check('rating')
+    check('body')
         .exists({checkFalsy: true})
         .withMessage("Please provide a body for Review"),
-    check('score')
+    check('rating')
         .exists({checkFalsy: true})
         .withMessage("Please provide a Rating")
         .isInt({max:5})
@@ -26,10 +26,12 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req,res) => {
 }));
 
 router.get('/:id(\\d+)/reviews/new', csrfProtection, asyncHandler(async(req,res) => {
-    let review = db.Review.build();
+    let id = parseInt(req.params.id, 10)
+    let review = {} //await db.Review.build();
     res.render('review-form', {
         title: "Review Form Submission",
         review,
+        id,
         csrfToken: req.csrfToken()
     })
 }));
@@ -54,7 +56,7 @@ router.post('/:id(\\d+)/reviews/new', reviewValidators, csrfProtection, asyncHan
         res.redirect(`/${movieId}`)
     } else {
         const errors = validatorErrors.array().map((error) => error.msg);
-        res.render('reviews-form', {
+        res.render('review-form', {
         title: 'Add Review',
         review,
         errors,

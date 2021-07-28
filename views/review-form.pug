@@ -7,7 +7,7 @@ block content
             each error in errors
                 li= error 
 
-    form(action="/movies/:#{review.movieId}/reviews/new", method="post")
+    form(action=`/movies/${id}/reviews/new`, method="post")
         input(type="hidden" name="_csrf" value= csrfToken)
 
         label(for="score") Score
