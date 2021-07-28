@@ -3,7 +3,8 @@ mixin showShelves(shelves, titles)
             each shelf in shelves
                 div(class="shelf")
                     if titles
-                        h3= shelf.name
+                        h3
+                            a(href=`/shelves/${shelf.id}`)= shelf.name
                     each movie in shelf.Movies
                         div(class="movie-image")
                             a(id="poster-link" href=`/movies/${movie.id}`)
