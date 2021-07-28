@@ -1,12 +1,13 @@
 mixin showShelves(shelves, titles)
     if shelves
             each shelf in shelves
+                div(id="shelfId" hidden)= shelf.id
                 div(class="shelf")
                     if titles
                         h3
                             a(href=`/shelves/${shelf.id}`)= shelf.name
                     each movie in shelf.Movies
-                        div(class="movie-image")
+                        div(class="movie-image" id= movie.id)
                             a(id="poster-link" href=`/movies/${movie.id}`)
                                 img(src=movie.cover)
                             strong(class="movie-title")
@@ -15,5 +16,5 @@ mixin showShelves(shelves, titles)
                                 form(action="#", method="get")
                                     input(type="hidden" name="_csrf" value=csrfToken)
 
-                                    button(class="btn-edit" id=`edit-${shelf.id}-${movie.id}` style="display:none") Edit
-                                    button(class="btn-del" id=`del-${shelf.id}-${movie.id}` style="display:none") Delete
+                                    button(class="btn-edit" id=`edit-${shelf.id}-${movie.id}` hidden) Edit
+                                    button(class="btn-del" id=`delete-${shelf.id}-${movie.id}` hidden) Delete
