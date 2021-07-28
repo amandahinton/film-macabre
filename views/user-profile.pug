@@ -1,0 +1,22 @@
+extends layout.pug
+
+block content
+    if user
+    div(class="container" id="profile-block")
+        div(class="image" id="profile-img")
+        h2(class="username" id="username") #{user.username}
+        div(class="stats" id="user-stats")
+    if shelves
+        div(class="container" id="shelf-container")
+        each shelf, count in shelves
+            div(class="shelf" id=`shelf-${count}`)
+                h3 #{shelf.name}
+                    ul(class="shelf-list")
+                        each movie in shelf.Movies
+                            li
+                                a(href=`/movies/${movie.id}`) #{movie.title}
+    if reviews
+        
+        div(class="container" id="review-container")
+        each review in reviews
+            h3 Review of #{review.Movie.title}

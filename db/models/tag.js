@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
 		// associations can be defined here
 		const maps = {
 			through: 'Movie_tag',
-			otherKey: 'tagId',
-			foreignKey: 'id',
+			otherKey: 'movieId',
+			foreignKey: 'tagId',
 		};
 
-		Tag.belongsToMany(models.Movie_tag, maps);
+		Tag.belongsToMany(models.Movie, maps);
 	};
 	return Tag;
 };
