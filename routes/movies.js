@@ -4,8 +4,6 @@ const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils.js');
 const { check, validationResult } = require('express-validator');
 
-
-
 const reviewValidators = [
     check('body')
         .exists({checkFalsy: true})
@@ -23,6 +21,17 @@ router.get('/', asyncHandler(async (req, res) => {
     let movies = await db.Movie.findAll();
     let reviews = await db.Review.findAll();
     res.render('movies-all', { title: 'Browse all movies', movies, reviews})
+}));
+
+
+router.get('/new', csrfProtection, asyncHandler(async (req, res) => {
+    res.render('suggestion', { title: 'Suggest a movie', csrfToken: req.csrfToken() })
+}));
+
+router.post('/new', csrfProtection, asyncHandler(async (req, res) => {
+    // create a suggestion works like the register form and dumps the info into a row in the suggestion table
+    const { title, year, description, director, cover} = req.body;
+    // send the form submit to to a new table in the database?
 }));
 
 
