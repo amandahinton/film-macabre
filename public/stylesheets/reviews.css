@@ -1,0 +1,23 @@
+.hidden {
+    display:none;
+}
+
+#reviewContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: blue; */
+}
+#body {
+    width: 100%;
+    overflow: auto;
+    width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	/* background-position: bottom right; */
+	background-repeat: no-repeat;
+}
