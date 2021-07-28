@@ -1,6 +1,7 @@
 'use strict';
 
-const userId = 1;
+const FEATURED_ID = 6;
+const USER_ID = 1;
 
 module.exports = {
 	up: (queryInterface, Sequelize) => {
@@ -14,16 +15,32 @@ module.exports = {
 			'Shelves',
 			[
 				{
-					userId,
+					userId: USER_ID,
 					name: 'My Top 10',
 				},
 				{
-					userId,
+					userId: USER_ID,
 					name: 'Want to Watch',
 				},
 				{
-					userId,
+					userId: USER_ID,
 					name: 'Watched',
+				},
+				{
+					userId: FEATURED_ID,
+					name: 'Our picks for your next movie night',
+				},
+				{
+					userId: FEATURED_ID,
+					name: 'More gor por favor',
+				},
+				{
+					userId: FEATURED_ID,
+					name: 'A little scary but a lot hilarious',
+				},
+				{
+					userId: FEATURED_ID,
+					name: "You'll be sleeping with the lights on after this one",
 				},
 			],
 			{}
