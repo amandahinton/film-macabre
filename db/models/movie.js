@@ -13,23 +13,23 @@ module.exports = (sequelize, DataTypes) => {
 	);
 	Movie.associate = function (models) {
 		// associations can be defined here
-		Movie.hasMany(models.Review, { foreignKey: 'movieId ' });
+		Movie.hasMany(models.Review, { foreignKey: 'movieId' });
 
 		const maps = {
 			through: 'Movie_tag',
-			otherKey: 'movieId',
-			foreignKey: 'id',
+			otherKey: 'tagId',
+			foreignKey: 'movieId',
 		};
 
-		Movie.belongsToMany(models.Movie_tag, maps);
+		Movie.belongsToMany(models.Tag, maps);
 
 		const shelfMaps = {
 			through: 'Movie_shelf',
-			otherKey: 'moveId',
-			foreignKey: 'id',
+			otherKey: 'shelfId',
+			foreignKey: 'movieId',
 		};
 
-		Movie.belongsToMany(models.Movie_shelf, shelfMaps);
+		Movie.belongsToMany(models.Shelf, shelfMaps);
 	};
 	return Movie;
 };
