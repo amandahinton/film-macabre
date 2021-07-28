@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
 	);
 	Movie.associate = function (models) {
 		// associations can be defined here
-		Movie.hasMany(models.Review, { foreignKey: 'movieId ' });
+		Movie.hasMany(models.Review, { foreignKey: 'movieId' });
 
 		const maps = {
 			through: 'Movie_tag',

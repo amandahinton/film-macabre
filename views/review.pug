@@ -1,0 +1,24 @@
+
+extends layout.pug
+
+block content
+    if errors
+        div(class="errors")
+        ul
+            each error in errors
+                li= error
+    if review
+        div= review.body
+        div= review.rating
+        form(action=`/reviews/${review.id}/` method='post' class="hidden")
+            input(type="hidden" name="_csrf" value= csrfToken)
+            label(for="rating") Rating
+            input(type="number" name="rating" value= review.rating required)
+
+            label(for="body") Write your review here
+            textarea(name="body", cols="30", rows="10" required) #{review.body}
+            button(type="submit") Update Review
+            a(href=`/movies/${movieId}`) Cancel
+        form(action=`/reviews/${review.id}/delete` method='post' class="hidden")
+            input(type="hidden" name="_csrf" value= csrfToken)
+            button(type="submit") Delete Review

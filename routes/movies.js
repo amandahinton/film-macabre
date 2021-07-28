@@ -53,7 +53,7 @@ router.post('/:id(\\d+)/reviews/new', reviewValidators, csrfProtection, asyncHan
     // console.log("WEEEEEEE", validationErrors)
     if (validatorErrors.isEmpty()) {
         await review.save()
-        res.redirect(`/${movieId}`)
+        res.redirect(`/movies/${movieId}`)
     } else {
         const errors = validatorErrors.array().map((error) => error.msg);
         res.render('review-form', {
