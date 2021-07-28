@@ -19,10 +19,17 @@ const reviewValidators = [
         .withMessage("Please do not provide a score less than 0")
 ]
 
+router.get('/', asyncHandler(async (req, res) => {
+    let movies = await db.Movie.findAll();
+    let reviews = await db.Review.findAll();
+    res.render('movies-all', { title: 'Browse all movies', movies, reviews})
+}));
+
+
 router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req,res) => {
     let id = parseInt(req.params.id, 10)
     let movie = await db.Movie.findByPk(id)
-    res.render('movies', {title: 'Review Form', movie, csrfToken: req.csrfToken()})
+    res.render('movie-detail', {title: 'Review Form', movie, csrfToken: req.csrfToken()})
 }));
 
 router.get('/:id(\\d+)/reviews/new', csrfProtection, asyncHandler(async(req,res) => {
@@ -47,7 +54,7 @@ router.post('/:id(\\d+)/reviews/new', reviewValidators, csrfProtection, asyncHan
         userId: res.locals.user.id,
         rating,
         body,
-        movieId 
+        movieId
     })
     const validatorErrors = validationResult(req);
     // console.log("WEEEEEEE", validationErrors)
