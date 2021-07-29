@@ -1,4 +1,6 @@
-
+body {
+    background-image: none;
+}
 #reviewContainer {
     padding: 30px;
     display:flex;
@@ -54,9 +56,10 @@
   color: red;
 }
 
-#rating {
+.rating {
     width: 30px;
 }
+
 
 /* #movieContainer img {
     width: 25%;

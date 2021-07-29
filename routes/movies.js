@@ -43,10 +43,12 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req,res) => {
 
 router.get('/:id(\\d+)/reviews/new', csrfProtection, asyncHandler(async(req,res) => {
     let id = parseInt(req.params.id, 10)
+    const movie = await db.Movie.findByPk(id)
     let review = {} //await db.Review.build();
     res.render('review-form', {
         title: "Review Form Submission",
         review,
+        movie,
         id,
         csrfToken: req.csrfToken()
     })
@@ -65,6 +67,7 @@ router.post('/:id(\\d+)/reviews/new', reviewValidators, csrfProtection, asyncHan
         body,
         movieId
     })
+
     const validatorErrors = validationResult(req);
     // console.log("WEEEEEEE", validationErrors)
     if (validatorErrors.isEmpty()) {
