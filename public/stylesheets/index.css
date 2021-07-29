@@ -105,6 +105,21 @@ a {
     border-radius: 6px;
 }
 
+.delete-button {
+    background-color: #cccccc;
+    border: none;
+    color: red;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 7px 10px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+}
+
 .btn-edit {
 
 }

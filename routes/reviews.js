@@ -21,7 +21,10 @@ const reviewValidators = [
 router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req,res) => {
     const id = parseInt(req.params.id, 10)
     const review = await db.Review.findByPk(id)
-    res.render('review', {title: 'Review', review, csrfToken: req.csrfToken()})
+    const movieId = review.movieId
+    const movie = await db.Movie.findByPk(movieId)
+
+    res.render('review', {title: 'Review', review, movie, csrfToken: req.csrfToken()})
 }));
 
 
