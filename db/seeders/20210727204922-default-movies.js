@@ -370,11 +370,11 @@ module.exports = {
           cover: 'https://m.media-amazon.com/images/M/MV5BYjI0MDVlOGUtMjNjNS00ZGI1LTgxMzQtNWIyM2QyN2RkYjRhXkEyXkFqcGdeQXVyMjQwMjk0NjI@._V1_SX300.jpg'
         },
         {
-          title: 'The Dead Alive',
-          year: 1916,
-          description: 'Old Jim loses his money in the gambling house of "Doc" Ardini, an international crook. Feeling sorry for the old man, Ardini gives him a job. He will not write his motherless twin daughters...',
-          director: 'Henry J. Vernot',
-          cover: 'https://m.media-amazon.com/images/M/MV5BNGI4OTVkOWMtYzRiNS00NzhhLWJjMzYtNzJhMGI5NjA2Y2U4XkEyXkFqcGdeQXVyNjA5MTAzODY@._V1_SX300.jpg'
+          title: 'Dead Alive',
+          year: 1992,
+          description: "A young man's mother is bitten by a Sumatran rat-monkey. She gets sick and dies, at which time she comes back to life, killing and eating dogs, nurses, friends, and neighbors.",
+          director: 'Peter Jackson',
+          cover: 'https://resizing.flixster.com/eLGnBEJn6E-Ev23oAZ47JWbGM58=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzL2M3YWFlMzBjLWFkZDQtNDk5Ni04Nzg3LWE3ZjQ0MTE0NzEzYy5qcGc='
         },
         {
           title: 'It',

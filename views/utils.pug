@@ -1,0 +1,20 @@
+mixin showShelves(shelves, titles)
+    if shelves
+        each shelf in shelves
+            div(id="shelfId" hidden)= shelf.id
+            div.shelf
+                div.shelf-name
+                if titles
+                    h3
+                        a.shelf-name(href=`/shelves/${shelf.id}`)= shelf.name
+                div.one-shelf
+                    each movie in shelf.Movies
+                        div.movie-tile(class="movie-image" id= movie.id)
+                            a.poster-link(id="poster-link" href=`/movies/${movie.id}`)
+                                img.poster-pic(src=movie.cover)
+                            a.title-link(id="title-link" href=`/movies/${movie.id}`)= movie.title
+                            if curId && curId === shelf.userId
+                                form(action="#", method="get")
+                                    input(type="hidden" name="_csrf" value=csrfToken)
+                                    button(class="btn-edit" id=`edit-${shelf.id}-${movie.id}` hidden) Edit
+                                    button(class="btn-del" id=`delete-${shelf.id}-${movie.id}` hidden) Delete
