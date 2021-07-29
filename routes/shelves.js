@@ -5,9 +5,11 @@ const { csrfProtection, asyncHandler } = require('./utils.js');
 const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const e = require('express');
+const { requireAuth } = require('../auth');
 
 router.get(
 	'/new',
+	requireAuth,
 	csrfProtection,
 	asyncHandler(async (req, res) => {
 		const movies = await db.Movie.findAll();
@@ -17,6 +19,7 @@ router.get(
 
 router.post(
 	'/',
+	requireAuth,
 	csrfProtection,
 	asyncHandler(async (req, res) => {
 		try {
@@ -36,6 +39,7 @@ router.post(
 
 router.get(
 	'/:id',
+	requireAuth,
 	asyncHandler(async (req, res) => {
 		const { id } = req.params;
 		const shelf = await db.Shelf.findByPk(id, {
@@ -58,6 +62,7 @@ router.get(
 
 router.post(
 	'/:shelf/:id/delete',
+	requireAuth,
 	asyncHandler(async (req, res) => {
 		const { shelf: shelfId, id: movieId } = req.params;
 
@@ -75,6 +80,7 @@ router.post(
 
 router.post(
 	'/:shelfId/delete',
+	requireAuth, 
 	asyncHandler(async (req, res) => {
 		const { shelfId } = req.params;
 		const shelf = await db.Shelf.findByPk(shelfId);
