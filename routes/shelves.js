@@ -41,6 +41,7 @@ router.get(
 		const shelf = await db.Shelf.findByPk(id, {
 			include: db.Movie,
 		});
+		const curId = res.locals.user ? res.locals.user.id : null;
 
 		const user = await db.User.findByPk(shelf.userId);
 		const created = shelf.createdAt.toLocaleDateString();
@@ -50,21 +51,37 @@ router.get(
 			user,
 			created,
 			updated,
-			curId: res.locals.user.id,
+			curId,
 		});
 	})
 );
 
-router.delete(
-	'/:shelf/:id',
+router.post(
+	'/:shelf/:id/delete',
 	asyncHandler(async (req, res) => {
-		const { shelf: shelfId, id: userId } = req.params;
-		// const { id: curId } = res.locals.user;
-		// const targetShelf = await db.Shelf.findByPk(shelf);
-		// console.log(targetShelf);
-		// if (curId === targetShelf.userId) {
-		// 	console.log('HAHAHAHA LETS GO');
-		// }
+		const { shelf: shelfId, id: movieId } = req.params;
+
+		const entry = await db.Movie_shelf.findOne({
+			where: {
+				shelfId,
+				movieId,
+			},
+		});
+
+		await entry.destroy();
+		res.status(200).send('OK');
+	})
+);
+
+router.post(
+	'/:shelfId/delete',
+	asyncHandler(async (req, res) => {
+		const { shelfId } = req.params;
+		const shelf = await db.Shelf.findByPk(shelfId);
+
+		await shelf.destroy();
+
+		res.status(200).send('OK');
 	})
 );
 

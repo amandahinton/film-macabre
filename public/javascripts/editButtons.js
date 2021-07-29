@@ -1,10 +1,6 @@
-function changeVis(thing1, thing2, vis) {
-	Array.from(thing1).forEach((ele) =>
-		ele.setAttribute('style', `display:${vis}`)
-	);
-	Array.from(thing2).forEach((ele) =>
-		ele.setAttribute('style', `display:${vis}`)
-	);
+function changeVis(thing1, thing2) {
+	Array.from(thing1).forEach((ele) => ele.toggleAttribute('hidden'));
+	Array.from(thing2).forEach((ele) => ele.toggleAttribute('hidden'));
 }
 
 async function deleteFromShelf(shelfId, movieId, userId) {
@@ -20,27 +16,42 @@ document.addEventListener('DOMContentLoaded', (e) => {
 	const editButtons = document.getElementsByClassName('btn-edit');
 	const deleteButtons = document.getElementsByClassName('btn-del');
 	const editButton = document.getElementById('edit-button');
-	let clickCount = 0;
 
 	if (editButton) {
 		editButton.addEventListener('click', (e) => {
-			clickCount++;
+			const actionsContainer = document.getElementById('actions');
+			actionsContainer.addEventListener('click', (e) => {
+				e.stopImmediatePropagation();
+				if (actionsContainer.childNodes.length === 1) {
+					const button = document.createElement('button');
+					button.innerText = 'Delete Shelf';
 
-			if (clickCount % 2 === 0) {
-				editButton.innerText = 'Edit Shelf';
-				changeVis(editButtons, deleteButtons, 'none');
-			} else {
-				editButton.innerText = 'Save Changes';
-				changeVis(editButtons, deleteButtons, 'visible');
-			}
+					actionsContainer.appendChild(button);
+					button.addEventListener('click', async (e) => {
+						console.log('DELETE');
+						const shelfId = document.getElementById('shelfId').innerText;
+						const res = await fetch(`/shelves/${shelfId}/delete`, {
+							method: 'POST',
+						});
+						window.location = '/';
+					});
+				}
+			});
+
+			changeVis(editButtons, deleteButtons);
 		});
-		Array.from(deleteButtons).forEach((button) => {
+		Array.from(deleteButtons).forEach(async (button) => {
 			button.addEventListener('click', async (e) => {
 				e.preventDefault();
 				e.stopPropagation();
-				const target = e.target;
-				const [_method, shelfId, movieId] = target.id.split('-');
-				await deleteFromShelf(shelfId, movieId);
+				const [_method, shelfId, movieId] = e.target.id.split('-');
+
+				const movie = document.getElementById(movieId);
+				movie.toggleAttribute('hidden');
+
+				const res = await fetch(`/shelves/${shelfId}/${movieId}/delete`, {
+					method: 'POST',
+				});
 			});
 		});
 	}
