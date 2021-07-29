@@ -3,24 +3,26 @@ extends layout.pug
 
 block content
 
-    each movie in movies
-        div.movie-tile
-            img(src=movie.cover, alt="movie poster")
-            p #{movie.title}
-            -const num = Object.values(movie.Reviews).map(review => review.rating).reduce((a,b) => {return a + b}, 0)
-            -const total = movie.Reviews.length
-            -let score = num/(total * 1.0)
-            -score = Math.floor(score)
-            h3=score
-            div(id="starContainer")
-                    - let i = 0
-                    - let j = score
+    h1 #{title}
+    div.movie-gallery
+        each movie in movies
+            div.movie-tile(class="movie-image" id= movie.id)
+                a.poster-link(id="poster-link" href=`/movies/${movie.id}`)
+                    img.poster-pic(src=movie.cover)
+                a.title-link(id="title-link" href=`/movies/${movie.id}`)= movie.title
+                -const num = Object.values(movie.Reviews).map(review => review.rating).reduce((a,b) => {return a + b}, 0)
+                -const total = movie.Reviews.length
+                -let score = num/(total * 1.0)
+                -score = Math.floor(score)
+                div(id="starContainer")
+                    -let i = 0
+                    -let j = score
                     while i < score
                         span(class="fa fa-star checked")
-                        - i++
+                        -i++
                     while j < 5
                         span(class="fa fa-star")
-                        - j++
-            //- each review in reviews
-            //-     if review.movieId === movie.id
-            //-         p #{review.rating}
+                        -j++
+                //- each review in reviews
+                //-     if review.movieId === movie.id
+                //-         p #{review.rating}

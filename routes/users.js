@@ -5,6 +5,7 @@ const { csrfProtection, asyncHandler } = require('./utils.js');
 const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const e = require('express');
+const {loginUser, logoutUser, restoreUser} = require("../auth")
 
 async function generateShelf(name, userId) {
 	try {
@@ -153,15 +154,6 @@ router.get('/login', csrfProtection, (req, res) => {
 	res.render('login', { title: 'Login', csrfToken: req.csrfToken() });
 });
 
-const loginUser = (req, res, user) => {
-	req.session.auth = {
-		userId: user.id,
-	};
-};
-
-const logoutUser = (req, res) => {
-	delete req.session.auth;
-};
 
 router.post('/logout', (req, res) => {
 	logoutUser(req, res);
@@ -174,26 +166,7 @@ router.post('/logout', (req, res) => {
 	});
 });
 
-const restoreUser = async (req, res, next) => {
-	if (req.session.auth) {
-		const { userId } = req.session.auth;
-		try {
-			const user = await db.User.findByPk(userId);
 
-			if (user) {
-				res.locals.authenticated = true;
-				res.locals.user = user;
-				next();
-			}
-		} catch (err) {
-			res.locals.authenticated = false;
-			next(err);
-		}
-	} else {
-		res.locals.authenticated = false;
-		next();
-	}
-};
 
 router.post(
 	'/login',

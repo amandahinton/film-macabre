@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 				const [_method, shelfId, movieId] = e.target.id.split('-');
 
 				const movie = document.getElementById(movieId);
-				movie.toggleAttribute('hidden');
+				movie.setAttribute('style', 'display:none');
 
 				const res = await fetch(`/shelves/${shelfId}/${movieId}/delete`, {
 					method: 'POST',

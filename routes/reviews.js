@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils.js');
 const { check, validationResult } = require('express-validator');
+const { requireAuth } = require('../auth');
 
 const reviewValidators = [
     check('body')
@@ -29,10 +30,10 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req,res) => {
 
 
 //edit review route
-router.post('/:id(\\d+)', csrfProtection, reviewValidators,
+router.post('/:id(\\d+)', requireAuth, csrfProtection, reviewValidators,
   asyncHandler(async (req, res) => {
     const id = parseInt(req.params.id, 10);
-    
+
     const reviewToUpdate = await db.Review.findByPk(id);
     let movieId = reviewToUpdate.movieId
     const {
@@ -62,7 +63,7 @@ router.post('/:id(\\d+)', csrfProtection, reviewValidators,
     }
   }));
 
-    router.post('/:id(\\d+)/delete', csrfProtection, reviewValidators, asyncHandler(async (req, res) => {
+    router.post('/:id(\\d+)/delete', requireAuth, csrfProtection, reviewValidators, asyncHandler(async (req, res) => {
         const id = parseInt(req.params.id, 10);
         const review = await db.Review.findByPk(id);
         const movieId = review.movieId
