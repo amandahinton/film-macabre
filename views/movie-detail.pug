@@ -18,11 +18,11 @@ block content
                 p.movie-details-director #{movie.director}
                 p.movie-details-description #{movie.description}
     if myShelves
-        form(action=`/shelves/edit`, method="post")
+        form(id="add-to-shelf" action=`/shelves/edit`, method="post")
             input(type="hidden" name="_csrf" value=csrfToken)
             input(type="hidden" name="movieId" value= movie.id)
 
-            label(for="shelfId") Add to Shelf
+            label(for="shelfId")= "Add to Shelf: "
             select(name="shelfId" id="dropdown")
                 each shelf in myShelves
                     option(value=shelf.id)= shelf.name
