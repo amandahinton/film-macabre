@@ -1,0 +1,41 @@
+/* MOVIE DETAILS */
+.movie-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.movie-details-image {
+    height: 350px;
+    box-shadow: 5px 5px 10px #ff2800;
+}
+
+.movie-details-text {
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, .5);
+    height: 350px;
+    width: 400px;
+    padding: 25px;
+    box-shadow: 5px 5px 10px #ff2800;
+    margin-left: 40px;
+}
+
+.movie-details-title {
+    margin: 10px 0;
+}
+
+.movie-details-year, .movie-details-director {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #cccccc;
+    margin: 5px 0 10px;
+}
+
+.movie-details-description {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #cccccc
+}

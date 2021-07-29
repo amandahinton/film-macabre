@@ -32,7 +32,7 @@ module.exports = {
 				},
 				{
 					userId: FEATURED_ID,
-					name: 'More gor por favor',
+					name: 'More gore por favor',
 				},
 				{
 					userId: FEATURED_ID,
@@ -40,7 +40,7 @@ module.exports = {
 				},
 				{
 					userId: FEATURED_ID,
-					name: "You'll be sleeping with the lights on after this one",
+					name: "You'll be sleeping with the lights on after this",
 				},
 			],
 			{}
