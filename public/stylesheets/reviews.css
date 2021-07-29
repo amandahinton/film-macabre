@@ -1,13 +1,21 @@
-.hidden {
+.hidden .updateForm {
     display:none;
 }
 
 #reviewContainer {
+    padding: 30px;
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     /* background-color: blue; */
+}
+
+#formContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 #body {
     width: 100%;
@@ -20,4 +28,8 @@
 	background-image: url(bg.gif);
 	/* background-position: bottom right; */
 	background-repeat: no-repeat;
+}
+
+.checked {
+  color: orange;
 }

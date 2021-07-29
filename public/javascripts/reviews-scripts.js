@@ -1,9 +1,9 @@
 //add event listener to form
 
 function hideForm() {
-    let form = document.getElementsByClassName('updateForm')[0]
+    // let form = document.getElementsByClassName('updateForm')[0]
     // if (form.style.display === "none") {
-    //     form.style.display = "block"
+    //     form.style.display = "flex"
     // } else {
     //     form.style.display = "none"
     // }
