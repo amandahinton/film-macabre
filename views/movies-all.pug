@@ -1,11 +1,13 @@
 extends layout.pug
 
 block content
-
-    each movie in movies
-        div.movie-tile
-            img(src=movie.cover, alt="movie poster")
-            p #{movie.title}
-            each review in reviews
-                if review.movieId === movie.id
-                    p #{review.rating}
+    h1 #{title}
+    div.movie-gallery
+        each movie in movies
+            div.movie-tile(class="movie-image" id= movie.id)
+                a.poster-link(id="poster-link" href=`/movies/${movie.id}`)
+                    img.poster-pic(src=movie.cover)
+                a.title-link(id="title-link" href=`/movies/${movie.id}`)= movie.title
+                //- each review in reviews
+                //-     if review.movieId === movie.id
+                //-         p #{review.rating}
