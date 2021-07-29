@@ -1,7 +1,21 @@
 extends layout.pug
 
+append head
+    link(rel="stylesheet" href="/stylesheets/index.css")
+    link(rel="stylesheet" href="/stylesheets/movie-detail.css")
+
 block content
     if movie
-        img(src=movie.cover, alt="img", srcset="")
+        .movie-details
+            .movie-details-poster
+                a(href=`/movies/${movie.id}`)
+                    img.movie-details-image(src=movie.cover, alt="movie poster")
+            .movie-details-text
+                h3.movie-details-title
+                    a(id="title-link" href=`/movies/${movie.id}`)= movie.title
+                p.movie-details-year #{movie.year}
+                p.movie-details-director #{movie.director}
+                p.movie-details-description #{movie.description}
+
         form()
         button(type="submit") Logout

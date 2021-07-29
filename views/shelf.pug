@@ -1,0 +1,13 @@
+extends layout.pug
+include utils
+
+block content
+    h2 #{shelf.name}
+    h3 Created by #{user.firstName} #{user.lastName} on #{created}
+    h3 Last updated on #{updated}
+    if curId
+        if curId === shelf.userId
+            div(id="actions")
+                button(id="edit-button") Edit Shelf
+    +showShelves([shelf])
+    script(src="/javascripts/editButtons.js")

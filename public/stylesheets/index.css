@@ -1,31 +1,312 @@
+body {
+    background-color: rgba(0, 0, 0, .97);
+    background-image: url("../images/hands.png");
+    background-repeat: no-repeat;
+    background-size: 100% 30%;
+    background-position: 50% 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+
+}
+
+.outer-container {
+    background-image: url("../images/scream.jpg");
+    background-repeat: no-repeat;
+    background-size: 1000px;
+    background-position: 50% 0%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/*
+OPEN SANS WEIGHTS:
+    800 - EXTRA BOLD
+    700- BOLD
+    400 - REGULAR
+    300- LIGHT
+*/
+
 h1 {
-    color: rgb(255, 102, 0);
-    display: flex;
-    justify-content: center;
-    font-family: 'Creepster', cursive;
+    font-family: 'Pirata One', sans-serif;
+    font-size: 60px;
+    color: #ff2800;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #cccccc;
+
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #cccccc
 }
 
 p {
-    color: white;
-    display: flex;
-    justify-content: center;
-    font-family: 'Creepster', cursive;
-    padding-right: 250px;
-    padding-left: 250px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #cccccc
+}
+
+a {
+    font-family: 'Open Sans', sans-serif;
+    color: #ff2800;
+    text-decoration: none;
+}
+
+
+/* BUTTONS */
+
+.big-button {
+    background-color: #ff2800;
+    border: none;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 25px;
+    margin: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+.med-button {
+    background-color: #cccccc;
+    border: none;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 7px 10px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+}
+
+.small-button {
+    background-color: #cccccc;
+    border: none;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 7px 10px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+}
+
+.btn-edit {
 
 }
 
-.loginbutton, .registerbutton, .logindemo {
+.btn-del {
+
+}
+
+/* .loginbutton, .registerbutton, .logindemo {
     background-color: rgb(255, 102, 0);
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 5px;
+} */
+
+
+
+/* NAVIGATION */
+.navbar {
+    display: inline-flex;
+    margin:0px;
+    height: 100px;
+    width: 1000px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.nav {
-    background-color: black;
-    height: 300px;
+.navbar-logo {
+    height: 50px;
 }
+
+.nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 
 .firstNameDiv, .lastNameDiv, .emailDiv, .usernameDiv, .ageDiv, .passwordDiv, .confirmedpasswordDiv {
     display: block;
+    font-family: 'Pirata One', sans-serif;
+    font-size: 60px;
+    color: #ff2800;
+} 
+
+
+
+
+/* HOMEPAGE HERO SECTION */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px 100px;
+
 }
+
+/* HOMEPAGE HERO HEADLINE */
+.motto {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Pirata One', sans-serif;
+    font-size: 100px;
+}
+
+/* HOMEPAGE HERO TEXT */
+.elevator {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: 'Pirata One', sans-serif;
+    font-size: 52px;
+    letter-spacing: .07em;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* LOGIN LINE */
+.login-hero {
+    margin: 0px;
+}
+
+
+
+/* HOMEPAGE SHELF SECTION */
+.feature-shelf {
+
+}
+
+/* ENTIRE SHELF: TITLE AND TILES */
+.shelf {
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
+/* FROM MIXIN: SHELF TITLE */
+.shelf-name {
+
+}
+
+/* FROM MIXIN: NOT TITLE, ROW OF TILES */
+.one-shelf {
+    max-width: 1000px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+/* TILE PER MOVIE: IMAGE, TITLE, EDIT/DEL BUTTONS */
+.movie-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
+}
+
+.poster-pic {
+    width: 150px;
+}
+
+.title-link {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300px;
+    text-decoration: none;
+    width: 150px;
+    margin-top: 5px;
+
+}
+
+/* HOMEPAGE RANDOM MOVIE RECOMMENDATION */
+.random-rec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.random-rec-image, .random-rec-poster {
+    height: 350px;
+    box-shadow: 5px 5px 10px #ff2800;
+}
+
+.random-rec-text {
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, .9);
+    height: 350px;
+    width: 400px;
+    padding: 25px;
+    box-shadow: 5px 5px 10px #ff2800;
+    margin-left: 40px;
+}
+
+.random-rec-intro {
+    margin: 0 0 15px 0;
+}
+
+.random-rec-title {
+    margin: 10px 0;
+}
+
+.random-rec-year, .random-rec-director {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #cccccc;
+    margin: 5px 0 10px;
+}
+
+.random-rec-description {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #cccccc
+}
+
+
+/* HOMEPAGE FOOTER SECTION */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-founders {
+    display: flex;
+    margin: 150px 15px 0;
+}
+
+.footer-item a{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300px;
+    color: #ccc;
+    margin: 0 10px 0;
+}
+
+
+.footer-year {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300px;
+    color: #ccc;
+    margin: 0 15px 30px 15px;
+}
+
+
+

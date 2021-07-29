@@ -10,8 +10,8 @@ block content
     form(action=`/movies/${id}/reviews/new`, method="post")
         input(type="hidden" name="_csrf" value= csrfToken)
 
-        label(for="score") Score
-        input(type="number" name="score" value= review.score required)
+        label(for="rating") Rating
+        input(type="number" name="rating" value= review.rating required)
 
         label(for="body") Write your review here
         textarea(name="body", cols="30", rows="10" placeholder="Write your review here." value= review.body required) 
