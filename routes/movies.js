@@ -19,9 +19,8 @@ const reviewValidators = [
 ]
 
 router.get('/', asyncHandler(async (req, res) => {
-    let movies = await db.Movie.findAll({order: [['title', 'ASC']]});
-    let reviews = await db.Review.findAll();
-    res.render('movies-all', { title: 'Browse all movies', movies, reviews})
+    let movies = await db.Movie.findAll({include: db.Review});
+    res.render('movies-all', { title: 'Browse all movies', movies})
 }));
 
 
@@ -45,7 +44,7 @@ router.get('/:id(\\d+)', requireAuth, csrfProtection, asyncHandler(async(req,res
     const userId = res.locals.user ? res.locals.user.id : null;
     let myShelves = null;
 
-    let movie = await db.Movie.findByPk(id)
+    let movie = await db.Movie.findByPk(id, {include: db.Review})
     if(userId) {
         myShelves = await db.Shelf.findAll({
             where: {
@@ -62,7 +61,7 @@ router.get('/:id(\\d+)', requireAuth, csrfProtection, asyncHandler(async(req,res
 router.get('/:id(\\d+)/reviews/new', requireAuth, csrfProtection, asyncHandler(async(req,res) => {
     let id = parseInt(req.params.id, 10)
     const movie = await db.Movie.findByPk(id)
-    let review = {} //await db.Review.build();
+    let review = db.Review.build();
     res.render('review-form', {
         title: "Review Form Submission",
         review,
@@ -85,10 +84,12 @@ router.post('/:id(\\d+)/reviews/new', requireAuth, reviewValidators, csrfProtect
         body,
         movieId
     })
+    const movie = await db.Movie.findByPk(movieId)
 
     const validatorErrors = validationResult(req);
     // console.log("WEEEEEEE", validationErrors)
     if (validatorErrors.isEmpty()) {
+        // return res.json({review})
         await review.save()
         res.redirect(`/movies/${movieId}`)
     } else {
@@ -96,6 +97,7 @@ router.post('/:id(\\d+)/reviews/new', requireAuth, reviewValidators, csrfProtect
         res.render('review-form', {
         title: 'Add Review',
         review,
+        movie,
         errors,
         csrfToken: req.csrfToken(),
       });
