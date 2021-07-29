@@ -1,3 +1,186 @@
+body {
+    background-color: black;
+}
+
+
+/*
+OPEN SANS WEIGHTS:
+    800 - EXTRA BOLD
+    700- BOLD
+    400 - REGULAR
+    300- LIGHT
+*/
+
 h1 {
-    color: #555555;
+    font-family: 'Pirata One', sans-serif;
+    color: #ff2800;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: #cccccc;
+    font-weight: 800px;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700px;
+    color: #cccccc
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+
+    color: #cccccc
+}
+
+a {
+    font-family: 'Open Sans', sans-serif;
+    color: #ff2800;
+}
+
+
+/* BUTTONS */
+
+.big-button {
+    background-color: #ff2800;
+    border: none;
+    color: #cccccc;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.med-button {
+
+}
+
+small-button {
+
+}
+
+.btn-edit {
+
+}
+
+.btn-del {
+
+}
+
+
+
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-logo {
+    height: 50px;
+}
+
+.nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* HOMEPAGE HERO SECTION */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* HOMEPAGE HERO HEADLINE */
+.motto {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Pirata One', sans-serif;
+    font-size: 120px;
+}
+
+/* HOMEPAGE HERO TEXT */
+.elevator {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-family: 'Pirata One', sans-serif;
+    font-size: 60px;
+}
+/* LOGIN LINE */
+.login-hero {
+
+}
+
+/* LINK PART OF LOGIN LINE */
+
+
+/* HOMEPAGE SHELF SECTION */
+.feature-shelf {
+
+}
+
+/* ENTIRE SHELF: TITLE AND TILES */
+.shelf {
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
+/* FROM MIXIN: SHELF TITLE */
+.shelf-name {
+
+}
+
+/* FROM MIXIN: NOT TITLE, ROW OF TILES */
+.one-shelf {
+    display: flex;
+    align-items: center;
+
+}
+
+/* TILE PER MOVIE: IMAGE, TITLE, EDIT/DEL BUTTONS */
+.movie-tile {
+
+}
+
+.poster-pic {
+    width: 150px;
+}
+
+.title-link {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300px;
+}
+
+/* HOMEPAGE RANDOM MOVIE RECOMMENDATION */
+.random-rec {
+
+}
+
+.random-rec-text {
+
+}
+
+.random-rec {
+
+}
+
+/* HOMEPAGE FOOTER SECTION */
+.footer {
+
+}
+
+.footer-founders {
+
+}
+
+
+.footer-year {
+
 }

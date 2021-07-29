@@ -1,17 +1,31 @@
 doctype html
 html
-  head
-      block head
-        title #{title}
-        link(rel='stylesheet' href='/stylesheets/reset.css')
-  body
-    if locals.authenticated
-      div
-        p Welcome #{locals.user.username} :D
-        form(action="/users/logout" method="post")
-          button(type="submit") Logout
-    else
-      div
-        a(href="/users/login") Login
-        a(href="/users/register") Register
-    block content
+    head
+        block head
+            title #{title}
+            //- link(rel='stylesheet' href='/stylesheets/reset.css')
+
+            link(rel='stylesheet' href='/stylesheets/index.css')
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    body
+        nav.navbar
+            div.nav-item
+                a(href='/')
+                    img.navbar-logo(src="../images/logo.png", alt="horrorhost logo")
+            div.nav-item
+                a.nav-link.page-link(href='/movies') Movies
+            if locals.authenticated
+                div.nav-item
+                    p Welcome #{locals.user.username}!
+                div.nav-item
+                    form(action="/users/logout" method="post")
+                        button.med-button(type="submit") Logout
+            else
+                div.nav-item
+                    a.nav-link.login-link(href="/users/login") Login
+                div.nav-item
+                    a.nav-link.register-link(href="/users/register") Register
+        block content

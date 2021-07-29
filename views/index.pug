@@ -2,18 +2,35 @@ extends layout
 include utils
 
 append head
-  //- add page specific styles by appending to the head
-  link(rel="stylesheet" href="/stylesheets/index.css")
-  //- add page specific js
-  script(src="/javascripts/index.js" type="module" defer)
+    //- add page specific styles by appending to the head
+    link(rel="stylesheet" href="/stylesheets/index.css")
+    //- add page specific js
+    script(src="/javascripts/index.js" type="module" defer)
 
 block content
-    div(id="splash")
-        h1= "face your fears."
-        h2= "Curate a blood-curdling collection of horror movies while discovering new favorites"
+    .hero
+        h1.motto Face your fears
+        h2.elevator Curate a blood-curdling collection of horror movies while discovering new favorites
         form(action="/users/register", method="get")
-            button(type="submit") GET STARTED
-        small= "Already a member? "
-            a(href="/users/login")= "Log in >>"
-    div(id="featured-shelves")
+            button.big-button(type="submit") GET STARTED
+        .login-hero
+            p Already a member?
+            a(href="/users/login") Log in >>
+    .feature-shelf
         +showShelves(shelves, true)
+    .random-rec
+        .random-rec-poster
+            img(src=randomMovie.cover, alt="movie poster")
+        .random-rec-text
+            h3 Have you seen this one...
+            p.random-rec-title #{randomMovie.title}
+            p.random-rec-year #{randomMovie.year}
+            p.random-rec-director #{randomMovie.director}
+            p.random-rec-description #{randomMovie.description}
+    .footer
+        .footer-founders
+            a(href="https://amandahinton.com/") Amanda Hinton
+            a(href="/movies") Tanner Pedretti
+            a(href="/movies") Moncef Sebbata
+            a(href="/movies") Walker Williams
+        .footer-year Copyright 2021 ©  All Rights Reserved
