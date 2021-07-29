@@ -1,0 +1,11 @@
+extends layout.pug
+
+block content
+    h2(class="suggestions") Suggested movies
+    form(action="/suggestions", method="post")
+        input(type="hidden" name="_csrf" value=csrfToken)
+
+        label(for="suggestions") Suggest a movie
+        input(type="text" name="suggestions" required)
+
+        button(type="submit") Send

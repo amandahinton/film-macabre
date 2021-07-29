@@ -1,27 +1,24 @@
-extends layout.pug
+if errors
+    div(class="errors")
+    ul
+        each error in errors
+            li= error
 
-block content
-    if errors
-        div(class="errors")
-        ul
-            each error in errors
-                li= error
+form(action="/users/login", method="post")
+    input(type="hidden" name="_csrf" value= csrfToken)
 
-    form(action="/users/login", method="post")
-        input(type="hidden" name="_csrf" value= csrfToken)
+    label(for="username") Username
+    input(type="text" name="username" required)
 
-        label(for="username") Username
-        input(type="text" name="username" required)
+    label(for="password") Password
+    input(type="password" name="password" required)
 
-        label(for="password") Password
-        input(type="password" name="password" required)
+    button(type="submit") Login
 
-        button(type="submit") Login
-    
-    form(action="/users/login/demo", method="post")
-        label(for="username") 
-        input(type="hidden" name="username" value="demo")
+form(action="/users/login/demo", method="post")
+    label(for="username")
+    input(type="hidden" name="username" value="demo")
 
-        label(for="password") 
-        input(type="hidden" name="password" value="Password1!")
-        button(type="submit") Login Demo
+    label(for="password")
+    input(type="hidden" name="password" value="Password1!")
+    button(type="submit" class="logindemo") Login Demo

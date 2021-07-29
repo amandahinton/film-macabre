@@ -11,7 +11,15 @@ html
         form(action="/users/logout" method="post")
           button(type="submit") Logout
     else
-      div
-        a(href="/users/login") Login
-        a(href="/users/register") Register
-    block content
+      nav(class="nav")
+        div
+          <form method="get" action="/users/login" class="container">
+            <button type="submit"class="loginbutton">Login</button >
+          </form>
+          <form method="get" action="/users/register">
+            <button type="submit"class="registerbutton">Register</button  >
+          </form>
+        //- button(type="submit" )
+        //-   a(href="/users/login" class="loginlink") Login
+        //-   a(href="/users/register" class="registerlink") Register
+        block content
