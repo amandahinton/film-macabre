@@ -1,15 +1,36 @@
-.hidden {
-    display:none;
+body {
+    background-image: none;
 }
-
 #reviewContainer {
+    padding: 30px;
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background-color: blue; */
 }
+#reviewContainer div {
+    margin: 15px;
+}
+
+#reviewBody, #ratingLabel {
+    color: #cccccc;
+}
+
+.updateForm form {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.hidden {
+    display:none;
+}
+
 #body {
+    flex-basis: 100%;
+    margin: 5px;
     width: 100%;
     overflow: auto;
     width: 600px;
@@ -21,3 +42,26 @@
 	/* background-position: bottom right; */
 	background-repeat: no-repeat;
 }
+
+ #ratingLabel {
+    font-weight: 700;
+}
+
+#deleteReview, #updateReview {
+    flex-basis: 20%;
+}
+
+
+.checked {
+  color: red;
+}
+
+.rating {
+    width: 30px;
+}
+
+
+/* #movieContainer img {
+    width: 25%;
+    align-items: center;
+} */

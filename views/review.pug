@@ -3,7 +3,10 @@ extends layout.pug
 
 append head 
     //- defer helps to make sure the scripts only run after the full template is rendered
-    script(src="/javascripts/reviews-scripts.js" type="module" defer)
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel='stylesheet', href='/stylesheets/background.css')
+    link(rel='stylesheet', href='/stylesheets/review-form.css')
+    script(src="/javascripts/reviews-scripts.js" type="module" defer )
 block content
     if errors
         div(class="errors")
@@ -12,28 +15,35 @@ block content
                 li= error
     if review
         div(id="reviewContainer")
-            div(id="reviewRating")= `${review.rating}/5`
+            div(id="movieContainer")
+                img(src=`${movie.cover}`, alt="Movie Cover")
+            div(id="starContainer")
+                    - let i = 0
+                    - let j = review.rating
+                    while i < review.rating
+                        span(class="fa fa-star checked")
+                        - i++
+                    while j < 5
+                        span(class="fa fa-star")
+                        - j++
             div(id="reviewBody")= review.body
             div(id="buttonContainer")
+                button(type="submit" id= "updateReview" class="small-button") Edit Review
 
-                button(type="submit" id= "updateReview") Edit Review
+            div(id="formContainer" class= "updateForm hidden")
+                form(action=`/reviews/${review.id}/` method='post' id="formFields")
+                
+                    input(type="hidden" name="_csrf" value= csrfToken)
+
+                    div(id="score")
+                        label(for="rating" id="ratingLabel") Rating:   
+                        input(type="number" min="0" max="5" name="rating" class= "rating" value= review.rating required)
+
+                    //- label(for="body") Write your review here
+                    textarea(name="body" id="body" cols="30", rows="10" required) #{review.body}
+                    button(type="submit" id= "updateReview" class="small-button") Submit Review
 
                 form(action=`/reviews/${review.id}/delete` method='post')
                     input(type="hidden" name="_csrf" value= csrfToken)
-                    button(type="submit") Delete Review
-
-            form(action=`/reviews/${review.id}/` method='post' class="updateForm hidden")
-            
-                input(type="hidden" name="_csrf" value= csrfToken)
-
-                label(for="rating") Rating
-                input(type="number" name="rating" value= review.rating required)
-
-                label(for="body") Write your review here
-                textarea(name="body" id="body" cols="30", rows="10" required) #{review.body}
-                button(type="submit" id= "update") Submit Review
-        
-        //- form(action=`/reviews/${review.id}/delete` method='post')
-        //-     input(type="hidden" name="_csrf" value= csrfToken)
-        //-     button(type="submit") Delete Review
+                    button(type="submit" class="delete-button" id="deleteReview") Delete Review
         

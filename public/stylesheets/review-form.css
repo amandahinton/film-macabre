@@ -1,0 +1,37 @@
+body {
+    background-image: none;
+}
+
+#formContainer {
+    display:flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#formContainer div {
+    margin: 10px;
+    display:flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#reviewBody {
+    margin: 5px;
+    width: 100%;
+    overflow: auto;
+    width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	/* background-image: url(bg.gif); */
+	/* background-position: bottom right; */
+	/* background-repeat: no-repeat; */
+}
+
+.label {
+    color: #cccccc;
+    font-weight: 700
+}

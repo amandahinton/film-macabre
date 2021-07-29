@@ -1,19 +1,34 @@
 extends layout.pug
+append head 
+    //- defer helps to make sure the scripts only run after the full template is rendered
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel='stylesheet', href='/stylesheets/background.css')
+    link(rel='stylesheet', href='/stylesheets/review-form.css')
 
 block content
-    if errors
-        div(class="errors")
-        ul
-            each error in errors
-                li= error 
+    
+    div(id="errorContainer")
+        if errors
+            div(class="errors")
+            ul
+                each error in errors
+                    li= error 
+    
+    div(id="pageContainer")
+        form(action=`/movies/${id}/reviews/new`, method="post" id="formContainer")
+            
+            div(id="movieContainer")
+                img(src=`${movie.cover}`, alt="Movie Cover")
+            
+            input(type="hidden" name="_csrf" value= csrfToken)
 
-    form(action=`/movies/${id}/reviews/new`, method="post")
-        input(type="hidden" name="_csrf" value= csrfToken)
-
-        label(for="rating") Rating
-        input(type="number" name="rating" value= review.rating required)
-
-        label(for="body") Write your review here
-        textarea(name="body", cols="30", rows="10" placeholder="Write your review here." value= review.body required) 
-
-        button(type="submit") Submit Review
+            div(id="score")
+                label(for="rating" class="label") Rating
+                input(type="number" min="0" max="5" name="rating" value= review.rating required)
+            
+            div(id="reviewForm")
+                label(for="body" class="label") Write your review here:
+                textarea(name="body", cols="30", rows="10" placeholder="Write your review here." value= review.body required id="reviewBody") 
+            
+            div(id="submitButton")
+                button(type="submit" class="small-button") Submit Review
