@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils.js');
 const { check, validationResult } = require('express-validator');
+const { requireAuth } = require('../auth');
 
 const reviewValidators = [
     check('body')
@@ -24,18 +25,22 @@ router.get('/', asyncHandler(async (req, res) => {
 }));
 
 
-router.get('/new', csrfProtection, asyncHandler(async (req, res) => {
+router.get('/new', requireAuth, csrfProtection, asyncHandler(async (req, res) => {
     res.render('suggestion', { title: 'Suggest a movie', csrfToken: req.csrfToken() })
 }));
 
-router.post('/new', csrfProtection, asyncHandler(async (req, res) => {
+router.post('/new', requireAuth, csrfProtection, asyncHandler(async (req, res) => {
     // create a suggestion works like the register form and dumps the info into a row in the suggestion table
     const { title, year, description, director, cover} = req.body;
     // send the form submit to to a new table in the database?
+    await db.Suggestion.create(
+        { title, year, description, director, cover}
+    )
+    res.redirect('/')
 }));
 
 
-router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req,res) => {
+router.get('/:id(\\d+)', requireAuth, csrfProtection, asyncHandler(async(req,res) => {
     let id = parseInt(req.params.id, 10)
     const userId = res.locals.user ? res.locals.user.id : null;
     let myShelves = null;
@@ -54,7 +59,7 @@ router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req,res) => {
     res.render('movie-detail', {title: 'Review Form', movie, csrfToken: req.csrfToken(), userId, myShelves})
 }));
 
-router.get('/:id(\\d+)/reviews/new', csrfProtection, asyncHandler(async(req,res) => {
+router.get('/:id(\\d+)/reviews/new', requireAuth, csrfProtection, asyncHandler(async(req,res) => {
     let id = parseInt(req.params.id, 10)
     let review = {} //await db.Review.build();
     res.render('review-form', {
@@ -65,7 +70,7 @@ router.get('/:id(\\d+)/reviews/new', csrfProtection, asyncHandler(async(req,res)
     })
 }));
 
-router.post('/:id(\\d+)/reviews/new', reviewValidators, csrfProtection, asyncHandler(async (req, res) => {
+router.post('/:id(\\d+)/reviews/new', requireAuth, reviewValidators, csrfProtection, asyncHandler(async (req, res) => {
     let movieId = parseInt(req.params.id, 10)
     const {
       rating,
