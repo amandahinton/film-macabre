@@ -16,7 +16,7 @@ router.get('/', async function (req, res, next) {
 		let randomMovie = await db.Movie.findByPk(randomNumber)
 
 		res.render('index', {
-			title: 'Horror Host',
+			title: 'HorrorHost',
 			shelves: featuredShelves,
 			randomMovie
 		});
