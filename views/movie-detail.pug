@@ -3,6 +3,7 @@ extends layout.pug
 append head
     link(rel="stylesheet" href="/stylesheets/index.css")
     link(rel="stylesheet" href="/stylesheets/movie-detail.css")
+    script(src="/javascripts/addToShelf.js")
 
 block content
     if movie
@@ -16,6 +17,13 @@ block content
                 p.movie-details-year #{movie.year}
                 p.movie-details-director #{movie.director}
                 p.movie-details-description #{movie.description}
+    if myShelves
+        form(action=`/shelves/edit`, method="post")
+            input(type="hidden" name="_csrf" value=csrfToken)
+            input(type="hidden" name="movieId" value= movie.id)
 
-        form()
-        button(type="submit") Logout
+            label(for="shelfId") Add to Shelf
+            select(name="shelfId" id="dropdown")
+                each shelf in myShelves
+                    option(value=shelf.id)= shelf.name
+            button(type="submit" id="btn-add") Add

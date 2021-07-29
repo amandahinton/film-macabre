@@ -37,8 +37,21 @@ router.post('/new', csrfProtection, asyncHandler(async (req, res) => {
 
 router.get('/:id(\\d+)', csrfProtection, asyncHandler(async(req,res) => {
     let id = parseInt(req.params.id, 10)
+    const userId = res.locals.user ? res.locals.user.id : null;
+    let myShelves = null;
+
     let movie = await db.Movie.findByPk(id)
-    res.render('movie-detail', {title: 'Review Form', movie, csrfToken: req.csrfToken()})
+    if(userId) {
+        myShelves = await db.Shelf.findAll({
+            where: {
+                userId
+            }
+        })
+    }
+
+    console.log(userId, myShelves);
+
+    res.render('movie-detail', {title: 'Review Form', movie, csrfToken: req.csrfToken(), userId, myShelves})
 }));
 
 router.get('/:id(\\d+)/reviews/new', csrfProtection, asyncHandler(async(req,res) => {

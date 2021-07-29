@@ -27,7 +27,7 @@ router.post(
 				name,
 			});
 			await newShelve.save();
-			res.send('success');
+			res.redirect(`/users/${userId}`);
 		} catch (err) {
 			throw new Error(err);
 		}
@@ -37,22 +37,28 @@ router.post(
 router.get(
 	'/:id',
 	asyncHandler(async (req, res) => {
-		const { id } = req.params;
-		const shelf = await db.Shelf.findByPk(id, {
-			include: db.Movie,
-		});
-		const curId = res.locals.user ? res.locals.user.id : null;
+		try {
+			const { id } = req.params;
+			const shelf = await db.Shelf.findByPk(id, {
+				include: db.Movie,
+			});
+			const curId = res.locals.user ? res.locals.user.id : null;
 
-		const user = await db.User.findByPk(shelf.userId);
-		const created = shelf.createdAt.toLocaleDateString();
-		const updated = shelf.updatedAt.toLocaleDateString();
-		res.render('shelf', {
-			shelf,
-			user,
-			created,
-			updated,
-			curId,
-		});
+			const user = await db.User.findByPk(shelf.userId);
+			const created = shelf.createdAt.toLocaleDateString();
+			const updated = shelf.updatedAt.toLocaleDateString();
+			res.render('shelf', {
+				shelf,
+				user,
+				created,
+				updated,
+				curId,
+			});
+		} catch (err) {
+			res.render('title', {
+				title: 'This shelf does not exist!',
+			});
+		}
 	})
 );
 
@@ -78,10 +84,40 @@ router.post(
 	asyncHandler(async (req, res) => {
 		const { shelfId } = req.params;
 		const shelf = await db.Shelf.findByPk(shelfId);
+		const shelf_movies = await db.Movie_shelf.findAll({
+			where: {
+				shelfId,
+			},
+		});
+
+		await shelf_movies.forEach(async (movie) => await movie.destroy());
 
 		await shelf.destroy();
 
 		res.status(200).send('OK');
+	})
+);
+
+router.post(
+	'/edit',
+	asyncHandler(async (req, res) => {
+		const { shelfId, movieId } = req.body;
+		const { id: userId } = res.locals.user ? res.locals.user : null;
+
+		console.log(res.locals.user.id);
+
+		const shelf = await db.Shelf.findByPk(shelfId);
+		console.log(userId);
+		if (shelf.userId == userId) {
+			const newMovie_shelf = await db.Movie_shelf.build({
+				shelfId,
+				movieId,
+			});
+			await newMovie_shelf.save();
+			res.redirect(`/shelves/${shelfId}`);
+		} else {
+			res.status(400).send('Denied');
+		}
 	})
 );
 
