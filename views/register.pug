@@ -1,31 +1,34 @@
-if errors
-    div(class="errors")
-    ul
-        each error in errors
-            li= error
+extends layout.pug
 
-form(action="/users/register", method="post")
-    input(type="hidden" name="_csrf" value= csrfToken)
-    div(class="firstNameDiv")
+block content
+    if errors
+        div(class="errors")
+        ul
+            each error in errors
+                li= error
+
+    form(action="/users/register", method="post")
+        input(type="hidden" name="_csrf" value= csrfToken)
+
         label(for="firstName") First Name
         input(type="text" name="firstName" required)
-    div(class="lastNameDiv")
+
         label(for="lastName") Last Name
         input(type="text" name="lastName" required)
-    div(class="emailDiv")
+
         label(for="email") Email
         input(type="text" name="email" required)
-    div(class="usernameDiv")
+
         label(for="username") Username
         input(type="text" name="username" required)
-    div(class="ageDiv")
+
         label(for="age") Age
         input(type="number" name="age" required)
-    div(class="passwordDiv")
+
         label(for="password") Password
         input(type="password" name="password" required)
-    div(class="confirmedpasswordDiv")
+
         label(for="confirmPassword") Confirm Password
         input(type="password" name="confirmPassword" required)
 
-    button(type="submit") Register
+        button(type="submit") Register
