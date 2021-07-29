@@ -3,6 +3,7 @@ function changeVis(thing1, thing2) {
 	Array.from(thing2).forEach((ele) => ele.toggleAttribute('hidden'));
 }
 
+// Deletes movie from shelf
 async function deleteFromShelf(shelfId, movieId, userId) {
 	const res = await fetch(`/shelves/${shelfId}/${movieId}`, {
 		method: 'DELETE',
