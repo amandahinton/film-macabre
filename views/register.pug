@@ -5,7 +5,7 @@ block content
         div(class="errors")
         ul
             each error in errors
-                li= error 
+                li= error
 
     form(action="/users/register", method="post")
         input(type="hidden" name="_csrf" value= csrfToken)
