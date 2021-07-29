@@ -13,24 +13,28 @@ block content
         h2.elevator Curate a blood-curdling collection of horror movies while discovering new favorites
         form(action="/users/register", method="get")
             button.big-button(type="submit") GET STARTED
-        .login-hero
-            p Already a member?
-            a(href="/users/login") Log in >>
+        p.login-hero Already a member? #[a(href="/users/login") Log in >>]
     .feature-shelf
         +showShelves(shelves, true)
     .random-rec
         .random-rec-poster
-            img(src=randomMovie.cover, alt="movie poster")
+            a(href=`/movies/${randomMovie.id}`)
+                img.random-rec-image(src=randomMovie.cover, alt="movie poster")
         .random-rec-text
-            h3 Have you seen this one...
-            p.random-rec-title #{randomMovie.title}
+            h2.random-rec-intro Have you seen this one...
+            h3.random-rec-title
+                a(id="title-link" href=`/movies/${randomMovie.id}`)= randomMovie.title
             p.random-rec-year #{randomMovie.year}
             p.random-rec-director #{randomMovie.director}
             p.random-rec-description #{randomMovie.description}
     .footer
         .footer-founders
-            a(href="https://amandahinton.com/") Amanda Hinton
-            a(href="/movies") Tanner Pedretti
-            a(href="/movies") Moncef Sebbata
-            a(href="/movies") Walker Williams
+            p.footer-item
+                a(href="https://amandahinton.com/") Amanda Hinton
+            p.footer-item
+                a.footer-item(href="/movies") Tanner Pedretti
+            p.footer-item
+                a.footer-item(href="/movies") Moncef Sebbata
+            p.footer-item
+                a.footer-item(href="/movies") Walker Williams
         .footer-year Copyright 2021 ©  All Rights Reserved

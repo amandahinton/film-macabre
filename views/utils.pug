@@ -6,7 +6,7 @@ mixin showShelves(shelves, titles)
                 div.shelf-name
                 if titles
                     h3
-                        a(href=`/shelves/${shelf.id}`)= shelf.name
+                        a.shelf-name(href=`/shelves/${shelf.id}`)= shelf.name
                 div.one-shelf
                     each movie in shelf.Movies
                         div.movie-tile(class="movie-image" id= movie.id)
