@@ -1,6 +1,9 @@
 extends layout.pug
 include utils
 
+append head
+    link(rel="stylesheet" href="/stylesheets/edit-shelf.css")
+
 block content
     h2 #{shelf.name}
     h3 Created by #{user.firstName} #{user.lastName} on #{created}
@@ -9,5 +12,6 @@ block content
         if curId === shelf.userId
             div(id="actions")
                 button(id="edit-button") Edit Shelf
+                button(id="btn-del-shelf") Delete Shelf
     +showShelves([shelf])
     script(src="/javascripts/editButtons.js")

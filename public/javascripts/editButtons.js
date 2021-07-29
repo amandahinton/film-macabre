@@ -20,23 +20,24 @@ document.addEventListener('DOMContentLoaded', (e) => {
 	if (editButton) {
 		editButton.addEventListener('click', (e) => {
 			const actionsContainer = document.getElementById('actions');
-			actionsContainer.addEventListener('click', (e) => {
-				e.stopImmediatePropagation();
-				if (actionsContainer.childNodes.length === 1) {
-					const button = document.createElement('button');
-					button.innerText = 'Delete Shelf';
+			// actionsContainer.addEventListener('click', (e) => {
+			// 	e.stopImmediatePropagation();
+			// 	if (actionsContainer.childNodes.length === 1) {
+			// 		const button = document.createElement('button');
+			// 		button.innerText = 'Delete Shelf';
+			// 		button.setAttribute('id', 'btn-del-shelf');
 
-					actionsContainer.appendChild(button);
-					button.addEventListener('click', async (e) => {
-						console.log('DELETE');
-						const shelfId = document.getElementById('shelfId').innerText;
-						const res = await fetch(`/shelves/${shelfId}/delete`, {
-							method: 'POST',
-						});
-						window.location = '/';
-					});
-				}
-			});
+			// 		actionsContainer.appendChild(button);
+			// 		button.addEventListener('click', async (e) => {
+			// 			console.log('DELETE');
+			// 			const shelfId = document.getElementById('shelfId').innerText;
+			// 			const res = await fetch(`/shelves/${shelfId}/delete`, {
+			// 				method: 'POST',
+			// 			});
+			// 			window.location = '/';
+			// 		});
+			// 	}
+			// });
 
 			changeVis(editButtons, deleteButtons);
 		});

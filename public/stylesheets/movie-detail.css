@@ -1,41 +1,95 @@
+:root {
+	--primary-red: #ff2800;
+	--primary-white: #cccccc;
+}
+
 /* MOVIE DETAILS */
 .movie-details {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 100px;
 }
 
 .movie-details-image {
-    height: 350px;
-    box-shadow: 5px 5px 10px #ff2800;
+	height: 350px;
+	box-shadow: 5px 5px 10px #ff2800;
 }
 
 .movie-details-text {
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, .5);
-    height: 350px;
-    width: 400px;
-    padding: 25px;
-    box-shadow: 5px 5px 10px #ff2800;
-    margin-left: 40px;
+	box-sizing: border-box;
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 350px;
+	width: 400px;
+	padding: 25px;
+	box-shadow: 5px 5px 10px #ff2800;
+	margin-left: 40px;
 }
 
 .movie-details-title {
-    margin: 10px 0;
+	margin: 10px 0;
 }
 
-.movie-details-year, .movie-details-director {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    color: #cccccc;
-    margin: 5px 0 10px;
+.movie-details-year,
+.movie-details-director {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	color: #cccccc;
+	margin: 5px 0 10px;
 }
 
 .movie-details-description {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #cccccc
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #cccccc;
+}
+
+label {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+	color: var(--primary-red);
+}
+
+select {
+	background: rgba(0, 0, 0, 0);
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+	color: var(--primary-white);
+	border: none;
+	font-size: 1em;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 10px 0px 15px;
+}
+
+#add-to-shelf {
+	font-size: 1em;
+	margin-top: 10vh;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+#btn-add {
+	background-color: rgba(0, 0, 0, 0);
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	color: var(--primary-white);
+	border: 1px solid var(--primary-white);
+	font-size: 1em;
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 5px 15px;
+	margin-right: 10px;
+}
+
+#btn-add:hover {
+	background: var(--primary-white);
+	color: rgba(0, 0, 0, 0.97);
+	transition: background 0.5s, color 0.5s;
 }
