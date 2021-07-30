@@ -14,6 +14,7 @@ block content
         h2.elevator Curate a blood-curdling collection of horror movies while discovering new favorites
         if login
             div(class="login-form-container hidden")
+            a.big-button(href=`/users/${locals.user.id}`)
         else
              div(class="login-form-container hidden")
                 form(action="/users/register", method="get")
