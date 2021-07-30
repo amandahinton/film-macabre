@@ -19,7 +19,7 @@ block content
                 p.movie-details-description #{movie.description}
                 div.movie-details-score
                     p.score-label Overall score:
-                    div(id="starContainer")
+                    div.star-container
                         each review in reviews
                             -const num = Object.values(movie.Reviews).map(review => review.rating).reduce((a,b) => {return a + b}, 0)
                             -const total = movie.Reviews.length
@@ -31,6 +31,9 @@ block content
                                 while i < score
                                     span(class="fa fa-star checked")
                                     -i++
+                div.movie-form-container
+                    a.small-button(href=`/movies/${movie.id}/reviews/new`) Submit Review
+
 
         div(id= "reviews-container")
             each review in reviews
@@ -50,7 +53,7 @@ block content
                         p= review.User.username
                     if userId && userId == review.userId
                         div(class="button-group")
-                            a(href=`http:/reviews/${review.id}`) Edit review
+                            a.small-button(href=`http:/reviews/${review.id}`) Edit review
                       
     if myShelves
         form(id="add-to-shelf" action=`/shelves/edit`, method="post")
