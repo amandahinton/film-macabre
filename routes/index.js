@@ -21,6 +21,7 @@ router.get('/', async function (req, res, next) {
 			title: 'HorrorHost',
 			login: res.locals.authenticated,
 			shelves: featuredShelves,
+			content_container: "scream",
 			randomMovie,
 		});
 		// res.json({featuredShelves})
