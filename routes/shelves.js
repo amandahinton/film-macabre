@@ -44,7 +44,10 @@ router.get(
 		try {
 			const { id } = req.params;
 			const shelf = await db.Shelf.findByPk(id, {
-				include: db.Movie,
+				include: {
+					model: db.Movie,
+					include: db.Review,
+				},
 			});
 			const curId = res.locals.user ? res.locals.user.id : null;
 

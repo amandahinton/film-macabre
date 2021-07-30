@@ -34,6 +34,11 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.STRING.BINARY,
 			},
+			bio: {
+				allowNull: true,
+				type: Sequelize.TEXT,
+				defaultValue: 'No bio yet.',
+			},
 			createdAt: {
 				allowNull: false,
 				type: Sequelize.DATE,
