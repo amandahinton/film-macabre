@@ -28,6 +28,6 @@ mixin showShelves(shelves, titles)
                                         span(class="fa fa-star")
                                         -j++
                             if curId && curId === shelf.userId
-                                form(action="#", method="get")
+                                form(class="actions" action="#", method="get")
                                     input(type="hidden" name="_csrf" value=csrfToken)
-                                    button(class="small-button toggle" id=`delete-${shelf.id}-${movie.id}` style="display:none") Delete
+                                    button(class="small-button toggle" id=`delete-${shelf.id}-${movie.id}` style="visibility:hidden") Delete

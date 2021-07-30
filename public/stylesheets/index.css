@@ -230,6 +230,13 @@ a {
 	text-decoration: none;
 	width: 150px;
 	margin-top: 5px;
+
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+
+	min-height: 44px;
 }
 
 /* HOMEPAGE RANDOM MOVIE RECOMMENDATION */
@@ -363,4 +370,11 @@ a {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	margin: 0 auto 0;
+}
+
+#shelf-name {
+	font-size: 40px;
+	display: flex;
+	min-height: 57.5px;
+	max-height: 57.5px;
 }

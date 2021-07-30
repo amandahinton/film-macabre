@@ -1,29 +1,29 @@
 function changeVis(thing1, thing2, thing3, thing4) {
-	const att = thing1[0].style.display;
+	const att = thing1[0].style.visibility;
 	Array.from(thing1).forEach((ele) =>
 		ele.setAttribute(
 			'style',
-			`display:${att == 'none' ? 'inline-block' : 'none'}`
+			`display:${att == 'hidden' ? 'inline-block' : 'none'}`
 		)
 	);
 	Array.from(thing2).forEach((ele) =>
 		ele.setAttribute(
 			'style',
-			`display:${att == 'none' ? 'inline-block' : 'none'}`
+			`visibility:${att == 'hidden' ? 'visible' : 'hidden'}`
 		)
 	);
 
 	if (thing3) {
 		thing3.setAttribute(
 			'style',
-			`display:${att == 'none' ? 'inline-block' : 'none'}`
+			`display:${att == 'hidden' ? 'inline-block' : 'none'}`
 		);
 		thing3.childNodes[0].childNodes[1].setAttribute('value', thing4.innerText);
-		thing4.setAttribute(
-			'style',
-			`display:${att == 'none' ? 'none' : 'inline-block'}`
-		);
 	}
+	thing4.setAttribute(
+		'style',
+		`display:${att == 'hidden' ? 'none' : 'inline-block'}`
+	);
 }
 
 // Deletes movie from shelf
