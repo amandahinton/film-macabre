@@ -1,11 +1,15 @@
 extends layout.pug
 include utils
 
-append head
-    link(rel="stylesheet" href="/stylesheets/edit-shelf.css")
-
 block content
-    h2 #{shelf.name}
+    h2(id="shelf-name") #{shelf.name}
+    div(class="container" id="edit-box" style="display:none")
+        form( action="#", method="post")
+            input(type="hidden" name="_csrf" value=csrfToken)
+
+            input(class="form-field" id="newName" type="text" name="name")
+
+            button(class="small-button" id="save-shelf" type="submit") Save
     h3 Created by #{user.firstName} #{user.lastName} on #{created}
     h3 Last updated on #{updated}
     if curId
@@ -15,10 +19,3 @@ block content
                 button(class="small-button" id="btn-del-shelf") Delete Shelf
     +showShelves([shelf])
     script(src="/javascripts/editButtons.js")
-
-    div(class="container" id="edit-box" style="display:none")
-        form(action="#", method="post")
-            input(type="hidden" name="_csrf" value=csrfToken)
-
-            label(for="name") Shelf Name
-            input(type="text" name="name")

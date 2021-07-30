@@ -16,5 +16,4 @@ mixin showShelves(shelves, titles)
                             if curId && curId === shelf.userId
                                 form(action="#", method="get")
                                     input(type="hidden" name="_csrf" value=csrfToken)
-                                    button(class="small-button toggle" id=`edit-${shelf.id}-${movie.id}` style="display:none") Edit
                                     button(class="small-button toggle" id=`delete-${shelf.id}-${movie.id}` style="display:none") Delete
