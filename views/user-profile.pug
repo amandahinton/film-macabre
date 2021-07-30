@@ -16,7 +16,7 @@ block content
         if userObj.id == locals.user.id
             form(action="/shelves/new" method="get")
                 button(class="small-button") + New Shelf
-    +showShelves(shelves, true)
+    +showShelvesPreview(shelves, true)
     if reviews
 
         div(class="container" id="review-container")

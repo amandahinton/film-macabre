@@ -31,3 +31,68 @@ mixin showShelves(shelves, titles)
                                 form(class="actions" action="#", method="get")
                                     input(type="hidden" name="_csrf" value=csrfToken)
                                     button(class="small-button toggle" id=`delete-${shelf.id}-${movie.id}` style="visibility:hidden") Delete
+
+mixin showShelvesPreview(shelves, titles)
+    if shelves
+        each shelf in shelves
+            div(id="shelfId" hidden)= shelf.id
+            .shelf
+                .shelf-name
+                if titles
+                        a.shelf-title(href=`/shelves/${shelf.id}`)= shelf.name
+                .one-shelf
+                    if shelf.Movies.length > 6
+                        each movie in shelf.Movies.slice(0, 5)
+                            .movie-tile(class="movie-image" id=movie.id)
+                                a.poster-link(id="poster-link" href=`/movies/${movie.id}`)
+                                    img.poster-pic(src=movie.cover)
+                                a.title-link(id="title-link" href=`/movies/${movie.id}`)= movie.title
+                                div.star-container
+                                    -const num = Object.values(movie.Reviews).map(review => review.rating).reduce((a,b) => {return a + b}, 0)
+                                    -const total = movie.Reviews.length
+                                    -let score = num/(total * 1.0)
+                                    -score = Math.round(score)
+                                    div(id="starContainer")
+                                        -let i = 0
+                                        -let j = score
+                                        while i < score
+                                            span(class="fa fa-star checked")
+                                            -i++
+                                        while j < 5
+                                            span(class="fa fa-star")
+                                            -j++
+                        .see-more-box.sixth-movie
+                            -let sixth = shelf.Movies[6]
+                                img.poster-pic-behind(src=sixth.cover)
+                                a.sixth-overlay(id="shelf-link" href=`/shelves/${shelf.id}`)
+                                    h4.see-more-text See all movies on this shelf
+                                    span(class="fa fa-angle-double-right")
+                                if curId && curId === shelf.userId
+                                    form(action="#", method="get")
+                                        input(type="hidden" name="_csrf" value=csrfToken)
+                                        button(class="small-button toggle" id=`delete-${shelf.id}-${movie.id}` style="display:none") Delete
+                    else
+                        each movie in shelf.Movies
+                            .movie-tile(class="movie-image" id= movie.id)
+                                a.poster-link(id="poster-link" href=`/movies/${movie.id}`)
+                                    img.poster-pic(src=movie.cover)
+                                a.title-link(id="title-link" href=`/movies/${movie.id}`)= movie.title
+                                div.star-container
+                                    -const num = Object.values(movie.Reviews).map(review => review.rating).reduce((a,b) => {return a + b}, 0)
+                                    -const total = movie.Reviews.length
+                                    -let score = num/(total * 1.0)
+                                    -score = Math.round(score)
+                                    div(id="starContainer")
+                                        -let i = 0
+                                        -let j = score
+                                        while i < score
+                                            span(class="fa fa-star checked")
+                                            -i++
+                                        while j < 5
+                                            span(class="fa fa-star")
+                                            -j++
+                                if curId && curId === shelf.userId
+                                    form(action="#", method="get")
+                                        input(type="hidden" name="_csrf" value=csrfToken)
+                                        button(class="small-button toggle" id=`delete-${shelf.id}-${movie.id}` style="display:none") Delete
+
