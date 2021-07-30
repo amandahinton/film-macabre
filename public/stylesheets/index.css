@@ -512,3 +512,8 @@ li {
 .submitButton {
 	margin-left: 70px;
 }
+
+#created {
+	display: flex;
+	flex-direction: row;
+}
