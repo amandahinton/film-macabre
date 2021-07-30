@@ -17,6 +17,41 @@ block content
                 p.movie-details-year #{movie.year}
                 p.movie-details-director #{movie.director}
                 p.movie-details-description #{movie.description}
+                div.movie-details-score
+                    p.score-label Overall score:
+                    div(id="starContainer")
+                        each review in reviews
+                            -const num = Object.values(movie.Reviews).map(review => review.rating).reduce((a,b) => {return a + b}, 0)
+                            -const total = movie.Reviews.length
+                            -let score = num/(total * 1.0)
+                            -score = Math.round(score)
+                            div(id="starContainer")
+                                -let i = 0
+                                -let j = score
+                                while i < score
+                                    span(class="fa fa-star checked")
+                                    -i++
+
+        div(id= "reviews-container")
+            each review in reviews
+                div(class="review-group")
+                    div(class="review")
+                        p= review.body
+                    div(class="starRating")
+                        -let i = 0
+                        -let j = review.rating
+                        while i < review.rating
+                            span(class="fa fa-star checked")
+                            -i++
+                        while j < 5
+                            span(class="fa fa-star")
+                            -j++  
+                    div(class= "username") 
+                        p= review.User.username
+                    if userId && userId == review.userId
+                        div(class="button-group")
+                            a(href=`http:/reviews/${review.id}`) Edit review
+                      
     if myShelves
         form(id="add-to-shelf" action=`/shelves/edit`, method="post")
             input(type="hidden" name="_csrf" value=csrfToken)

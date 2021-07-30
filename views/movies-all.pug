@@ -13,7 +13,7 @@ block content
                 -const num = Object.values(movie.Reviews).map(review => review.rating).reduce((a,b) => {return a + b}, 0)
                 -const total = movie.Reviews.length
                 -let score = num/(total * 1.0)
-                -score = Math.floor(score)
+                -score = Math.round(score)
                 div(id="starContainer")
                     -let i = 0
                     -let j = score

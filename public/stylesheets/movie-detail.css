@@ -93,3 +93,22 @@ select {
 	color: rgba(0, 0, 0, 0.97);
 	transition: background 0.5s, color 0.5s;
 }
+
+.checked {
+  color: red;
+}
+
+#reviews-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.review-group {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+

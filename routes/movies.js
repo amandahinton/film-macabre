@@ -45,6 +45,15 @@ router.get('/:id(\\d+)', requireAuth, csrfProtection, asyncHandler(async(req,res
     let myShelves = null;
 
     let movie = await db.Movie.findByPk(id, {include: db.Review})
+
+    let reviews = await db.Review.findAll({
+        where: {
+            movieId: id
+        },
+        include: db.User
+    })
+    // console.log(reviews)
+
     if(userId) {
         myShelves = await db.Shelf.findAll({
             where: {
@@ -53,9 +62,10 @@ router.get('/:id(\\d+)', requireAuth, csrfProtection, asyncHandler(async(req,res
         })
     }
 
-    console.log(userId, myShelves);
+    // res.json({reviews})
+    // console.log(userId, myShelves);
 
-    res.render('movie-detail', {title: 'Review Form', movie, csrfToken: req.csrfToken(), userId, myShelves})
+    res.render('movie-detail', {title: 'Review Form', movie, reviews, csrfToken: req.csrfToken(), userId, myShelves})
 }));
 
 router.get('/:id(\\d+)/reviews/new', requireAuth, csrfProtection, asyncHandler(async(req,res) => {
