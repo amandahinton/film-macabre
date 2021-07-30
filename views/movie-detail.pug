@@ -20,18 +20,19 @@ block content
                 div.movie-details-score
                     p.score-label Overall score:
                     div.star-container
+                    -let score
                         each review in reviews
                             -const num = Object.values(movie.Reviews).map(review => review.rating).reduce((a,b) => {return a + b}, 0)
                             -const total = movie.Reviews.length
-                            -let score = num/(total * 1.0)
+                            -score = num/(total * 1.0)
                             -score = Math.round(score)
-                            div(id="starContainer")
-                                -let i = 0
-                                -let j = score
-                                while i < score
-                                    span(class="fa fa-star checked")
-                                    -i++
-
+                        div(id="starContainer")
+                            -let i = 0
+                            -let j = score
+                            while i < score
+                                span(class="fa fa-star checked")
+                                -i++
+                
     if myShelves
         form(id="add-to-shelf" action=`/shelves/edit`, method="post")
             input(type="hidden" name="_csrf" value=csrfToken)

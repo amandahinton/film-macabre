@@ -247,7 +247,10 @@ router.get(
 			where: {
 				userId: id,
 			},
-			include: db.Movie,
+			include: { 
+				model: db.Movie,
+				include: db.Review
+			},
 		});
 		const reviews = await db.Review.findAll({
 			where: {

@@ -9,7 +9,10 @@ router.get('/', async function (req, res, next) {
 			where: {
 				userId: 6,
 			},
-			include: db.Movie,
+			include: { 
+				model: db.Movie,
+				include: db.Review
+			}
 		});
 		// console.log(featuredShelves);
 		let randomNumber = Math.floor(Math.random() * 110) + 1;
@@ -20,6 +23,7 @@ router.get('/', async function (req, res, next) {
 			shelves: featuredShelves,
 			randomMovie,
 		});
+		// res.json({featuredShelves})
 	} catch (err) {
 		throw new Error(err);
 	}
