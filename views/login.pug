@@ -1,4 +1,6 @@
 extends layout.pug
+//- append head
+//-     link(rel='stylesheet', href='/stylesheets/background.css')
 
 block content
     if errors
@@ -7,21 +9,19 @@ block content
             each error in errors
                 li= error
 
-    form(action="/users/login", method="post")
+    form.form-box(action="/users/login", method="post")
         input(type="hidden" name="_csrf" value= csrfToken)
-
-        label(for="username") Username
-        input(type="text" name="username" required)
-
-        label(for="password") Password
-        input(type="password" name="password" required)
-
-        button(type="submit") Login
-
-    form(action="/users/login/demo", method="post")
-        label(for="username")
-        input(type="hidden" name="username" value="demo")
-
-        label(for="password")
-        input(type="hidden" name="password" value="Password1!")
-        button(type="submit") Login Demo
+        label.form-label(for="username") Username
+        input.form-field(type="text" name="username" required)
+        label.form-label(for="password") Password
+        input.form-field(type="password" name="password" required)
+        button.med-button.form-button(type="submit") Login
+        p.form-outro New here? #[a(href="/users/register") Become a member >>]
+    div.form-box.demo-box
+        p.form-intro Want to take a look around?
+        form(action="/users/login/demo", method="post")
+            label.form-label(for="username")
+            input.form-field(type="hidden" name="username" value="demo")
+            label.form-label(for="password")
+            input.form-field(type="hidden" name="password" value="Password1!")
+            button.med-button.form-button(type="submit") Be our guest
