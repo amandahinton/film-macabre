@@ -5,7 +5,7 @@ const { csrfProtection, asyncHandler } = require('./utils.js');
 const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const e = require('express');
-const {loginUser, logoutUser, restoreUser} = require("../auth")
+const { loginUser, logoutUser, restoreUser } = require('../auth');
 
 async function generateShelf(name, userId) {
 	try {
@@ -115,15 +115,29 @@ router.post(
 	csrfProtection,
 	userValidators,
 	asyncHandler(async (req, res) => {
-		const { username, firstName, lastName, email, age, password } = req.body;
-		const user = await db.User.build({
-			username,
-			firstName,
-			lastName,
-			email,
-			age,
-			password,
-		});
+		const { username, firstName, lastName, email, age, password, bio } =
+			req.body;
+		let user;
+		if (bio) {
+			user = await db.User.build({
+				username,
+				firstName,
+				lastName,
+				email,
+				age,
+				password,
+				bio,
+			});
+		} else {
+			user = await db.User.build({
+				username,
+				firstName,
+				lastName,
+				email,
+				age,
+				password,
+			});
+		}
 		const validatorErrors = validationResult(req);
 
 		if (!validatorErrors.isEmpty()) {
@@ -154,7 +168,6 @@ router.get('/login', csrfProtection, (req, res) => {
 	res.render('login', { title: 'Login', csrfToken: req.csrfToken() });
 });
 
-
 router.post('/logout', (req, res) => {
 	logoutUser(req, res);
 	req.session.save((error) => {
@@ -165,8 +178,6 @@ router.post('/logout', (req, res) => {
 		}
 	});
 });
-
-
 
 router.post(
 	'/login',
@@ -245,12 +256,15 @@ router.get(
 	'/:id',
 	asyncHandler(async (req, res) => {
 		const { id } = req.params;
-		const user = await db.User.findByPk(id);
+		const userObj = await db.User.findByPk(id);
 		const shelves = await db.Shelf.findAll({
 			where: {
 				userId: id,
 			},
-			include: db.Movie,
+			include: {
+				model: db.Movie,
+				include: db.Review,
+			},
 		});
 		const reviews = await db.Review.findAll({
 			where: {
@@ -260,7 +274,7 @@ router.get(
 		});
 		console.log(reviews);
 		console.log(shelves);
-		res.render('user-profile', { user, shelves, reviews });
+		res.render('user-profile', { userObj, shelves, reviews });
 	})
 );
 

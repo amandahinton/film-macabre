@@ -44,7 +44,10 @@ router.get(
 		try {
 			const { id } = req.params;
 			const shelf = await db.Shelf.findByPk(id, {
-				include: db.Movie,
+				include: {
+					model: db.Movie,
+					include: db.Review,
+				},
 			});
 			const curId = res.locals.user ? res.locals.user.id : null;
 
@@ -123,6 +126,28 @@ router.post(
 			res.redirect(`/shelves/${shelfId}`);
 		} else {
 			res.status(400).send('Denied');
+		}
+	})
+);
+
+router.put(
+	'/:id',
+	asyncHandler(async (req, res) => {
+		const { name } = req.body;
+		const { id } = req.params;
+		const { id: userId } = res.locals.user;
+
+		const shelf = await db.Shelf.findByPk(id);
+
+		// console.log(name, id, userId, shelf);
+
+		if (userId === shelf.userId) {
+			shelf.name = name;
+			await shelf.save();
+
+			res.status(200).send('OK');
+		} else {
+			res.status(400).send('DENIED');
 		}
 	})
 );

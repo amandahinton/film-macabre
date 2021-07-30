@@ -2,15 +2,16 @@ extends layout.pug
 include utils.pug
 
 block content
-    if user
     div(class="container" id="profile-block")
         div(class="image" id="profile-img")
-        h2(class="username" id="username") #{user.username}
-        h3(class="full-name" id="full-name") #{user.firstName} #{user.lastName}
+        h2(class="username" id="username") #{userObj.username}
+        h3(class="full-name" id="full-name") #{userObj.firstName} #{userObj.lastName}
+        p(class="bio" id="bio") #{userObj.bio}
         if reviews
             h3(class="num-reviews" id="num-reviews")
                 a(class="reviews-link") Reviews #{reviews.length}
         div(class="stats" id="user-stats")
+    h2(class="shelves-header") #{userObj.username}'s Shelves
     +showShelves(shelves, true)
     if reviews
 
