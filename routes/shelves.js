@@ -96,8 +96,12 @@ router.post(
 			},
 		});
 
-		await entry.destroy();
-		res.status(200).send('OK');
+		if (res.locals.user && shelf.userId == res.locals.user.id) {
+			await entry.destroy();
+			res.status(200).send('OK');
+		} else {
+			res.status(401).send();
+		}
 	})
 );
 
@@ -106,18 +110,23 @@ router.post(
 	requireAuth,
 	asyncHandler(async (req, res) => {
 		const { shelfId } = req.params;
-		const shelf = await db.Shelf.findByPk(shelfId);
-		const shelf_movies = await db.Movie_shelf.findAll({
-			where: {
-				shelfId,
-			},
-		});
 
-		await shelf_movies.forEach(async (movie) => await movie.destroy());
+		if (res.locals.user && shelf.userId == res.locals.user.id) {
+			const shelf = await db.Shelf.findByPk(shelfId);
+			const shelf_movies = await db.Movie_shelf.findAll({
+				where: {
+					shelfId,
+				},
+			});
 
-		await shelf.destroy();
+			await shelf_movies.forEach(async (movie) => await movie.destroy());
 
-		res.status(200).send('OK');
+			await shelf.destroy();
+
+			res.status(200).send();
+		} else {
+			res.status(401).send();
+		}
 	})
 );
 
@@ -136,7 +145,7 @@ router.post(
 			await newMovie_shelf.save();
 			res.redirect(`/shelves/${shelfId}`);
 		} else {
-			res.status(400).send('Denied');
+			res.status(401).send();
 		}
 	})
 );
@@ -156,7 +165,7 @@ router.put(
 
 			res.status(200).send('OK');
 		} else {
-			res.status(400).send('DENIED');
+			res.status(401).send();
 		}
 	})
 );
