@@ -3,13 +3,14 @@ include utils
 
 block content
     h2(id="shelf-name") #{shelf.name}
-    div(class="container" id="edit-box" style="display:none")
-        form( action="#", method="post")
-            input(type="hidden" name="_csrf" value=csrfToken)
+    if isDefault === false
+        div(class="container" id="edit-box" style="display:none")
+            form( action="#", method="post")
+                input(type="hidden" name="_csrf" value=csrfToken)
 
-            input(class="form-field" id="newName" type="text" name="name")
+                input(class="form-field" id="newName" type="text" name="name")
 
-            button(class="small-button" id="save-shelf" type="submit") Save
+                button(class="small-button" id="save-shelf" type="submit") Save
     h3 Created by #{user.firstName} #{user.lastName} on #{created}
     h3 Last updated on #{updated}
     if curId

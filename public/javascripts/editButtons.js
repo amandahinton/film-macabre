@@ -13,17 +13,17 @@ function changeVis(thing1, thing2, thing3, thing4) {
 		)
 	);
 
-	thing3.setAttribute(
-		'style',
-		`display:${att == 'none' ? 'inline-block' : 'none'}`
-	);
-
-	thing3.childNodes[0].childNodes[1].setAttribute('value', thing4.innerText);
-
-	thing4.setAttribute(
-		'style',
-		`display:${att == 'none' ? 'none' : 'inline-block'}`
-	);
+	if (thing3) {
+		thing3.setAttribute(
+			'style',
+			`display:${att == 'none' ? 'inline-block' : 'none'}`
+		);
+		thing3.childNodes[0].childNodes[1].setAttribute('value', thing4.innerText);
+		thing4.setAttribute(
+			'style',
+			`display:${att == 'none' ? 'none' : 'inline-block'}`
+		);
+	}
 }
 
 // Deletes movie from shelf
@@ -47,40 +47,44 @@ document.addEventListener('DOMContentLoaded', (e) => {
 		const editShelfNameDiv = document.getElementById('edit-box');
 		const shelfNameSaveBtn = document.getElementById('save-shelf');
 
-		button.addEventListener('click', async (e) => {
-			const shelfId = document.getElementById('shelfId').innerText;
-			const res = await fetch(`/shelves/${shelfId}/delete`, {
-				method: 'POST',
+		if (button) {
+			button.addEventListener('click', async (e) => {
+				const shelfId = document.getElementById('shelfId').innerText;
+				const res = await fetch(`/shelves/${shelfId}/delete`, {
+					method: 'POST',
+				});
+				window.location = '/';
 			});
-			window.location = '/';
-		});
+		}
 		editButton.addEventListener('click', (e) => {
 			changeVis(editButtons, deleteButtons, editShelfNameDiv, shelfName);
 		});
 
-		shelfNameSaveBtn.addEventListener('click', async (e) => {
-			const shelfId = document.getElementById('shelfId').innerText;
-			e.stopPropagation();
-			e.preventDefault();
+		if (shelfNameSaveBtn) {
+			shelfNameSaveBtn.addEventListener('click', async (e) => {
+				const shelfId = document.getElementById('shelfId').innerText;
+				e.stopPropagation();
+				e.preventDefault();
 
-			const changeHere = document.getElementById('shelf-name');
-			const newNameEle = { name: document.getElementById('newName').value };
+				const changeHere = document.getElementById('shelf-name');
+				const newNameEle = { name: document.getElementById('newName').value };
 
-			// console.log(newName);
+				// console.log(newName);
 
-			const res = await fetch(`/shelves/${shelfId}`, {
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				method: 'PUT',
-				body: JSON.stringify(newNameEle),
-			})
-				.then((res) => {
-					changeHere.innerText = newNameEle.name;
-					changeVis(editButtons, deleteButtons, editShelfNameDiv, shelfName);
+				const res = await fetch(`/shelves/${shelfId}`, {
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					method: 'PUT',
+					body: JSON.stringify(newNameEle),
 				})
-				.catch((err) => console.log(err));
-		});
+					.then((res) => {
+						changeHere.innerText = newNameEle.name;
+						changeVis(editButtons, deleteButtons, editShelfNameDiv, shelfName);
+					})
+					.catch((err) => console.log(err));
+			});
+		}
 
 		Array.from(deleteButtons).forEach(async (button) => {
 			button.addEventListener('click', async (e) => {
