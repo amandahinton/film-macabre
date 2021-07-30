@@ -132,12 +132,21 @@ a {
 }
 
 /* NAVIGATION */
-.navbar {
+div.navbar {
 	display: inline-flex;
 	margin: 0px;
 	height: 100px;
-	width: 1000px;
+	width: 100%;
 	align-items: center;
+	justify-content: center;
+}
+
+nav.navbar {
+	display: inline-flex;
+	margin: 0px;
+	height: 100px;
+	align-items: center;
+	width: 1000px;
 	justify-content: space-between;
 }
 
@@ -433,66 +442,73 @@ li {
 .shelves-header {
 	font-size: 32px;
 }
-.suggestionContainer{
-    background-color: #ccc;
-    width: 420px;
-    position: relative;
-    top:420px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    padding: 60px;
-    box-shadow: 5px 5px 10px #ff2800;
 
+.suggestionContainer {
+	background-color: #ccc;
+	width: 420px;
+	position: relative;
+	top: 420px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	padding: 60px;
+	box-shadow: 5px 5px 10px #ff2800;
 }
 
-
-.titleDiv, .labelDiv, .descriptionDiv, .directorDiv, .linkDiv  {
-    display: block;
-    padding-bottom: 20px;
+.titleDiv,
+.labelDiv,
+.descriptionDiv,
+.directorDiv,
+.linkDiv {
+	display: block;
+	padding-bottom: 20px;
 }
 
-
-.titleField, .yearField, .directorField, .linkField {
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 4px;
+.titleField,
+.yearField,
+.directorField,
+.linkField {
+	width: 300px;
+	height: 30px;
+	border: none;
+	border-radius: 4px;
 }
-
 
 .descriptionField {
-    width: 300px;
-    height: 60px;
-    border: none;
-    border-radius:4px;
+	width: 300px;
+	height: 60px;
+	border: none;
+	border-radius: 4px;
 }
 
-
-.titleLabel, .yearLabel, .descriptionLabel, .directorLabel, .linkLabel {
-    display: block;
-    padding-bottom: 10px;
+.titleLabel,
+.yearLabel,
+.descriptionLabel,
+.directorLabel,
+.linkLabel {
+	display: block;
+	padding-bottom: 10px;
 }
 
 .suggestionSubmit {
-    background-color: #ff2800;
-    border: none;
-    color: #000000;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 12px 22px;
-    margin: 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 8px;
-    cursor:pointer;
-    text-transform: uppercase;
+	background-color: #ff2800;
+	border: none;
+	color: #000000;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 12px 22px;
+	margin: 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 8px;
+	cursor: pointer;
+	text-transform: uppercase;
 }
 
 .submitButton {
-    margin-left:70px
+	margin-left: 70px;
 }
