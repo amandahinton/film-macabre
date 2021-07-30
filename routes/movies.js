@@ -21,10 +21,7 @@ const reviewValidators = [
 router.get(
 	'/',
 	asyncHandler(async (req, res) => {
-		let movies = await db.Movie.findAll({
-			include: db.Review,
-			order: [['title', 'ASC']],
-		});
+		let movies = await db.Movie.findAll({ include: db.Review });
 		res.render('movies-all', { title: 'Browse all movies', movies });
 	})
 );
