@@ -12,9 +12,15 @@ block content
     .hero
         h1.motto Face your fears
         h2.elevator Curate a blood-curdling collection of horror movies while discovering new favorites
-        form(action="/users/register", method="get")
-            button.big-button(type="submit") GET STARTED
-        p.login-hero Already a member? #[a(href="/users/login") Log in >>]
+        if login
+            div(class="login-form-container hidden")
+            a.big-button(href=`/users/${locals.user.id}`) View Your Profile
+        else
+             div(class="login-form-container hidden")
+                form(action="/users/register", method="get")
+                    button.big-button(type="submit") GET STARTED
+                p.login-hero Already a member? #[a(href="/users/login") Log in >>] 
+
     .feature-shelf
         +showShelves(shelves, true)
     .random-rec
