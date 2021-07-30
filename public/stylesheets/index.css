@@ -9,6 +9,15 @@ body {
     margin: auto;
 }
 
+.checked {
+  color: red;
+}
+
+.final-item {
+    margin-bottom: 100px;
+}
+
+
 /*
 OPEN SANS WEIGHTS:
     800 - EXTRA BOLD
@@ -16,7 +25,6 @@ OPEN SANS WEIGHTS:
     400 - REGULAR
     300- LIGHT
 */
-
 h1 {
     font-family: 'Pirata One', sans-serif;
     font-size: 60px;
@@ -41,15 +49,17 @@ p {
     color: #cccccc
 }
 
+p.black {
+    color: black
+}
+
 a {
     font-family: 'Open Sans', sans-serif;
     color: #ff2800;
     text-decoration: none;
 }
 
-
 /* BUTTONS */
-
 .big-button {
     background-color: #ff2800;
     border: none;
@@ -63,6 +73,8 @@ a {
     text-decoration: none;
     display: inline-block;
     border-radius: 8px;
+    cursor:pointer;
+    text-transform: uppercase;
 }
 
 .med-button {
@@ -77,6 +89,8 @@ a {
     text-decoration: none;
     display: inline-block;
     border-radius: 6px;
+    cursor:pointer;
+    text-transform: uppercase;
 }
 
 .small-button {
@@ -92,6 +106,8 @@ a {
     text-decoration: none;
     display: inline-block;
     border-radius: 6px;
+    cursor:pointer;
+    text-transform: uppercase;
 }
 
 .delete-button {
@@ -109,14 +125,12 @@ a {
     border-radius: 6px;
 }
 
-.btn-edit {
-
+.button-div {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
 }
-
-.btn-del {
-
-}
-
 
 /* NAVIGATION */
 .navbar {
@@ -162,8 +176,6 @@ a {
     font-family: 'Pirata One', sans-serif;
     font-size: 52px;
     letter-spacing: .07em;
-    text-align: justify;
-    text-justify: inter-word;
 }
 
 /* LOGIN LINE */
@@ -171,23 +183,20 @@ a {
     margin: 0px;
 }
 
-
-
 /* HOMEPAGE SHELF SECTION */
-.feature-shelf {
-
-}
-
 /* ENTIRE SHELF: TITLE AND TILES */
 .shelf {
     align-items: center;
-    margin-top: 50px;
     margin-bottom: 75px;
 }
 
 /* FROM MIXIN: SHELF TITLE */
-.shelf-name {
-  margin-left: 10px;
+.shelf-title {
+    margin: 0 0 10px 10px;
+    color: red;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
 }
 
 /* FROM MIXIN: NOT TITLE, ROW OF TILES */
@@ -197,7 +206,7 @@ a {
     align-items: start;
     justify-content: center;
     flex-wrap: wrap;
-
+    margin-top: 15px;
     /* justify-content: space-between; */
 }
 
@@ -207,7 +216,7 @@ a {
     flex-direction: column;
     justify-content: center;
     width: 150px;
-    margin: 0 8px 50px;
+    margin: 0 8px 40px;
 }
 
 .poster-pic {
@@ -271,7 +280,6 @@ a {
     color: #cccccc
 }
 
-
 /* HOMEPAGE FOOTER SECTION */
 .footer {
     display: flex;
@@ -292,7 +300,6 @@ a {
     margin: 0 10px 0;
 }
 
-
 .footer-year {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300px;
@@ -300,6 +307,60 @@ a {
     margin: 0 15px 30px 15px;
 }
 
-.checked {
-  color: red;
+/* FORMS */
+.form-box {
+    background-color: #ccc;
+    width: 350px;
+    position: relative;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 5px 5px 10px #ff2800;
+}
+
+.demo-box {
+    align-items: center;
+}
+
+.register-box {
+    position: relative;
+    top: 390px;
+}
+
+.form-label {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.form-field {
+    height: 30px;
+    width: 310px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.form-button {
+    background-color: #ff2800;
+    margin: 10px auto 20px;
+}
+
+.form-intro {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    margin: 10px 0 15px;
+}
+
+.form-outro {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 0 auto 0;
 }

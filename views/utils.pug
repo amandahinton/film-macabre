@@ -6,7 +6,7 @@ mixin showShelves(shelves, titles)
                 div.shelf-name
                 if titles
                     h3
-                        a.shelf-name(href=`/shelves/${shelf.id}`)= shelf.name
+                        a.shelf-title(href=`/shelves/${shelf.id}`)= shelf.name
                 div.one-shelf
                     each movie in shelf.Movies
                         div.movie-tile(class="movie-image" id= movie.id)
@@ -30,5 +30,5 @@ mixin showShelves(shelves, titles)
                             if curId && curId === shelf.userId
                                 form(action="#", method="get")
                                     input(type="hidden" name="_csrf" value=csrfToken)
-                                    button(class="btn-edit" id=`edit-${shelf.id}-${movie.id}` hidden) Edit
-                                    button(class="btn-del" id=`delete-${shelf.id}-${movie.id}` hidden) Delete
+                                    button(class="small-button toggle" id=`edit-${shelf.id}-${movie.id}` style="display:none") Edit
+                                    button(class="small-button toggle" id=`delete-${shelf.id}-${movie.id}` style="display:none") Delete

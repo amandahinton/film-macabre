@@ -1,8 +1,20 @@
 function changeVis(thing1, thing2) {
-	Array.from(thing1).forEach((ele) => ele.toggleAttribute('hidden'));
-	Array.from(thing2).forEach((ele) => ele.toggleAttribute('hidden'));
+	const att = thing1[0].style.display;
+	Array.from(thing1).forEach((ele) =>
+		ele.setAttribute(
+			'style',
+			`display:${att == 'none' ? 'inline-block' : 'none'}`
+		)
+	);
+	Array.from(thing2).forEach((ele) =>
+		ele.setAttribute(
+			'style',
+			`display:${att == 'none' ? 'inline-block' : 'none'}`
+		)
+	);
 }
 
+// Deletes movie from shelf
 async function deleteFromShelf(shelfId, movieId, userId) {
 	const res = await fetch(`/shelves/${shelfId}/${movieId}`, {
 		method: 'DELETE',
@@ -13,32 +25,21 @@ async function deleteFromShelf(shelfId, movieId, userId) {
 }
 
 document.addEventListener('DOMContentLoaded', (e) => {
-	const editButtons = document.getElementsByClassName('btn-edit');
-	const deleteButtons = document.getElementsByClassName('btn-del');
+	const editButtons = document.getElementsByClassName('small-button toggle');
+	const deleteButtons = document.getElementsByClassName('small-button toggle');
 	const editButton = document.getElementById('edit-button');
 
 	if (editButton) {
+		const button = document.getElementById('btn-del-shelf');
+
+		button.addEventListener('click', async (e) => {
+			const shelfId = document.getElementById('shelfId').innerText;
+			const res = await fetch(`/shelves/${shelfId}/delete`, {
+				method: 'POST',
+			});
+			window.location = '/';
+		});
 		editButton.addEventListener('click', (e) => {
-			const actionsContainer = document.getElementById('actions');
-			// actionsContainer.addEventListener('click', (e) => {
-			// 	e.stopImmediatePropagation();
-			// 	if (actionsContainer.childNodes.length === 1) {
-			// 		const button = document.createElement('button');
-			// 		button.innerText = 'Delete Shelf';
-			// 		button.setAttribute('id', 'btn-del-shelf');
-
-			// 		actionsContainer.appendChild(button);
-			// 		button.addEventListener('click', async (e) => {
-			// 			console.log('DELETE');
-			// 			const shelfId = document.getElementById('shelfId').innerText;
-			// 			const res = await fetch(`/shelves/${shelfId}/delete`, {
-			// 				method: 'POST',
-			// 			});
-			// 			window.location = '/';
-			// 		});
-			// 	}
-			// });
-
 			changeVis(editButtons, deleteButtons);
 		});
 		Array.from(deleteButtons).forEach(async (button) => {
