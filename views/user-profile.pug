@@ -2,16 +2,20 @@ extends layout.pug
 include utils.pug
 
 block content
-    div(class="container" id="profile-block")
-        div(class="image" id="profile-img")
-        h2(class="username" id="username") #{userObj.username}
-        h3(class="full-name" id="full-name") #{userObj.firstName} #{userObj.lastName}
-        p(class="bio" id="bio") #{userObj.bio}
-        if reviews
-            h3(class="num-reviews" id="num-reviews")
-                a(class="reviews-link") Reviews #{reviews.length}
-        div(class="stats" id="user-stats")
-    h2(class="shelves-header") #{userObj.username}'s Shelves
+    div(class="image" id="profile-img")
+        img(id="profile-pic" src="/images/profile-pic.jpg", alt="profile picture")
+        div(id="name-stats")
+            h2(class="username" id="username") #{userObj.username}
+                p(class="bio" id="bio") #{userObj.bio}
+            div(class="stats" id="user-stats")
+                if reviews
+                    h3(class="num-reviews" id="num-reviews")
+                        p(class="reviews-link") Reviews: #{reviews.length}
+    div(id="shelves-header")
+        h2(class="shelves-header") #{userObj.username}'s Shelves
+        if userObj.id == locals.user.id
+            form(action="/shelves/new" method="get")
+                button(class="small-button") + New Shelf
     +showShelvesPreview(shelves, true)
     if reviews
 

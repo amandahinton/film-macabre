@@ -3,19 +3,22 @@ include utils
 
 block content
     h2(id="shelf-name") #{shelf.name}
-    div(class="container" id="edit-box" style="display:none")
-        form( action="#", method="post")
-            input(type="hidden" name="_csrf" value=csrfToken)
+    if isDefault === false
+        div(class="container" id="edit-box" style="display:none")
+            form( action="#", method="post")
+                input(type="hidden" name="_csrf" value=csrfToken)
 
-            input(class="form-field" id="newName" type="text" name="name")
+                input(class="form-field" id="newName" type="text" name="name")
 
-            button(class="small-button" id="save-shelf" type="submit") Save
-    h3 Created by #{user.firstName} #{user.lastName} on #{created}
-    h3 Last updated on #{updated}
+                button(class="small-button" id="save-shelf" type="submit") Save
+    h3 Created by
+        a(href=`/users/${user.id}`)= ` ${user.username}`
+    //- h3 Last updated on #{updated}
     if curId
         if curId === shelf.userId
             div(id="actions")
                 button(class="small-button" id="edit-button") Edit Shelf
-                button(class="small-button" id="btn-del-shelf") Delete Shelf
+                if isDefault === false
+                    button(class="small-button" id="btn-del-shelf") Delete Shelf
     +showShelves([shelf])
     script(src="/javascripts/editButtons.js")

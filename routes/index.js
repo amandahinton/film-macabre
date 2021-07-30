@@ -9,12 +9,11 @@ router.get('/', async function (req, res, next) {
 			where: {
 				userId: 6,
 			},
-			include: { 
+			include: {
 				model: db.Movie,
-				include: db.Review
-			}
+				include: db.Review,
+			},
 		});
-		console.log(res.locals.authenticated);
 		let randomNumber = Math.floor(Math.random() * 110) + 1;
 		let randomMovie = await db.Movie.findByPk(randomNumber);
 
@@ -22,6 +21,7 @@ router.get('/', async function (req, res, next) {
 			title: 'HorrorHost',
 			login: res.locals.authenticated,
 			shelves: featuredShelves,
+			content_container: "scream",
 			randomMovie,
 		});
 		// res.json({featuredShelves})
