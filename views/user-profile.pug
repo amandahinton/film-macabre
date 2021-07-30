@@ -12,6 +12,9 @@ block content
                 a(class="reviews-link") Reviews #{reviews.length}
         div(class="stats" id="user-stats")
     h2(class="shelves-header") #{userObj.username}'s Shelves
+    if userObj.id == locals.user.id
+        form(action="/shelves/new" method="get")
+            button(class="small-button") + New Shelf
     +showShelves(shelves, true)
     if reviews
 

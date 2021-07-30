@@ -50,6 +50,19 @@ router.get(
 				},
 			});
 			const curId = res.locals.user ? res.locals.user.id : null;
+			let defaultUserShelves = await db.Shelf.findAll({
+				where: {
+					userId: curId,
+				},
+				limit: 3,
+				order: [['id', 'ASC']],
+			});
+
+			defaultUserShelves = defaultUserShelves.map((myShelf) => myShelf.id);
+
+			let isDefault = defaultUserShelves.some((curShelf) => {
+				return parseInt(curShelf, 10) == parseInt(id, 10);
+			});
 
 			const user = await db.User.findByPk(shelf.userId);
 			const created = shelf.createdAt.toLocaleDateString();
@@ -60,6 +73,7 @@ router.get(
 				created,
 				updated,
 				curId,
+				isDefault,
 			});
 		} catch (err) {
 			res.render('title', {
@@ -113,10 +127,7 @@ router.post(
 		const { shelfId, movieId } = req.body;
 		const { id: userId } = res.locals.user ? res.locals.user : null;
 
-		console.log(res.locals.user.id);
-
 		const shelf = await db.Shelf.findByPk(shelfId);
-		console.log(userId);
 		if (shelf.userId == userId) {
 			const newMovie_shelf = await db.Movie_shelf.build({
 				shelfId,
@@ -138,8 +149,6 @@ router.put(
 		const { id: userId } = res.locals.user;
 
 		const shelf = await db.Shelf.findByPk(id);
-
-		// console.log(name, id, userId, shelf);
 
 		if (userId === shelf.userId) {
 			shelf.name = name;

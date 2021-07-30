@@ -16,6 +16,7 @@ block content
         if curId === shelf.userId
             div(id="actions")
                 button(class="small-button" id="edit-button") Edit Shelf
-                button(class="small-button" id="btn-del-shelf") Delete Shelf
+                if isDefault === false
+                    button(class="small-button" id="btn-del-shelf") Delete Shelf
     +showShelves([shelf])
     script(src="/javascripts/editButtons.js")

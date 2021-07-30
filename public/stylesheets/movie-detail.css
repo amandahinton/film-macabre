@@ -67,7 +67,7 @@ select {
 
 #add-to-shelf {
 	font-size: 1em;
-	margin-top: 10vh;
+	margin-top: 2vh;
 	display: flex;
 	justify-content: center;
 	text-align: center;
@@ -95,7 +95,7 @@ select {
 }
 
 .checked {
-  color: red;
+	color: red;
 }
 
 #reviews-container {
@@ -114,3 +114,6 @@ select {
 	padding: 5px;
 }
 
+#shelf-name {
+	font-size: 3em;
+}
