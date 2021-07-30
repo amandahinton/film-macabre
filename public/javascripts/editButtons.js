@@ -1,6 +1,17 @@
 function changeVis(thing1, thing2) {
-	Array.from(thing1).forEach((ele) => ele.toggleAttribute('hidden'));
-	Array.from(thing2).forEach((ele) => ele.toggleAttribute('hidden'));
+	const att = thing1[0].style.display;
+	Array.from(thing1).forEach((ele) =>
+		ele.setAttribute(
+			'style',
+			`display:${att == 'none' ? 'inline-block' : 'none'}`
+		)
+	);
+	Array.from(thing2).forEach((ele) =>
+		ele.setAttribute(
+			'style',
+			`display:${att == 'none' ? 'inline-block' : 'none'}`
+		)
+	);
 }
 
 // Deletes movie from shelf
@@ -14,8 +25,8 @@ async function deleteFromShelf(shelfId, movieId, userId) {
 }
 
 document.addEventListener('DOMContentLoaded', (e) => {
-	const editButtons = document.getElementsByClassName('btn-edit');
-	const deleteButtons = document.getElementsByClassName('btn-del');
+	const editButtons = document.getElementsByClassName('small-button toggle');
+	const deleteButtons = document.getElementsByClassName('small-button toggle');
 	const editButton = document.getElementById('edit-button');
 
 	if (editButton) {
