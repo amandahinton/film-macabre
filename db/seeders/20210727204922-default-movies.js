@@ -260,7 +260,7 @@ module.exports = {
         {
           title: 'Hellraiser',
           year: 1987,
-          description: 'A woman discovers the newly resurrected, partially formed, body of her brother-in-law. She starts killing for him to revitalize his body so he can escape the demonic beings that are pursuing him after he escaped their sadistic underw',
+          description: 'A woman discovers the newly resurrected, partially formed, body of her brother-in-law. She starts killing for him to revitalize his body so he can escape the demonic beings that are pursuing him after he escaped their sadistic underworld',
           director: 'Clive Barker',
           cover: 'https://m.media-amazon.com/images/M/MV5BOGRlZTdhOGYtODc5NS00YmJkLTkzN2UtZDMyYmRhZWM1NTQwXkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg'
         },
@@ -295,7 +295,7 @@ module.exports = {
         {
           title: "Trick 'r Treat",
           year: 2007,
-          description: 'Five interwoven stories that occur on Halloween: An everyday high school principal has a secret life as a serial killer; a college virgin might have just met the guy for her; a group of teenagers pull a mean prank; a woman who loathe',
+          description: 'Interwoven stories demonstrate that some traditions are best not forgotten as the residents (Anna Paquin, Brian Cox, Dylan Baker) of a small town face real ghosts and goblins on Halloween',
           director: 'Michael Dougherty',
           cover: 'https://m.media-amazon.com/images/M/MV5BYmIyY2E5YjMtZDA3NC00MmIzLWFkZmItNzVlODllZWNlZmRkXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg'
         },
@@ -309,7 +309,7 @@ module.exports = {
         {
           title: 'Audition',
           year: 1997,
-          description: 'Very much a Korean version of "Tootsie"....Park Jin-Wu, is a handsome young Korean playboy/womanizer who dreams of becoming a model/actor. However, his role is behind the scenes...working ...',
+          description: 'Very much a Korean version of "Tootsie"....Park Jin-Wu, is a handsome young Korean playboy/womanizer who dreams of becoming a model/actor.',
           director: 'Gyeong-min Lee',
           cover: 'https://upload.wikimedia.org/wikipedia/en/3/32/Audition-1999-poster.jpg'
         },
@@ -715,7 +715,7 @@ module.exports = {
         {
           title: 'Fido',
           year: 2006,
-          description: "Space radiation turns the dead into Zombies. Zomcon fights zombies and finds ways to pacify and use them. On pre-teen Timmy's (Kesun Loder's) 1950s suburban street, they all have a zombie doing menial chores. Timmy's zombie becomes h",
+          description: "When a cloud of space dust causes the dead to rise as ravenous zombies, the ZomCon Corp. emerges to conquer the creatures and domesticate them to become menial workers and pets for humans. Now, in an idyllic town, a skeptical boy (K'Sun Ray) finds a best friend in his family's new fiend, which he promptly names Fido (Billy Connolly). But Fido's control collar malfunctions, and the neighbors wind up on the menu.",
           director: 'Andrew Currie',
           cover: 'https://m.media-amazon.com/images/M/MV5BNzQwMzYyMDQtZTc1Yi00YzU4LThlM2ItYTM5Mjc5NGViNjRjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg'
         },
