@@ -4,7 +4,9 @@ html
         block head
             title #{title}
             link(rel='stylesheet' href='/stylesheets/reset.css')
+            //- link(rel='stylesheet' href='/stylesheets/background.css')
             link(rel='stylesheet' href='/stylesheets/index.css')
+            link(rel='stylesheet' href='/stylesheets/background.css')
             link(rel="preconnect" href="https://fonts.googleapis.com")
             link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
             link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
@@ -12,7 +14,7 @@ html
             link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
 
     body
-        div.content-container
+        div.navbar
             nav.navbar
                 div.nav-item
                     a(href='/')
@@ -30,4 +32,5 @@ html
                         a.nav-link.login-link(href="/users/login") Login
                     div.nav-item
                         a.nav-link.register-link(href="/users/register") Register
+        div(class= `content-container choice-${content_container}`)
             block content

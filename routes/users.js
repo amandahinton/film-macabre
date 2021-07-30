@@ -106,6 +106,7 @@ router.get(
 			csrfToken: req.csrfToken(),
 			title: 'Register',
 			user,
+			content_container:"hearts",
 		});
 	})
 );
@@ -165,7 +166,7 @@ router.post(
 );
 
 router.get('/login', csrfProtection, (req, res) => {
-	res.render('login', { title: 'Login', csrfToken: req.csrfToken() });
+	res.render('login', { title: 'Login', csrfToken: req.csrfToken(), content_container:"grave" });
 });
 
 router.post('/logout', (req, res) => {
