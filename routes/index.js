@@ -16,12 +16,12 @@ router.get('/', async function (req, res, next) {
 		});
 		// console.log(featuredShelves);
 		let randomNumber = Math.floor(Math.random() * 110) + 1;
-		let randomMovie = await db.Movie.findByPk(randomNumber)
+		let randomMovie = await db.Movie.findByPk(randomNumber);
 
 		res.render('index', {
 			title: 'HorrorHost',
 			shelves: featuredShelves,
-			randomMovie
+			randomMovie,
 		});
 		// res.json({featuredShelves})
 	} catch (err) {
