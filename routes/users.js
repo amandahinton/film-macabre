@@ -8,7 +8,7 @@ const e = require('express');
 const { loginUser, logoutUser, restoreUser } = require('../auth');
 
 async function generateShelf(name, userId, isDemoUser) {
-	const NUM_MOVIES = 11;
+	const NUM_MOVIES = 10;
 	if (!isDemoUser) {
 		try {
 			const newShelf = await db.Shelf.build({
@@ -186,7 +186,8 @@ router.post(
 			await generateShelf('Want to Watch', user.id, false);
 
 			loginUser(req, res, user);
-			await req.session.save().then(res.redirect('/'));
+			await req.session.save();
+			res.redirect('/');
 		}
 	})
 );
