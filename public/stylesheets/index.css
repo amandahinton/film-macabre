@@ -187,13 +187,16 @@ a {
 /* ENTIRE SHELF: TITLE AND TILES */
 .shelf {
     align-items: center;
-    margin-top: 50px;
     margin-bottom: 75px;
 }
 
 /* FROM MIXIN: SHELF TITLE */
-.shelf-name {
-  margin-left: 10px;
+.shelf-title {
+    margin: 0 0 10px 10px;
+    color: red;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
 }
 
 /* FROM MIXIN: NOT TITLE, ROW OF TILES */
@@ -203,7 +206,7 @@ a {
     align-items: start;
     justify-content: center;
     flex-wrap: wrap;
-
+    margin-top: 15px;
     /* justify-content: space-between; */
 }
 
@@ -213,7 +216,7 @@ a {
     flex-direction: column;
     justify-content: center;
     width: 150px;
-    margin: 0 8px 50px;
+    margin: 0 8px 40px;
 }
 
 .poster-pic {
