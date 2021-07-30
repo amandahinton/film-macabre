@@ -115,15 +115,29 @@ router.post(
 	csrfProtection,
 	userValidators,
 	asyncHandler(async (req, res) => {
-		const { username, firstName, lastName, email, age, password } = req.body;
-		const user = await db.User.build({
-			username,
-			firstName,
-			lastName,
-			email,
-			age,
-			password,
-		});
+		const { username, firstName, lastName, email, age, password, bio } =
+			req.body;
+		let user;
+		if (bio) {
+			user = await db.User.build({
+				username,
+				firstName,
+				lastName,
+				email,
+				age,
+				password,
+				bio,
+			});
+		} else {
+			user = await db.User.build({
+				username,
+				firstName,
+				lastName,
+				email,
+				age,
+				password,
+			});
+		}
 		const validatorErrors = validationResult(req);
 
 		if (!validatorErrors.isEmpty()) {
@@ -247,9 +261,9 @@ router.get(
 			where: {
 				userId: id,
 			},
-			include: { 
+			include: {
 				model: db.Movie,
-				include: db.Review
+				include: db.Review,
 			},
 		});
 		const reviews = await db.Review.findAll({
