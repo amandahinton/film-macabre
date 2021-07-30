@@ -259,7 +259,7 @@ router.post(
 				email: `demo${rand}@demo.com`,
 				age: 25,
 				password: hashedPassword,
-				bio: 'I am a demo user!',
+				bio: 'Just a demo user 🔪🎃',
 			});
 
 			await newDemo.save();

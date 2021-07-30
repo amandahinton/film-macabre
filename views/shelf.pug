@@ -11,8 +11,9 @@ block content
                 input(class="form-field" id="newName" type="text" name="name")
 
                 button(class="small-button" id="save-shelf" type="submit") Save
-    h3 Created by #{user.firstName} #{user.lastName} on #{created}
-    h3 Last updated on #{updated}
+    h3 Created by
+        a(href=`/users/${user.id}`)= ` ${user.username}`
+    //- h3 Last updated on #{updated}
     if curId
         if curId === shelf.userId
             div(id="actions")
