@@ -63,6 +63,7 @@ a {
     text-decoration: none;
     display: inline-block;
     border-radius: 8px;
+    cursor:pointer;
 }
 
 .med-button {
@@ -77,6 +78,7 @@ a {
     text-decoration: none;
     display: inline-block;
     border-radius: 6px;
+    cursor:pointer;
 }
 
 .small-button {
@@ -92,6 +94,7 @@ a {
     text-decoration: none;
     display: inline-block;
     border-radius: 6px;
+    cursor:pointer;
 }
 
 .delete-button {
