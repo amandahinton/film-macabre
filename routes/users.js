@@ -108,6 +108,9 @@ const userValidators = [
 			}
 			return true;
 		}),
+	check('bio')
+		.isLength({ max: 150 })
+		.withMessage('Bio must be less than 150 characters.'),
 ];
 
 const loginValidators = [

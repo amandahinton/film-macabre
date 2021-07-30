@@ -426,6 +426,10 @@ a {
 	margin-left: 10px;
 }
 
+li {
+	color: #ff2800;
+}
+
 .shelves-header {
 	font-size: 32px;
 }
