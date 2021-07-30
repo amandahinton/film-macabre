@@ -25,7 +25,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
 
 router.get('/new', requireAuth, csrfProtection, asyncHandler(async (req, res) => {
-    res.render('suggestion', { title: 'Suggest a movie', csrfToken: req.csrfToken() })
+    res.render('suggestion', { title: 'Suggest a movie', csrfToken: req.csrfToken(), content_container:"trees" })
 }));
 
 router.post('/new', requireAuth, csrfProtection, asyncHandler(async (req, res) => {
