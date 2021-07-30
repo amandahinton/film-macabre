@@ -233,10 +233,10 @@ a {
 
 	overflow: hidden;
 	display: -webkit-box;
-	-webkit-line-clamp: 2;
+	-webkit-line-clamp: 1;
 	-webkit-box-orient: vertical;
 
-	min-height: 44px;
+	min-height: 22px;
 }
 
 /* HOMEPAGE RANDOM MOVIE RECOMMENDATION */

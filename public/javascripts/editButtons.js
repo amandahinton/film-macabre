@@ -19,11 +19,11 @@ function changeVis(thing1, thing2, thing3, thing4) {
 			`display:${att == 'hidden' ? 'inline-block' : 'none'}`
 		);
 		thing3.childNodes[0].childNodes[1].setAttribute('value', thing4.innerText);
+		thing4.setAttribute(
+			'style',
+			`display:${att == 'hidden' ? 'none' : 'inline-block'}`
+		);
 	}
-	thing4.setAttribute(
-		'style',
-		`display:${att == 'hidden' ? 'none' : 'inline-block'}`
-	);
 }
 
 // Deletes movie from shelf
