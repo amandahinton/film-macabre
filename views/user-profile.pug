@@ -12,7 +12,7 @@ block content
                 a(class="reviews-link") Reviews #{reviews.length}
         div(class="stats" id="user-stats")
     h2(class="shelves-header") #{userObj.username}'s Shelves
-    +showShelves(shelves, true)
+    +showShelvesPreview(shelves, true)
     if reviews
 
         div(class="container" id="review-container")
