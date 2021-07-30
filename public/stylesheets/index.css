@@ -271,6 +271,11 @@ nav.navbar {
 	text-decoration: none;
 	width: 150px;
 	margin-top: 5px;
+
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
 }
 
 .see-more-box {
