@@ -7,16 +7,44 @@ const bcrypt = require('bcryptjs');
 const e = require('express');
 const { loginUser, logoutUser, restoreUser } = require('../auth');
 
-async function generateShelf(name, userId) {
-	try {
-		const newShelf = await db.Shelf.build({
-			name,
-			userId,
-		});
-		await newShelf.save();
-		return newShelf;
-	} catch (err) {
-		throw new Error(err);
+async function generateShelf(name, userId, isDemoUser) {
+	const NUM_MOVIES = 10;
+	if (!isDemoUser) {
+		try {
+			const newShelf = await db.Shelf.build({
+				name,
+				userId,
+			});
+			await newShelf.save();
+			return newShelf;
+		} catch (err) {
+			throw new Error(err);
+		}
+	} else {
+		try {
+			const newShelf = await db.Shelf.build({
+				name,
+				userId,
+			});
+
+			const totalMovies = await db.Movie.findAll();
+
+			await newShelf.save();
+
+			for (let i = 0; i < NUM_MOVIES; i++) {
+				const shelfId = newShelf.id;
+				const movieId = Math.floor(Math.random() * totalMovies.length) + 1;
+
+				const new_Movie_shelf = await db.Movie_shelf.build({
+					shelfId,
+					movieId,
+				});
+				await new_Movie_shelf.save();
+			}
+			return newShelf;
+		} catch (err) {
+			throw new Error(err);
+		}
 	}
 }
 
@@ -80,6 +108,9 @@ const userValidators = [
 			}
 			return true;
 		}),
+	check('bio')
+		.isLength({ max: 150 })
+		.withMessage('Bio must be less than 150 characters.'),
 ];
 
 const loginValidators = [
@@ -93,7 +124,6 @@ const loginValidators = [
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-	// console.log(res.locals.user.id);
 	res.send('respond with a resource');
 });
 
@@ -155,11 +185,12 @@ router.post(
 			await user.save();
 
 			// Generates the three default user shelves on registration.
-			generateShelf('My Top 10', user.id);
-			generateShelf('Watched', user.id);
-			generateShelf('Want to Watch', user.id);
+			await generateShelf('My Top 10', user.id, false);
+			await generateShelf('Watched', user.id, false);
+			await generateShelf('Want to Watch', user.id, false);
 
 			loginUser(req, res, user);
+			await req.session.save();
 			res.redirect('/');
 		}
 	})
@@ -222,12 +253,32 @@ router.post(
 			where: { username },
 		});
 		if (username === 'demo') {
-			loginUser(req, res, demoUser);
+			const rand = Math.floor(Math.random() * 123456789);
+			const hashedPassword = await bcrypt.hash('Password1!', 12);
+
+			const newDemo = await db.User.build({
+				username: `demo${rand}`,
+				firstName: 'Demo',
+				lastName: 'User',
+				email: `demo${rand}@demo.com`,
+				age: 25,
+				password: hashedPassword,
+				bio: 'Just a demo user 🔪🎃',
+			});
+
+			await newDemo.save();
+
+			await generateShelf('My Top 10', newDemo.id, true);
+			await generateShelf('Watched', newDemo.id, true);
+			await generateShelf('Want to Watch', newDemo.id, true);
+
+			loginUser(req, res, newDemo);
+
 			return req.session.save((error) => {
 				if (error) {
 					next(error);
 				} else {
-					return res.redirect('/');
+					return res.redirect(`/users/${newDemo.id}`);
 				}
 			});
 		}
@@ -259,6 +310,7 @@ router.get(
 		const { id } = req.params;
 		const userObj = await db.User.findByPk(id);
 		const shelves = await db.Shelf.findAll({
+			order: [['id', 'ASC']],
 			where: {
 				userId: id,
 			},
@@ -273,8 +325,6 @@ router.get(
 			},
 			include: db.Movie,
 		});
-		console.log(reviews);
-		console.log(shelves);
 		res.render('user-profile', { userObj, shelves, reviews });
 	})
 );

@@ -6,121 +6,140 @@ const { check, validationResult } = require('express-validator');
 const { requireAuth } = require('../auth');
 
 const reviewValidators = [
-    check('body')
-        .exists({checkFalsy: true})
-        .withMessage("Please provide a body for Review"),
-    check('rating')
-        .exists({checkFalsy: true})
-        .withMessage("Please provide a Rating")
-        .isInt({max:5})
-        .withMessage("Please do not exceed a score of 5")
-        .isInt({min:0})
-        .withMessage("Please do not provide a score less than 0")
-]
+	check('body')
+		.exists({ checkFalsy: true })
+		.withMessage('Please provide a body for Review'),
+	check('rating')
+		.exists({ checkFalsy: true })
+		.withMessage('Please provide a Rating')
+		.isInt({ max: 5 })
+		.withMessage('Please do not exceed a score of 5')
+		.isInt({ min: 0 })
+		.withMessage('Please do not provide a score less than 0'),
+];
 
-router.get('/', asyncHandler(async (req, res) => {
-    let movies = await db.Movie.findAll({include: db.Review});
-    res.render('movies-all', { title: 'Browse all movies', movies})
-}));
+router.get(
+	'/',
+	asyncHandler(async (req, res) => {
+		let movies = await db.Movie.findAll({ include: db.Review });
+		res.render('movies-all', { title: 'Browse all movies', movies });
+	})
+);
 
+router.get(
+	'/new',
+	requireAuth,
+	csrfProtection,
+	asyncHandler(async (req, res) => {
+		res.render('suggestion', {
+			title: 'Suggest a movie',
+			csrfToken: req.csrfToken(),
+		});
+	})
+);
 
-router.get('/new', requireAuth, csrfProtection, asyncHandler(async (req, res) => {
-    res.render('suggestion', { title: 'Suggest a movie', csrfToken: req.csrfToken(), content_container:"trees" })
-}));
+router.post(
+	'/new',
+	requireAuth,
+	csrfProtection,
+	asyncHandler(async (req, res) => {
+		// create a suggestion works like the register form and dumps the info into a row in the suggestion table
+		const { title, year, description, director, cover } = req.body;
+		// send the form submit to to a new table in the database?
+		await db.Suggestion.create({ title, year, description, director, cover });
+		res.redirect('/');
+	})
+);
 
-router.post('/new', requireAuth, csrfProtection, asyncHandler(async (req, res) => {
-    // create a suggestion works like the register form and dumps the info into a row in the suggestion table
-    const { title, year, description, director, cover} = req.body;
-    // send the form submit to to a new table in the database?
-    await db.Suggestion.create(
-        { title, year, description, director, cover}
-    )
-    res.redirect('/')
-}));
+router.get(
+	'/:id(\\d+)',
+	requireAuth,
+	csrfProtection,
+	asyncHandler(async (req, res) => {
+		let id = parseInt(req.params.id, 10);
+		const userId = res.locals.user ? res.locals.user.id : null;
+		let myShelves = null;
 
+		let movie = await db.Movie.findByPk(id, { include: db.Review });
 
-router.get('/:id(\\d+)', requireAuth, csrfProtection, asyncHandler(async(req,res) => {
-    let id = parseInt(req.params.id, 10)
-    const userId = res.locals.user ? res.locals.user.id : null;
-    let myShelves = null;
+		let reviews = await db.Review.findAll({
+			where: {
+				movieId: id,
+			},
+			include: db.User,
+		});
+		if (userId) {
+			myShelves = await db.Shelf.findAll({
+				where: {
+					userId,
+				},
+			});
+		}
 
-    let movie = await db.Movie.findByPk(id, {include: db.Review})
+		// res.json({reviews})
 
-    let reviews = await db.Review.findAll({
-        where: {
-            movieId: id
-        },
-        include: db.User
-    })
-    // console.log(reviews)
+		res.render('movie-detail', {
+			title: 'Review Form',
+			movie,
+			reviews,
+			csrfToken: req.csrfToken(),
+			userId,
+			myShelves,
+		});
+	})
+);
 
-    if(userId) {
-        myShelves = await db.Shelf.findAll({
-            where: {
-                userId
-            }
-        })
-    }
+router.get(
+	'/:id(\\d+)/reviews/new',
+	requireAuth,
+	csrfProtection,
+	asyncHandler(async (req, res) => {
+		let id = parseInt(req.params.id, 10);
+		const movie = await db.Movie.findByPk(id);
+		let review = db.Review.build();
+		res.render('review-form', {
+			title: 'Review Form Submission',
+			review,
+			movie,
+			id,
+			csrfToken: req.csrfToken(),
+		});
+	})
+);
 
-    // res.json({reviews})
-    // console.log(userId, myShelves);
+router.post(
+	'/:id(\\d+)/reviews/new',
+	requireAuth,
+	reviewValidators,
+	csrfProtection,
+	asyncHandler(async (req, res) => {
+		let movieId = parseInt(req.params.id, 10);
+		const { rating, body } = req.body;
 
-    res.render('movie-detail', {title: 'Review Form', movie, reviews, csrfToken: req.csrfToken(), userId, myShelves})
-}));
+		const review = db.Review.build({
+			userId: res.locals.user.id,
+			rating,
+			body,
+			movieId,
+		});
+		const movie = await db.Movie.findByPk(movieId);
 
-router.get('/:id(\\d+)/reviews/new', requireAuth, csrfProtection, asyncHandler(async(req,res) => {
-    let id = parseInt(req.params.id, 10)
-    const movie = await db.Movie.findByPk(id)
-    let review = db.Review.build();
-    res.render('review-form', {
-        title: "Review Form Submission",
-        review,
-        movie,
-        id,
-        csrfToken: req.csrfToken()
-    })
-}));
+		const validatorErrors = validationResult(req);
+		if (validatorErrors.isEmpty()) {
+			// return res.json({review})
+			await review.save();
+			res.redirect(`/movies/${movieId}`);
+		} else {
+			const errors = validatorErrors.array().map((error) => error.msg);
+			res.render('review-form', {
+				title: 'Add Review',
+				review,
+				movie,
+				errors,
+				csrfToken: req.csrfToken(),
+			});
+		}
+	})
+);
 
-router.post('/:id(\\d+)/reviews/new', requireAuth, reviewValidators, csrfProtection, asyncHandler(async (req, res) => {
-    let movieId = parseInt(req.params.id, 10)
-    const {
-      rating,
-      body
-    } = req.body;
-
-    const review = db.Review.build({
-        userId: res.locals.user.id,
-        rating,
-        body,
-        movieId
-    })
-    const movie = await db.Movie.findByPk(movieId)
-
-    const validatorErrors = validationResult(req);
-    // console.log("WEEEEEEE", validationErrors)
-    if (validatorErrors.isEmpty()) {
-        // return res.json({review})
-        await review.save()
-        res.redirect(`/movies/${movieId}`)
-    } else {
-        const errors = validatorErrors.array().map((error) => error.msg);
-        res.render('review-form', {
-        title: 'Add Review',
-        review,
-        movie,
-        errors,
-        csrfToken: req.csrfToken(),
-      });
-    }
-}));
-
-
-
-
-
-
-
-
-
-
-module.exports = {router};
+module.exports = { router };
