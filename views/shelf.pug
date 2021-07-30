@@ -13,7 +13,7 @@ block content
                 button(class="small-button" id="save-shelf" type="submit") Save
     div(id="created")
         h3 Created by
-            a(href=`/users/${user.id}`)= ` ${user.username}`
+            a(href=`/users/${userObj.id}`)= ` ${userObj.username}`
                 h3 on #{created}
     h3 Last updated on #{updated}
     if curId
