@@ -64,12 +64,12 @@ router.get(
 				return parseInt(curShelf, 10) == parseInt(id, 10);
 			});
 
-			const user = await db.User.findByPk(shelf.userId);
+			const userObj = await db.User.findByPk(shelf.userId);
 			const created = shelf.createdAt.toLocaleDateString();
 			const updated = shelf.updatedAt.toLocaleDateString();
 			res.render('shelf', {
 				shelf,
-				user,
+				userObj,
 				created,
 				updated,
 				curId,

@@ -2,7 +2,7 @@ extends layout.pug
 
 block content
 
-    h1 #{title}
+    h2(id="shelf-name") #{title}
     div.movie-gallery
         each movie in movies
             div.movie-tile(class="movie-image" id= movie.id)

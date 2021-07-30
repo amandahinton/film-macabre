@@ -271,6 +271,11 @@ nav.navbar {
 	text-decoration: none;
 	width: 150px;
 	margin-top: 5px;
+
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
 }
 
 .see-more-box {
@@ -450,6 +455,7 @@ nav.navbar {
 	flex-direction: row;
 	align-items: center;
 	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 #bio {
@@ -568,4 +574,9 @@ li {
 
 .submitButton {
 	margin-left: 70px;
+}
+
+#created {
+	display: flex;
+	flex-direction: row;
 }
