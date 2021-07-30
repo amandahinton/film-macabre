@@ -13,6 +13,20 @@ mixin showShelves(shelves, titles)
                             a.poster-link(id="poster-link" href=`/movies/${movie.id}`)
                                 img.poster-pic(src=movie.cover)
                             a.title-link(id="title-link" href=`/movies/${movie.id}`)= movie.title
+                            div.star-container
+                                -const num = Object.values(movie.Reviews).map(review => review.rating).reduce((a,b) => {return a + b}, 0)
+                                -const total = movie.Reviews.length
+                                -let score = num/(total * 1.0)
+                                -score = Math.round(score)
+                                div(id="starContainer")
+                                    -let i = 0
+                                    -let j = score
+                                    while i < score
+                                        span(class="fa fa-star checked")
+                                        -i++
+                                    while j < 5
+                                        span(class="fa fa-star")
+                                        -j++
                             if curId && curId === shelf.userId
                                 form(action="#", method="get")
                                     input(type="hidden" name="_csrf" value=csrfToken)
