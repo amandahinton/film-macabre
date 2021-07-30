@@ -14,14 +14,13 @@ body {
 /* ICONS */
 /* STAR REVIEW */
 .checked {
-    color: #ff2800;
+	color: #ff2800;
 }
 
 .fa-angle-double-right {
-    color: #ff2800;
+	color: #ff2800;
 	color: red;
 }
-
 
 /* SPACE AFTER LAST ITEM BEFORE PAGE ENDS  */
 .final-item {
@@ -121,18 +120,18 @@ a {
 }
 
 .delete-button {
-    background-color: #cccccc;
-    border: none;
-    color: #ff2800;;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 7px 10px;
-    margin: 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 6px;
+	background-color: #cccccc;
+	border: none;
+	color: #ff2800;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 7px 10px;
+	margin: 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 6px;
 	background-color: #cccccc;
 	border: none;
 	color: red;
@@ -156,13 +155,15 @@ a {
 
 /* NAVIGATION */
 .navbar {
-    display: flex;
-    margin:0px;
-    height: 100px;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ff2800;;
+	display: flex;
+	margin: 0px;
+	height: 100px;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #ff2800;
+}
+
 div.navbar {
 	display: inline-flex;
 	margin: 0px;
@@ -230,12 +231,11 @@ nav.navbar {
 
 /* FROM MIXIN: SHELF TITLE */
 .shelf-title {
-
-    margin: 0 0 10px 10px;
-    color: #ff2800;
-    font-weight: 700;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
+	margin: 0 0 10px 10px;
+	color: #ff2800;
+	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
 }
 
 /* FROM MIXIN: NOT TITLE, ROW OF TILES */
@@ -266,45 +266,43 @@ nav.navbar {
 }
 
 .title-link {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300px;
-    text-decoration: none;
-    width: 150px;
-    margin-top: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300px;
+	text-decoration: none;
+	width: 150px;
+	margin-top: 5px;
 }
 
- .see-more-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 150px;
-    height: 225px;
-    box-shadow: 0px 0px 3px #ff2800;
+.see-more-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 150px;
+	height: 225px;
+	box-shadow: 0px 0px 3px #ff2800;
 }
 
 .see-more-text {
-    font-size: 18px;
-    font-weight: 400;
-    color: #ff2800;
+	font-size: 18px;
+	font-weight: 400;
+	color: #ff2800;
 }
-
 
 .sixth-overlay {
-    background-color: rgba(0, 0, 0, .6);
-    z-index: 2147483647;
-    position: absolute;
-    width: 150px;
-    height: 225px;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    justify-content: center;
-    align-items: center;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 2147483647;
+	position: absolute;
+	width: 150px;
+	height: 225px;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	justify-content: center;
+	align-items: center;
 }
 
-
 .fa-angle-double-right {
-    font-size: 30px;
+	font-size: 30px;
 }
 
 /* HOMEPAGE RANDOM MOVIE RECOMMENDATION */
