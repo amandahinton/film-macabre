@@ -7,28 +7,21 @@ block content
             each error in errors
                 li= error
 
-    form(action="/users/register", method="post")
+    form.form-box.register-box(action="/users/register", method="post")
         input(type="hidden" name="_csrf" value= csrfToken)
-
-        label(for="firstName") First Name
-        input(type="text" name="firstName" required)
-
-        label(for="lastName") Last Name
-        input(type="text" name="lastName" required)
-
-        label(for="email") Email
-        input(type="text" name="email" required)
-
-        label(for="username") Username
-        input(type="text" name="username" required)
-
-        label(for="age") Age
-        input(type="number" name="age" required)
-
-        label(for="password") Password
-        input(type="password" name="password" required)
-
-        label(for="confirmPassword") Confirm Password
-        input(type="password" name="confirmPassword" required)
-
-        button(type="submit") Register
+        label.form-label(for="firstName") First Name
+        input.form-field(type="text" name="firstName" required)
+        label.form-label(for="lastName") Last Name
+        input.form-field(type="text" name="lastName" required)
+        label.form-label(for="email") Email
+        input.form-field(type="text" name="email" required)
+        label.form-label(for="username") Username
+        input.form-field(type="text" name="username" required)
+        label.form-label(for="age") Age
+        input.form-field(type="number" name="age" required)
+        label.form-label(for="password") Password
+        input.form-field(type="password" name="password" required)
+        label.form-label(for="confirmPassword") Confirm Password
+        input.form-field(type="password" name="confirmPassword" required)
+        button.med-button.form-button(type="submit") Register
+        p.form-outro Already a member? #[a(href="/users/login") Log in >>]
