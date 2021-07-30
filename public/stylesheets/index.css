@@ -134,12 +134,13 @@ a {
 
 /* NAVIGATION */
 .navbar {
-    display: inline-flex;
+    display: flex;
     margin:0px;
     height: 100px;
-    width: 1000px;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid red;
 }
 
 .navbar-logo {
@@ -150,6 +151,7 @@ a {
     margin-left: 10px;
     margin-right: 10px;
 }
+
 
 /* HOMEPAGE HERO SECTION */
 .hero {
