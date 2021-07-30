@@ -21,7 +21,7 @@ html
                     a.nav-link.page-link(href='/movies') Movies
                 if locals.authenticated
                     div.nav-item
-                        p Welcome #{locals.user.username}!
+                        a(href=`/users/${locals.user.id}`) Welcome #{locals.user.username}!
                     div.nav-item
                         form(action="/users/logout" method="post")
                             button.med-button(type="submit") Logout
