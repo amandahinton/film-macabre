@@ -86,7 +86,7 @@ router.post(
 
 router.post(
 	'/:shelfId/delete',
-	requireAuth, 
+	requireAuth,
 	asyncHandler(async (req, res) => {
 		const { shelfId } = req.params;
 		const shelf = await db.Shelf.findByPk(shelfId);
