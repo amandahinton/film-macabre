@@ -1,9 +1,9 @@
 'use strict';
-​
+
 const bcrypt = require('bcryptjs');
 const demoPassword = bcrypt.hashSync(process.env.DEMO_PASSWORD, 12);
 const adminPassword = bcrypt.hashSync(process.env.ADMIN_PASSWORD, 12);
-​
+
 module.exports = {
 	up: (queryInterface, Sequelize) => {
 		return queryInterface.bulkInsert(
@@ -79,7 +79,7 @@ module.exports = {
 			{}
 		);
 	},
-​
+
 	down: (queryInterface, Sequelize) => {
 		return queryInterface.bulkDelete('Users', null, {
 			truncate: true,
