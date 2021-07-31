@@ -580,3 +580,16 @@ li {
 	display: flex;
 	flex-direction: row;
 }
+
+#created > * {
+	margin-right: 0.5ch;
+}
+
+#edit-box {
+	min-height: 57.5px;
+}
+
+#newName {
+	border-spacing: 50px;
+	margin-bottom: 0px;
+}

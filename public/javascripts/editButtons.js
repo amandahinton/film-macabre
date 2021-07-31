@@ -54,8 +54,6 @@ function toggleEditBox(e) {
 	const editBoxInput = document.getElementById('newName');
 	const shelfTitle = document.getElementById('shelf-name');
 
-	editBox.style.display = 'visible';
-
 	if (editBox) {
 		const boxVisibility = editBox.style.display;
 		const titleVisibility = shelfTitle.style.display;
