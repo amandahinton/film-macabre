@@ -4,7 +4,7 @@ include utils
 block content
     h2(id="shelf-name") #{shelf.name}
     if isDefault === false
-        div(class="container" id="edit-box" style="display:none")
+        div(class="container" id="edit-box" style="display: none;")
             form( action="#", method="post")
                 input(type="hidden" name="_csrf" value=csrfToken)
 
