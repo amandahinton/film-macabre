@@ -452,9 +452,10 @@ nav.navbar {
 	margin-top: 20px;
 }
 
-#bio {
+.bio {
 	margin-top: -5px;
 	font-size: 14px;
+	min-height: 30px;
 }
 
 #username {
@@ -531,4 +532,28 @@ li {
 
 .choice-review {
     background-image: url("../images/path3.png");
+}
+
+#created > * {
+	margin-right: 0.5ch;
+}
+
+#edit-box {
+	min-height: 57.5px;
+}
+
+#newName {
+	border-spacing: 50px;
+	margin-bottom: 0px;
+}
+
+#edit-bio-form {
+	display: flex;
+
+	justify-content: center;
+	align-items: flex-end;
+}
+
+#custom-pos {
+	margin-bottom: 18px;
 }

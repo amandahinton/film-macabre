@@ -30,11 +30,13 @@ async function updateShelf(e) {
 	const shelfTitle = document.getElementById('shelf-name');
 	const newTitle = editBoxInput.value;
 	const shelfId = document.getElementById('shelfId').innerText;
+	const csrf = document.getElementsByName('_csrf')[0].value;
 
 	await fetch(`/shelves/${shelfId}`, {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json',
+			'X-CSRF-TOKEN': csrf,
 		},
 		body: JSON.stringify({ name: newTitle }),
 	});
@@ -53,8 +55,6 @@ function toggleEditBox(e) {
 	const editBox = document.getElementById('edit-box');
 	const editBoxInput = document.getElementById('newName');
 	const shelfTitle = document.getElementById('shelf-name');
-
-	editBox.style.display = 'visible';
 
 	if (editBox) {
 		const boxVisibility = editBox.style.display;
@@ -75,10 +75,11 @@ async function deleteShelf(e) {
 	}
 
 	const shelfId = document.getElementById('shelfId').innerText;
+	const userId = document.getElementById('user-id').innerText;
 
 	await fetch(`/shelves/${shelfId}`, { method: 'DELETE' });
 
-	window.location = '/';
+	window.location = `/users/${userId}`;
 }
 
 function addButtonFunc() {

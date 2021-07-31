@@ -2,6 +2,7 @@ extends layout.pug
 include utils
 
 block content
+    p(style="display: none;" id="user-id" value=userObj.id)=userObj.id
     h2(id="shelf-name") #{shelf.name}
     if isDefault === false
         div(class="container" id="edit-box" style="display: none;")
@@ -11,10 +12,10 @@ block content
                 input(class="form-field" id="newName" type="text" name="name")
 
                 button(class="small-button" id="save-shelf" type="submit") Save
-    div(id="created")
-        h3 Created by
-            a(href=`/users/${userObj.id}`)= ` ${userObj.username}`
-                h3 on #{created}
+        div(id="created")
+            h3= "Created by "
+            a(href=`/users/${userObj.id}`)= `${userObj.username}`
+            h3= ` on ${created}`
     h3 Last updated on #{updated}
     if curId
         if curId === shelf.userId
