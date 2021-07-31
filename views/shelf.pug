@@ -2,6 +2,7 @@ extends layout.pug
 include utils
 
 block content
+    p(style="display: none;" id="user-id" value=userObj.id)=userObj.id
     h2(id="shelf-name") #{shelf.name}
     if isDefault === false
         div(class="container" id="edit-box" style="display: none;")

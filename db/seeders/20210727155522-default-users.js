@@ -1,9 +1,9 @@
 'use strict';
-
+​
 const bcrypt = require('bcryptjs');
 const demoPassword = bcrypt.hashSync(process.env.DEMO_PASSWORD, 12);
 const adminPassword = bcrypt.hashSync(process.env.ADMIN_PASSWORD, 12);
-
+​
 module.exports = {
 	up: (queryInterface, Sequelize) => {
 		return queryInterface.bulkInsert(
@@ -16,6 +16,7 @@ module.exports = {
 					email: 'demo@demo.com',
 					age: 25,
 					password: demoPassword,
+					bio: '',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
@@ -26,36 +27,40 @@ module.exports = {
 					email: 'tanner@demo.com',
 					age: 25,
 					password: demoPassword,
+					bio: '#1 Horror Fan',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
 				{
-					username: 'Moncef',
+					username: 'frankenstein',
 					firstName: 'Moncef',
 					lastName: 'Sebata',
 					email: 'moncef@demo.com',
 					age: 25,
 					password: demoPassword,
+					bio: 'Victor, the (not mad) scientist. Not that other guy.',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
 				{
-					username: 'Amanda',
+					username: 'elvira',
 					firstName: 'Amanda',
 					lastName: 'Hinton',
 					email: 'amanda@demo.com',
 					age: 25,
 					password: demoPassword,
+					bio: 'Mistress of the Dark (TM), Horror Hostess, Horror Hotness',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
 				{
-					username: 'Walker',
+					username: 'boo',
 					firstName: 'Walker',
 					lastName: 'Williams',
 					email: 'walker@demo.com',
 					age: 25,
 					password: demoPassword,
+					bio: 'I am the thing that goes bump in the night',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
@@ -66,6 +71,7 @@ module.exports = {
 					email: 'admin@demo.com',
 					age: 25,
 					password: adminPassword,
+					bio: '👻🧛‍♂️💀🐺 Welcome to HorrorHost! 🧟‍♂️🤡🔪😈',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
@@ -73,7 +79,7 @@ module.exports = {
 			{}
 		);
 	},
-
+​
 	down: (queryInterface, Sequelize) => {
 		return queryInterface.bulkDelete('Users', null, {
 			truncate: true,

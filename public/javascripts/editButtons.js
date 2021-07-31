@@ -75,10 +75,11 @@ async function deleteShelf(e) {
 	}
 
 	const shelfId = document.getElementById('shelfId').innerText;
+	const userId = document.getElementById('user-id').innerText;
 
 	await fetch(`/shelves/${shelfId}`, { method: 'DELETE' });
 
-	window.location = '/';
+	window.location = `/users/${userId}`;
 }
 
 function addButtonFunc() {

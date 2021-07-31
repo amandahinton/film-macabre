@@ -136,7 +136,7 @@ router.get(
 			csrfToken: req.csrfToken(),
 			title: 'Register',
 			user,
-			content_container:"register",
+			content_container: 'register',
 		});
 	})
 );
@@ -197,7 +197,11 @@ router.post(
 );
 
 router.get('/login', csrfProtection, (req, res) => {
-	res.render('login', { title: 'Login', csrfToken: req.csrfToken(), content_container:"login" });
+	res.render('login', {
+		title: 'Login',
+		csrfToken: req.csrfToken(),
+		content_container: 'login',
+	});
 });
 
 router.post('/logout', (req, res) => {
@@ -268,9 +272,9 @@ router.post(
 
 			await newDemo.save();
 
-			await generateShelf('My Top 10', newDemo.id, true);
-			await generateShelf('Watched', newDemo.id, true);
-			await generateShelf('Want to Watch', newDemo.id, true);
+			await generateShelf('My Top 10 🎃', newDemo.id, true);
+			await generateShelf('Watched 👁️‍🗨️', newDemo.id, true);
+			await generateShelf('Want to Watch 👀', newDemo.id, true);
 
 			loginUser(req, res, newDemo);
 
