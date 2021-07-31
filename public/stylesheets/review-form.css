@@ -3,7 +3,7 @@ body {
 }
 
 #formContainer {
-    display:flex;  
+    display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -11,7 +11,7 @@ body {
 
 #formContainer div {
     margin: 10px;
-    display:flex;  
+    display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -26,9 +26,6 @@ body {
 	border: 3px solid #cccccc;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
-	/* background-image: url(bg.gif); */
-	/* background-position: bottom right; */
-	/* background-repeat: no-repeat; */
 }
 
 .label {

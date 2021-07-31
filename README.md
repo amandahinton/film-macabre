@@ -24,8 +24,8 @@ HorrorHost is a website allowing you to curate your own blood-curdling collectio
 ##  Features
 * Users
     * User functionality including registration, Login/Logout authentication, and authorization to perform different CRUD operations throughout the site is all present.
-    * The Bcrypt hashing agorithm is used to maintain password security.
-    * All forms are protected against Csurf attacks 
+    * The Bcrypt hashing algorithm is used to maintain password security.
+    * All forms are protected against Csurf attacks
 * Shelves
     * Authenticated users can create custom shelves and add/delete movies from their shelves or the 3 default shelves created for them upon registration. Custom shelves can also be deleted.
 * Movies
@@ -33,10 +33,10 @@ HorrorHost is a website allowing you to curate your own blood-curdling collectio
 * Reviews
     * Authenticated Users can submit a review for a movie, or edit/delete their review if they have previously submitted one.
 ## Challenges
-We ran into some problems along the way including: 
+We ran into some problems along the way including:
 * We learned quickly how important it is to ensure that nobody pushes to the main branch without a review process, and to commit early and often to keep all the branches updated.
-* A script we implemented to hide the review edit form until a button is clicked was toggling correctly between hidden and visible, but was incorractly displaying as visible at first. We fixed this by reordering our css file. Order is important!
-* Not really a bug, but implementing a star rating system for each movie was alot more challenging than expected and I have a new appreciation for that feature in other sites.
+* A script we implemented to hide the review edit form until a button is clicked was toggling correctly between hidden and visible, but was incorrectly displaying as visible at first. We fixed this by reordering our css file. Order is important!
+* Not really a bug, but implementing a star rating system for each movie was a lot more challenging than expected and I have a new appreciation for that feature in other sites.
 ## Code Highlights
 * Star reviews rendering in pug for each movie:
 ```
@@ -59,11 +59,5 @@ div.star-container
 ## Contributors
 * Tanner Pedretti(VoodooJellyfish)
 * Amanda Hinton(amandahinton)
-* Mocef Sebbata (msebbata)
+* Moncef Sebbata (msebbata)
 * Walker Williams (walkerwilliamsx)
-
-
-
-
-
-

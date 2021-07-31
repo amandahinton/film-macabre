@@ -1,7 +1,7 @@
 
 extends layout.pug
 
-append head 
+append head
     //- defer helps to make sure the scripts only run after the full template is rendered
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     link(rel='stylesheet', href='/stylesheets/background.css')
@@ -32,18 +32,16 @@ block content
 
             div(id="formContainer" class= "updateForm hidden")
                 form(action=`/reviews/${review.id}/` method='post' id="formFields")
-                
+
                     input(type="hidden" name="_csrf" value= csrfToken)
 
                     div(id="score")
-                        label(for="rating" id="ratingLabel") Rating:   
+                        label(for="rating" id="ratingLabel") Rating:
                         input(type="number" min="0" max="5" name="rating" class= "rating" value= review.rating required)
 
-                    //- label(for="body") Write your review here
                     textarea(name="body" id="body" cols="30", rows="10" required) #{review.body}
                     button(type="submit" id= "updateReview" class="small-button") Submit Review
 
                 form(action=`/reviews/${review.id}/delete` method='post')
                     input(type="hidden" name="_csrf" value= csrfToken)
                     button(type="submit" class="delete-button" id="deleteReview") Delete Review
-        

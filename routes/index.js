@@ -24,7 +24,6 @@ router.get('/', async function (req, res, next) {
 			content_container: "scream",
 			randomMovie,
 		});
-		// res.json({featuredShelves})
 	} catch (err) {
 		throw new Error(err);
 	}

@@ -43,9 +43,7 @@ router.post(
 	requireAuth,
 	csrfProtection,
 	asyncHandler(async (req, res) => {
-		// create a suggestion works like the register form and dumps the info into a row in the suggestion table
 		const { title, year, description, director, cover } = req.body;
-		// send the form submit to to a new table in the database?
 		await db.Suggestion.create({ title, year, description, director, cover });
 		res.redirect('/');
 	})
@@ -75,8 +73,6 @@ router.get(
 				},
 			});
 		}
-
-		// res.json({reviews})
 
 		res.render('movie-detail', {
 			title: 'Review Form',
@@ -135,7 +131,6 @@ router.post(
 			}
 		}
 		if (validatorErrors.isEmpty() && canReview) {
-			// return res.json({movie})
 			await review.save();
 			res.redirect(`/movies/${movieId}`);
 		} else {
