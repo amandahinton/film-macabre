@@ -6,6 +6,7 @@ CREATE TABLE "users" (
   "email" varchar,
   "age" integer,
   "password" varchar,
+  "bio" text,
   "createdAt" timestamp,
   "updatedAt" timestamp
 );

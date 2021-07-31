@@ -39,6 +39,23 @@ const ourPicks = [
 		shelfId: 4,
 		movieId: 2,
 	},
+	{
+		shelfId: 4,
+		movieId: 5,
+	},
+	{
+		shelfId: 4,
+		movieId: 15,
+	},
+	{
+		shelfId: 4,
+		movieId: 63,
+	},
+	{
+		shelfId: 4,
+		movieId: 22,
+	},
+
 ];
 
 const gore = [
@@ -87,7 +104,7 @@ const moreComedy = [
 	},
 	{
 		shelfId: 6,
-		movieId: 11,
+		movieId: 79,
 	},
 	{
 		shelfId: 6,
@@ -96,6 +113,18 @@ const moreComedy = [
 ];
 
 const superSpooky = [
+	{
+		shelfId: 7,
+		movieId: 7,
+	},
+	{
+		shelfId: 7,
+		movieId: 44,
+	},
+	{
+		shelfId: 7,
+		movieId: 34,
+	},
 	{
 		shelfId: 7,
 		movieId: 93,

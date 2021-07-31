@@ -2,5 +2,5 @@ body {
     background-image: url("../images/hands.png");
     background-repeat: no-repeat;
     background-size: 100% 30%;
-    background-position: 50% 100%;
+    background-position: bottom;
 }
