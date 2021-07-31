@@ -3,15 +3,15 @@ body {
 }
 
 #formContainer {
-    display:flex;  
+    display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
 #formContainer div {
-    margin: 10px;
-    display:flex;  
+    margin: 50px 10px 10px;
+    display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
