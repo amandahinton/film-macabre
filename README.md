@@ -94,14 +94,10 @@ mixin showShelvesPreview(shelves, titles)
 ![](https://github.com/amandahinton/film-macabre/blob/main/design/database_schema.png)
 
 ## Contributors
-* [Tanner Pedretti](https://github.com/VoodooJellyfish)
-* [Amanda Hinton](https://github.com/amandahinton)
-* [Moncef Sebbata](https://github.com/msebbata)
-* [Walker William](https://github.com/walkerwilliamsx)
-* Tanner Pedretti(VoodooJellyfish)
-* Amanda Hinton(amandahinton)
-* Mocef Sebbata (msebbata)
-* Walker Williams (walkerwilliamsx)
+* [Tanner Pedretti](https://github.com/VoodooJellyfish) (VoodooJellyfish)
+* [Amanda Hinton](https://github.com/amandahinton) (amandahinton)
+* [Moncef Sebbata](https://github.com/msebbata) (msebbata)
+* [Walker William](https://github.com/walkerwilliamsx) (walkerwilliamsx)
 
 
 
