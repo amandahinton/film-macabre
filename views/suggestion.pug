@@ -8,22 +8,23 @@ block content
             each error in errors
                 li= error
     div(class="suggestionContainer")
-        form(action=`/movies/new`, method="post" class="suggestionForm")
-            input(type="hidden" name="_csrf" value= csrfToken)
-            div(class="titleDiv")
-                label(for="title" class="titleLabel") Title
-                input(type="text" name="title" class="titleField" required )
-            div(class="labelDiv")
-                label(for="year" class="yearLabel" ) Year released
-                input(type="number" name="year" class="yearField" required)
-            div(class="descriptionDiv")
-                label(for="description" class="descriptionLabel") Description
-                textarea(name="description" class="descriptionField" placeholder="Brief description of movie" required)
-            div(class="directorDiv")
-                label(for="director" class="directorLabel") Director
-                input(type="text" name="director" class="directorField" required)
-            div(class="linkDiv")
-                label(for="cover" class="coverLabel") Link to movie poster
-                input(type="text" name="cover" class="linkField" placeholder="URL for movie poster" required)
-            div(class="submitButton")
-                button(type="submit" class="suggestionSubmit") Submit
+        body(class="suggestionBody")
+            form(action=`/movies/new`, method="post" class="suggestionForm")
+                input(type="hidden" name="_csrf" value= csrfToken)
+                div(class="titleDiv")
+                    label(for="title" class="titleLabel") Title
+                    input(type="text" name="title" class="titleField" required )
+                div(class="labelDiv")
+                    label(for="year" class="yearLabel" ) Year released
+                    input(type="number" name="year" class="yearField" required)
+                div(class="descriptionDiv")
+                    label(for="description" class="descriptionLabel") Description
+                    textarea(name="description" class="descriptionField" placeholder="Brief description of movie" required)
+                div(class="directorDiv")
+                    label(for="director" class="directorLabel") Director
+                    input(type="text" name="director" class="directorField" required)
+                div(class="linkDiv")
+                    label(for="cover" class="coverLabel") Link to movie poster
+                    input(type="text" name="cover" class="linkField" placeholder="URL for movie poster" required)
+                div(class="submitButton")
+                    button(type="submit" class="suggestionSubmit") Submit

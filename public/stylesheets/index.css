@@ -569,3 +569,11 @@ li {
 .submitButton {
 	margin-left: 70px;
 }
+
+
+.suggestionBody {
+	background-image: url("../images/trees.png");
+	background-repeat: no-repeat;
+	background-size: 100% 88%;
+	background-position: 100% 100%;
+}
