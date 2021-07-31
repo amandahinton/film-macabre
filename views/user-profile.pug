@@ -2,15 +2,23 @@ extends layout.pug
 include utils.pug
 
 block content
+    p(style="display: none;" id="user-id" value=userObj.id)=userObj.id
     div(class="image" id="profile-img")
         img(id="profile-pic" src="/images/profile-pic.jpg", alt="profile picture")
         div(id="name-stats")
             h2(class="username" id="username") #{userObj.username}
                 p(class="bio" id="bio") #{userObj.bio}
+                form(action="#" method="get" id="edit-bio-form" class="bio" style="display: none;")
+                    input(type="hidden" name="_csrf" value=csrfToken)
+                    input(type="text" class="form-field" name="new-bio" id="bio-field" value=userObj.bio)
+                    button(class="small-button" id="custom-pos" type="submit") Save
             div(class="stats" id="user-stats")
                 if reviews
                     h3(class="num-reviews" id="num-reviews")
                         p(class="reviews-link") Reviews: #{reviews.length}
+                    if userObj.id == locals.user.id
+                        button(class="small-button" id="edit-bio") Edit Bio
+
     div(id="shelves-header")
         h2(class="shelves-header") #{userObj.username}'s Shelves
         if userObj.id == locals.user.id
@@ -25,3 +33,4 @@ block content
                 a(href=`/movies/${review.Movie.id}`) #{review.Movie.title}
             p Rating: #{review.rating}/5
             p #{review.body}
+    script(src="/javascripts/editBio.js")
