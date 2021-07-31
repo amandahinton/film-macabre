@@ -15,11 +15,15 @@ block content
 
     div(id="pageContainer")
         form(action=`/movies/${id}/reviews/new`, method="post" id="formContainer")
-
             div(id="movieContainer")
                 img(src=`${movie.cover}`, alt="Movie Cover")
 
             input(type="hidden" name="_csrf" value= csrfToken)
+
+            
+            if canReview === false
+                div.errorContainer
+                    p.error You have already submitted a review for this movie.
 
             div(id="score")
                 label(for="rating" class="label") Rating
