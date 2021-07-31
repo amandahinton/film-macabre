@@ -4,16 +4,18 @@ include utils
 block content
     h2(id="shelf-name") #{shelf.name}
     if isDefault === false
-        div(class="container" id="edit-box" style="display:none")
+        div(class="container" id="edit-box" style="display: none;")
             form( action="#", method="post")
                 input(type="hidden" name="_csrf" value=csrfToken)
 
                 input(class="form-field" id="newName" type="text" name="name")
 
                 button(class="small-button" id="save-shelf" type="submit") Save
-    h3 Created by
-        a(href=`/users/${user.id}`)= ` ${user.username}`
-    //- h3 Last updated on #{updated}
+    div(id="created")
+        h3 Created by
+            a(href=`/users/${userObj.id}`)= ` ${userObj.username}`
+                h3 on #{created}
+    h3 Last updated on #{updated}
     if curId
         if curId === shelf.userId
             div(id="actions")
