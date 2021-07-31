@@ -136,7 +136,7 @@ router.get(
 			csrfToken: req.csrfToken(),
 			title: 'Register',
 			user,
-			content_container:"hearts",
+			content_container: 'hearts',
 		});
 	})
 );
@@ -197,7 +197,11 @@ router.post(
 );
 
 router.get('/login', csrfProtection, (req, res) => {
-	res.render('login', { title: 'Login', csrfToken: req.csrfToken(), content_container:"grave" });
+	res.render('login', {
+		title: 'Login',
+		csrfToken: req.csrfToken(),
+		content_container: 'grave',
+	});
 });
 
 router.post('/logout', (req, res) => {
@@ -306,6 +310,7 @@ router.get(
 
 router.get(
 	'/:id',
+	csrfProtection,
 	asyncHandler(async (req, res) => {
 		const { id } = req.params;
 		const userObj = await db.User.findByPk(id);
@@ -325,7 +330,37 @@ router.get(
 			},
 			include: db.Movie,
 		});
-		res.render('user-profile', { userObj, shelves, reviews });
+		res.render('user-profile', {
+			userObj,
+			shelves,
+			reviews,
+			csrfToken: req.csrfToken(),
+		});
+	})
+);
+
+router.put(
+	'/:id',
+	csrfProtection,
+	asyncHandler(async (req, res) => {
+		try {
+			const { bio } = req.body;
+			const { id } = req.params;
+			const { id: userId } = res.locals.user;
+
+			const user = await db.User.findByPk(id);
+
+			if (userId === user.id) {
+				user.bio = bio;
+				await user.save();
+
+				res.status(200).send();
+			} else {
+				res.status(401).send();
+			}
+		} catch (err) {
+			console.error(err);
+		}
 	})
 );
 

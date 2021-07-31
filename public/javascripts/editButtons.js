@@ -30,11 +30,13 @@ async function updateShelf(e) {
 	const shelfTitle = document.getElementById('shelf-name');
 	const newTitle = editBoxInput.value;
 	const shelfId = document.getElementById('shelfId').innerText;
+	const csrf = document.getElementsByName('_csrf')[0].value;
 
 	await fetch(`/shelves/${shelfId}`, {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json',
+			'X-CSRF-TOKEN': csrf,
 		},
 		body: JSON.stringify({ name: newTitle }),
 	});
