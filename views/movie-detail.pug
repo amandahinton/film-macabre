@@ -32,7 +32,7 @@ block content
                             while i < score
                                 span(class="fa fa-star checked")
                                 -i++
-                
+
     if myShelves
         form(id="add-to-shelf" action=`/shelves/edit`, method="post")
             input(type="hidden" name="_csrf" value=csrfToken)
@@ -62,7 +62,7 @@ block content
                             span(class="fa fa-star")
                             -j++
                     div(class= "username")
-                        p= review.User.username
+                        a(href=`/users/${review.User.id}`)= review.User.username
                     if userId && userId == review.userId
                         div(class="button-group")
                             a.small-button(href=`http:/reviews/${review.id}`) Edit review
