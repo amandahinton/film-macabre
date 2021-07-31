@@ -45,7 +45,7 @@ block content
 
 
                 div.movie-form-container
-            a.small-button(href=`/movies/${movie.id}/reviews/new`) Submit Review
+            a.small-button(href=`/movies/${movie.id}/reviews/new`) Add Review
         div(id= "reviews-container")
             each review in reviews
                 div(class="review-group")
@@ -64,4 +64,4 @@ block content
                         a(href=`/users/${review.User.id}`)= review.User.username
                     if userId && userId == review.userId
                         div(class="button-group")
-                            a.small-button(href=`http:/reviews/${review.id}`) Edit review
+                            a.small-button(href=`/reviews/${review.id}`) Edit review
