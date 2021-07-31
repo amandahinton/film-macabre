@@ -95,7 +95,7 @@ router.get(
 	csrfProtection,
 	asyncHandler(async (req, res) => {
 		let id = parseInt(req.params.id, 10);
-		const movie = await db.Movie.findByPk(id,);
+		const movie = await db.Movie.findByPk(id);
 		let review = db.Review.build();
 		res.render('review-form', {
 			title: 'Review Form Submission',
