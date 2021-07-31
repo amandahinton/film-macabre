@@ -124,20 +124,31 @@ router.post(
 			body,
 			movieId,
 		});
-		const movie = await db.Movie.findByPk(movieId);
-
+		const movie = await db.Movie.findByPk(movieId, {
+			include: db.Review
+		});
+		let canReview = true
+		let previousReviews = movie.Reviews
 		const validatorErrors = validationResult(req);
-		if (validatorErrors.isEmpty()) {
-			// return res.json({review})
+		for(let i=0; i < previousReviews.length; i++) {
+			let current = previousReviews[i]
+			if (current.userId == review.userId) {
+				canReview = false
+			}
+		}
+		if (validatorErrors.isEmpty() && canReview) {
+			// return res.json({movie})
 			await review.save();
 			res.redirect(`/movies/${movieId}`);
 		} else {
 			const errors = validatorErrors.array().map((error) => error.msg);
+			console.log(canReview)
 			res.render('review-form', {
 				title: 'Add Review',
 				review,
 				movie,
 				errors,
+				canReview: false,
 				csrfToken: req.csrfToken(),
 			});
 		}

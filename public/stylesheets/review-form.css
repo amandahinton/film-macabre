@@ -35,3 +35,7 @@ body {
     color: #cccccc;
     font-weight: 700
 }
+
+p.error {
+    color: red
+}

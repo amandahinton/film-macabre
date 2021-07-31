@@ -3,7 +3,6 @@ extends layout.pug
 append head
     link(rel="stylesheet" href="/stylesheets/index.css")
     link(rel="stylesheet" href="/stylesheets/movie-detail.css")
-    script(src="/javascripts/addToShelf.js")
 
 block content
     if movie
@@ -32,7 +31,7 @@ block content
                             while i < score
                                 span(class="fa fa-star checked")
                                 -i++
-                
+
     if myShelves
         form(id="add-to-shelf" action=`/shelves/edit`, method="post")
             input(type="hidden" name="_csrf" value=csrfToken)
@@ -46,7 +45,7 @@ block content
 
 
                 div.movie-form-container
-            a.small-button(href=`/movies/${movie.id}/reviews/new`) Submit Review
+            a.small-button(href=`/movies/${movie.id}/reviews/new`) Add Review
         div(id= "reviews-container")
             each review in reviews
                 div(class="review-group")
@@ -62,7 +61,7 @@ block content
                             span(class="fa fa-star")
                             -j++
                     div(class= "username")
-                        p= review.User.username
+                        a(href=`/users/${review.User.id}`)= review.User.username
                     if userId && userId == review.userId
                         div(class="button-group")
-                            a.small-button(href=`http:/reviews/${review.id}`) Edit review
+                            a.small-button(href=`/reviews/${review.id}`) Edit review

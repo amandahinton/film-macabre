@@ -5,2397 +5,1398 @@ module.exports = {
     return queryInterface.bulkInsert(
       'Reviews',
       [{
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        body: 'I loved it, it was more funny than scary in my opinion',
         rating: 4,
-        userId: 5,
+        userId: 1,
         movieId: 1
+      } ,
+      {
+        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        rating: 1,
+        userId: 1,
+        movieId: 2
+      } ,
+      {
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        rating: 3,
+        userId: 1,
+        movieId: 3
       } ,
       {
         body: 'Props for a scary monster/villian. Everything else was terribly executed.',
         rating: 2,
-        userId: 4,
-        movieId: 2
+        userId: 1,
+        movieId: 4
       } ,
+      {
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
+        userId: 1,
+        movieId: 5
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
+        movieId: 6
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 7 } ,
       {
         body: 'This was a great film! Although I would have liked to see a little more originality',
         rating: 4,
-        userId: 2,
-        movieId: 3
+        userId: 1,
+        movieId: 8
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 4
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        rating: 3,
+        userId: 1,
+        movieId: 9
       } ,
       {
         body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
         rating: 2,
-        userId: 3,
-        movieId: 5
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 6
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 7
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 8
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 9
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
+        userId: 1,
         movieId: 10
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 11
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 12
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 13
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 14
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 15
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 16
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 17
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 18
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 19
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 20
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 21
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 22
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 23
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 24
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 25
       } ,
       {
         body: 'Excellent movie! One of the best I have seen recently',
         rating: 5,
-        userId: 2,
+        userId: 1,
+        movieId: 11
+      } ,
+      {
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
+        userId: 1,
+        movieId: 12
+      } ,
+      {
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
+        rating: 2,
+        userId: 1,
+        movieId: 13
+      } ,
+      {
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
+        movieId: 14
+      } ,
+      {
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
+        movieId: 15
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
+        movieId: 16
+      } ,
+      {
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
+        userId: 1,
+        movieId: 17
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 18 } ,
+      {
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        rating: 4,
+        userId: 1,
+        movieId: 19
+      } ,
+      {
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 1,
+        movieId: 20
+      } ,
+      {
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 1,
+        movieId: 21
+      } ,
+      {
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
+        rating: 2,
+        userId: 1,
+        movieId: 22
+      } ,
+      {
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        rating: 4,
+        userId: 1,
+        movieId: 23
+      } ,
+      {
+        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        rating: 1,
+        userId: 1,
+        movieId: 24
+      } ,
+      {
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
+        rating: 2,
+        userId: 1,
+        movieId: 25
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
         movieId: 26
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
+        body: 'I would like to see some new ideas in these horror movies, it was literally a replica of Scream',
+        rating: 1,
+        userId: 1,
         movieId: 27
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
         movieId: 28
       } ,
       {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 1,
         movieId: 29
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        rating: 4,
+        userId: 1,
         movieId: 30
       } ,
       {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 1,
         movieId: 31
       } ,
       {
         body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
         rating: 2,
-        userId: 4,
+        userId: 1,
         movieId: 32
+      } ,
+      {
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 1,
+        movieId: 33
+      } ,
+      {
+        body: 'Prepare to be absolutely terrified! What an experieence',
+        rating: 5,
+        userId: 1,
+        movieId: 34
+      } ,
+      {
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        rating: 4,
+        userId: 1,
+        movieId: 35
+      } ,
+      {
+        body: 'Awful experience. The plot did not even make sense',
+        rating: 1,
+        userId: 1,
+        movieId: 36
+      } ,
+      {
+        body: 'The premise and idea was good, but what the heck was that ending?!',
+        rating: 3,
+        userId: 1,
+        movieId: 37
+      } ,
+      {
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
+        movieId: 38
+      } ,
+      {
+        body: 'Prepare to be absolutely terrified! What an experieence',
+        rating: 5,
+        userId: 1,
+        movieId: 39
+      } ,
+      {
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 1,
+        movieId: 40
+      } ,
+      {
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
+        userId: 1,
+        movieId: 41
+      } ,
+      {
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 1,
+        movieId: 42
+      } ,
+      {
+        body: 'The movie was confusing at times, but the dry humor made it all better',
+        rating: 4,
+        userId: 1,
+        movieId: 43
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 44 } ,
+      {
+        body: 'Prepare to be absolutely terrified! What an experieence',
+        rating: 5,
+        userId: 1,
+        movieId: 45
+      } ,
+      {
+        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        rating: 1,
+        userId: 1,
+        movieId: 46
+      } ,
+      {
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 1,
+        movieId: 47
+      } ,
+      {
+        body: 'The premise and idea was good, but what the heck was that ending?!',
+        rating: 3,
+        userId: 1,
+        movieId: 48
+      } ,
+      {
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
+        movieId: 49
+      } ,
+      {
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 1,
+        movieId: 50
       } ,
       {
         body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
         rating: 4,
         userId: 1,
-        movieId: 33
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 34
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 35
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 36
+        movieId: 51
       } ,
       {
         body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
         rating: 3,
-        userId: 5,
-        movieId: 37
+        userId: 1,
+        movieId: 52
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 38
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        rating: 4,
+        userId: 1,
+        movieId: 53
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 1,
+        movieId: 54
+      } ,
+      {
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
         rating: 2,
-        userId: 3,
-        movieId: 39
+        userId: 1,
+        movieId: 55
+      } ,
+      {
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
+        userId: 1,
+        movieId: 56
+      } ,
+      {
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 1,
+        movieId: 57
+      } ,
+      {
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 1,
+        movieId: 58
+      } ,
+      {
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 1,
+        movieId: 59
       } ,
       {
         body: 'Prepare to be absolutely terrified! What an experieence',
         rating: 5,
-        userId: 2,
-        movieId: 40
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 41
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 42
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 43
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 44
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 45
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 46
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 47
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 48
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 49
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 50
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 51
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 52
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 53
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 54
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 55
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 56
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 57
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 58
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 59
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
+        userId: 1,
         movieId: 60
       } ,
       {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 1,
         movieId: 61
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
         rating: 1,
-        userId: 3,
+        userId: 1,
         movieId: 62
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
         movieId: 63
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 1,
         movieId: 64
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        body: "I loved it but my wife didn't, I'm in trouble.",
         rating: 4,
-        userId: 5,
+        userId: 1,
         movieId: 65
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
         rating: 4,
-        userId: 2,
+        userId: 1,
         movieId: 66
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
         movieId: 67
       } ,
       {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        body: 'This was alright! The main character was just annoying.',
         rating: 3,
-        userId: 5,
+        userId: 1,
         movieId: 68
       } ,
       {
         body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
         rating: 2,
-        userId: 3,
+        userId: 1,
         movieId: 69
       } ,
       {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 1,
         movieId: 70
       } ,
       {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
         movieId: 71
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 1,
         movieId: 72
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 1,
         movieId: 73
       } ,
       {
         body: 'Decent. I went into this with higher expectations than I should have',
         rating: 3,
-        userId: 3,
+        userId: 1,
         movieId: 74
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 75
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 76
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 77
       } ,
       {
         body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
         rating: 1,
-        userId: 3,
-        movieId: 78
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 79
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 80
+        userId: 1,
+        movieId: 75
       } ,
       {
         body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
         rating: 4,
         userId: 1,
-        movieId: 81
+        movieId: 76
       } ,
       {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 82
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 83
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 84
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 85
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
+        body: "I loved it but my wife didn't, I'm in trouble.",
         rating: 4,
-        userId: 2,
-        movieId: 86
+        userId: 1,
+        movieId: 77
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 87
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 1,
+        movieId: 78
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 88
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
         rating: 4,
-        userId: 4,
-        movieId: 89
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 90
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 91
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 92
+        userId: 1,
+        movieId: 79
       } ,
       {
         body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
         rating: 1,
-        userId: 3,
+        userId: 1,
+        movieId: 80
+      } ,
+      {
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
+        rating: 2,
+        userId: 1,
+        movieId: 81
+      } ,
+      {
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 1,
+        movieId: 82
+      } ,
+      {
+        body: 'The movie was confusing at times, but the dry humor made it all better',
+        rating: 4,
+        userId: 1,
+        movieId: 83
+      } ,
+      {
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 1,
+        movieId: 84
+      } ,
+      {
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 1,
+        movieId: 85
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
+        movieId: 86
+      } ,
+      {
+        body: 'The movie was confusing at times, but the dry humor made it all better',
+        rating: 4,
+        userId: 1,
+        movieId: 87
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 88 } ,
+      {
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 1,
+        movieId: 89
+      } ,
+      {
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 1,
+        movieId: 90
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 91 } ,
+      {
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 1,
+        movieId: 92
+      } ,
+      {
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 1,
         movieId: 93
+      } ,
+      {
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
+        movieId: 94
       } ,
       {
         body: 'Awful experience. The plot did not even make sense',
         rating: 1,
-        userId: 2,
-        movieId: 94
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        userId: 1,
         movieId: 95
       } ,
       {
         body: 'Excellent film, although I thought that it ended a little too suddenly.',
         rating: 4,
-        userId: 5,
+        userId: 1,
         movieId: 96
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
+        movieId: 97
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 98 } ,
+      {
+        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        rating: 1,
+        userId: 1,
+        movieId: 99
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 100 } ,
+      {
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
+        userId: 1,
+        movieId: 101
       } ,
       {
         body: 'Props for a scary monster/villian. Everything else was terribly executed.',
         rating: 2,
-        userId: 4,
-        movieId: 97
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 98
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 99
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 100
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 101
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
+        userId: 1,
         movieId: 102
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 1,
         movieId: 103
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 1,
         movieId: 104
       } ,
       {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 1,
         movieId: 105
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
+        movieId: 106
+      } ,
+      {
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 1,
+        movieId: 107
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 108 } ,
+      {
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        rating: 3,
+        userId: 1,
+        movieId: 109
       } ,
       {
         body: 'Excellent film, although I thought that it ended a little too suddenly.',
         rating: 4,
-        userId: 5,
-        movieId: 106
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 107
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 108
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 109
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
+        userId: 1,
         movieId: 110
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 1
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 2
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 3
-      } ,
+      } ,{ body: 'Loved it !', rating: 4, userId: 1, movieId: 44 } ,
       {
         body: 'Prepare to be absolutely terrified! What an experieence',
         rating: 5,
-        userId: 2,
-        movieId: 4
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 5
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 6
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 7
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 8
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 9
-      } ,
-      {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
         userId: 1,
-        movieId: 10
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 11
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 12
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 13
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 14
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 15
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 16
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 17
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 18
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 19
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 20
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 21
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 22
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 23
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 24
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 25
-      } ,
-      {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
-        userId: 1,
-        movieId: 26
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 27
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 28
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 29
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 30
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 31
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 32
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 33
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 34
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 35
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 36
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 37
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 38
-      } ,
-      {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
-        userId: 1,
-        movieId: 39
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 40
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 41
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 42
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 43
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 44
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 45
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 46
-      } ,
-      {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
-        userId: 1,
-        movieId: 47
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 48
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 49
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 50
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 51
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 52
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 53
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 54
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 55
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 56
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 57
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 58
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 59
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 60
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 61
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 62
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 63
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 64
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 65
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 66
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 67
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 68
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 69
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 70
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 71
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 72
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 73
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 74
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 75
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 76
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 77
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 78
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 79
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 80
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 81
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 82
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 83
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 84
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 85
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 86
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 87
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 88
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 89
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 90
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 91
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 92
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 93
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 94
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 95
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 96
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 97
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 98
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 99
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 100
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 101
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 102
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 103
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 104
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 105
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 106
-      } ,
-      {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
-        userId: 1,
-        movieId: 107
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 108
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 109
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 110
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 1
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 2
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 3
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 4
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 5
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 6
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 7
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 8
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 9
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 10
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 11
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 12
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 13
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 14
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 15
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 16
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 17
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 18
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 19
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 20
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 21
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 22
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 23
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 24
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 25
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 26
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 27
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 28
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 29
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 30
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 31
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 32
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 33
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 34
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 35
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 36
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 37
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 38
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 39
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 40
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 41
-      } ,
-      {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
-        userId: 1,
-        movieId: 42
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 43
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 44
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
         movieId: 45
       } ,
       {
         body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
         rating: 1,
-        userId: 3,
+        userId: 1,
         movieId: 46
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 1,
         movieId: 47
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
+        body: 'The premise and idea was good, but what the heck was that ending?!',
+        rating: 3,
+        userId: 1,
         movieId: 48
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
         movieId: 49
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 1,
         movieId: 50
       } ,
       {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
+        userId: 1,
         movieId: 51
       } ,
       {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        rating: 3,
+        userId: 1,
         movieId: 52
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 53
       } ,
       {
         body: 'Excellent film, although I thought that it ended a little too suddenly.',
         rating: 4,
-        userId: 5,
+        userId: 1,
+        movieId: 53
+      } ,
+      {
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 1,
         movieId: 54
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 1,
         movieId: 55
       } ,
       {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        body: "I loved it but my wife didn't, I'm in trouble.",
         rating: 4,
         userId: 1,
         movieId: 56
       } ,
       {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 1,
         movieId: 57
       } ,
       {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
         userId: 1,
         movieId: 58
       } ,
       {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
         rating: 2,
-        userId: 4,
+        userId: 1,
         movieId: 59
+      } ,
+      {
+        body: 'Prepare to be absolutely terrified! What an experieence',
+        rating: 5,
+        userId: 1,
+        movieId: 60
+      } ,
+      {
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 1,
+        movieId: 61
       } ,
       {
         body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
         rating: 1,
-        userId: 5,
-        movieId: 60
+        userId: 1,
+        movieId: 62
       } ,
       {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 61
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
+        movieId: 63
+      } ,
+      {
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 1,
+        movieId: 64
+      } ,
+      {
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
+        userId: 1,
+        movieId: 65
       } ,
       {
         body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
         rating: 4,
         userId: 1,
-        movieId: 62
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 63
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 64
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 65
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
         movieId: 66
       } ,
       {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
         movieId: 67
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
         movieId: 68
       } ,
       {
         body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
         rating: 2,
-        userId: 3,
+        userId: 1,
         movieId: 69
       } ,
       {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 1,
         movieId: 70
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 1,
         movieId: 71
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 1,
         movieId: 72
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 73
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 74
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 75
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 76
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 77
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 78
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 79
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 80
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 81
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 82
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 83
-      } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 84
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 85
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 86
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 87
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 88
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 89
       } ,
       {
         body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
         rating: 5,
-        userId: 3,
-        movieId: 90
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 91
+        userId: 1,
+        movieId: 73
       } ,
       {
         body: 'Decent. I went into this with higher expectations than I should have',
         rating: 3,
-        userId: 3,
-        movieId: 92
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 93
+        userId: 1,
+        movieId: 74
       } ,
       {
         body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
         rating: 1,
-        userId: 3,
-        movieId: 94
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 95
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 96
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 97
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 98
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 99
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 100
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 101
+        userId: 1,
+        movieId: 75
       } ,
       {
         body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
         rating: 4,
         userId: 1,
-        movieId: 102
+        movieId: 76
       } ,
+      {
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
+        userId: 1,
+        movieId: 77
+      } ,
+      {
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 1,
+        movieId: 78
+      } ,
+      {
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
+        userId: 1,
+        movieId: 79
+      } ,
+      {
+        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        rating: 1,
+        userId: 1,
+        movieId: 80
+      } ,
+      {
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
+        rating: 2,
+        userId: 1,
+        movieId: 81
+      } ,
+      {
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 1,
+        movieId: 82
+      } ,
+      {
+        body: 'The movie was confusing at times, but the dry humor made it all better',
+        rating: 4,
+        userId: 1,
+        movieId: 83
+      } ,
+      {
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 1,
+        movieId: 84
+      } ,
+      {
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 1,
+        movieId: 85
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
+        movieId: 86
+      } ,
+      {
+        body: 'The movie was confusing at times, but the dry humor made it all better',
+        rating: 4,
+        userId: 1,
+        movieId: 87
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 88 } ,
+      {
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 1,
+        movieId: 89
+      } ,
+      {
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 1,
+        movieId: 90
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 91 } ,
       {
         body: 'Excellent movie! One of the best I have seen recently',
         rating: 5,
-        userId: 2,
-        movieId: 103
+        userId: 1,
+        movieId: 92
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 104
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 1,
+        movieId: 93
       } ,
       {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        body: "This movie scared me to death, don't watch it !!!",
         rating: 3,
-        userId: 5,
-        movieId: 105
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 106
+        userId: 1,
+        movieId: 94
       } ,
       {
         body: 'Awful experience. The plot did not even make sense',
         rating: 1,
-        userId: 2,
+        userId: 1,
+        movieId: 95
+      } ,
+      {
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        rating: 4,
+        userId: 1,
+        movieId: 96
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
+        movieId: 97
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 98 } ,
+      {
+        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        rating: 1,
+        userId: 1,
+        movieId: 99
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 100 } ,
+      {
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
+        userId: 1,
+        movieId: 101
+      } ,
+      {
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 1,
+        movieId: 102
+      } ,
+      {
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 1,
+        movieId: 103
+      } ,
+      {
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 1,
+        movieId: 104
+      } ,
+      {
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 1,
+        movieId: 105
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 1,
+        movieId: 106
+      } ,
+      {
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 1,
         movieId: 107
       } ,
+      { body: 'Loved it !', rating: 4, userId: 1, movieId: 108 } ,
       {
         body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
         rating: 3,
-        userId: 5,
-        movieId: 108
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
+        userId: 1,
         movieId: 109
       } ,
       {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
         rating: 4,
         userId: 1,
         movieId: 110
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
         userId: 2,
         movieId: 1
       } ,
       {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
+        userId: 2,
         movieId: 2
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 2,
         movieId: 3
       } ,
+      { body: 'Loved it !', rating: 4, userId: 2, movieId: 4 } ,
       {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 4
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 2,
         movieId: 5
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        rating: 3,
         userId: 2,
         movieId: 6
       } ,
       {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
+        userId: 2,
         movieId: 7
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
+        body: 'Awful experience. The plot did not even make sense',
+        rating: 1,
+        userId: 2,
         movieId: 8
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        rating: 3,
+        userId: 2,
         movieId: 9
       } ,
       {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
         userId: 2,
         movieId: 10
       } ,
       {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
+        body: 'I would like to see some new ideas in these horror movies, it was literally a replica of Scream',
+        rating: 1,
+        userId: 2,
         movieId: 11
       } ,
       {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
+        body: 'Awful experience. The plot did not even make sense',
+        rating: 1,
+        userId: 2,
         movieId: 12
       } ,
       {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
+        body: 'Awful experience. The plot did not even make sense',
+        rating: 1,
+        userId: 2,
         movieId: 13
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 14
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 15
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 16
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 17
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 18
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 19
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 20
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 21
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 22
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 23
       } ,
       {
         body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
         rating: 2,
-        userId: 3,
-        movieId: 24
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
         userId: 2,
-        movieId: 25
+        movieId: 14
       } ,
+      { body: 'Loved it !', rating: 4, userId: 2, movieId: 15 } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        body: 'This was a great film! Although I would have liked to see a little more originality',
         rating: 4,
-        userId: 5,
-        movieId: 26
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 27
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 28
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
         userId: 2,
-        movieId: 29
+        movieId: 16
+      } ,
+      {
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 2,
+        movieId: 17
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 2,
+        movieId: 18
+      } ,
+      {
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
+        userId: 2,
+        movieId: 19
+      } ,
+      {
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 2,
+        movieId: 20
+      } ,
+      {
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 2,
+        movieId: 21
+      } ,
+      {
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 2,
+        movieId: 22
+      } ,
+      {
+        body: 'This was a great film! Although I would have liked to see a little more originality',
+        rating: 4,
+        userId: 2,
+        movieId: 23
+      } ,
+      {
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
+        userId: 2,
+        movieId: 24
       } ,
       {
         body: 'Decent. I went into this with higher expectations than I should have',
         rating: 3,
-        userId: 3,
-        movieId: 30
+        userId: 2,
+        movieId: 25
       } ,
       {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 31
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        body: 'I would like to see some new ideas in these horror movies, it was literally a replica of Scream',
         rating: 1,
-        userId: 3,
-        movieId: 32
+        userId: 2,
+        movieId: 26
       } ,
       {
         body: 'Prepare to be absolutely terrified! What an experieence',
         rating: 5,
         userId: 2,
-        movieId: 33
+        movieId: 27
       } ,
       {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 2,
+        movieId: 28
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 2,
+        movieId: 29
+      } ,
+      {
+        body: 'The movie was confusing at times, but the dry humor made it all better',
         rating: 4,
-        userId: 4,
-        movieId: 34
+        userId: 2,
+        movieId: 30
+      } ,
+      {
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 2,
+        movieId: 31
       } ,
       {
         body: 'This was a great film! Although I would have liked to see a little more originality',
+        rating: 4,
+        userId: 2,
+        movieId: 32
+      } ,
+      {
+        body: 'I would like to see some new ideas in these horror movies, it was literally a replica of Scream',
+        rating: 1,
+        userId: 2,
+        movieId: 33
+      } ,
+      {
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 2,
+        movieId: 34
+      } ,
+      {
+        body: 'The movie was confusing at times, but the dry humor made it all better',
         rating: 4,
         userId: 2,
         movieId: 35
       } ,
       {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 2,
         movieId: 36
       } ,
       {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
-        userId: 1,
+        body: 'I would like to see some new ideas in these horror movies, it was literally a replica of Scream',
+        rating: 1,
+        userId: 2,
         movieId: 37
       } ,
       {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 2,
         movieId: 38
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        rating: 3,
+        userId: 2,
         movieId: 39
       } ,
       {
         body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
         rating: 1,
-        userId: 3,
+        userId: 2,
         movieId: 40
       } ,
       {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
+        body: 'Decent. I went into this with higher expectations than I should have',
         rating: 3,
-        userId: 4,
+        userId: 2,
         movieId: 41
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
         rating: 5,
         userId: 2,
         movieId: 42
       } ,
       {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 2,
         movieId: 43
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
         userId: 2,
         movieId: 44
       } ,
       {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
+        body: 'This was a great film! Although I would have liked to see a little more originality',
+        rating: 4,
+        userId: 2,
         movieId: 45
+      } ,
+      {
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 2,
+        movieId: 46
+      } ,
+      {
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
+        userId: 2,
+        movieId: 47
+      } ,
+      {
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 2,
+        movieId: 48
+      } ,
+      {
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
+        userId: 2,
+        movieId: 49
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 2,
+        movieId: 50
+      } ,
+      {
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
+        userId: 2,
+        movieId: 51
       } ,
       {
         body: 'The premise and idea was good, but what the heck was that ending?!',
         rating: 3,
-        userId: 4,
-        movieId: 46
+        userId: 2,
+        movieId: 52
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 47
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 2,
+        movieId: 53
       } ,
       {
         body: 'This was a great film! Although I would have liked to see a little more originality',
         rating: 4,
         userId: 2,
-        movieId: 48
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 49
-      } ,
-      {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 50
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 51
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 52
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 53
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
         movieId: 54
       } ,
       {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
+        body: 'This was a great film! Although I would have liked to see a little more originality',
         rating: 4,
-        userId: 4,
+        userId: 2,
         movieId: 55
       } ,
       {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
         userId: 2,
         movieId: 56
       } ,
       {
         body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
         rating: 2,
-        userId: 3,
+        userId: 2,
         movieId: 57
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
         userId: 2,
         movieId: 58
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 2,
         movieId: 59
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
+        body: 'The premise and idea was good, but what the heck was that ending?!',
+        rating: 3,
+        userId: 2,
         movieId: 60
       } ,
       {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
-        userId: 1,
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 2,
         movieId: 61
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
+        userId: 2,
         movieId: 62
       } ,
       {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
         userId: 2,
         movieId: 63
       } ,
       {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 2,
         movieId: 64
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
+        body: 'Prepare to be absolutely terrified! What an experieence',
+        rating: 5,
+        userId: 2,
         movieId: 65
       } ,
       {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        body: "This movie scared me to death, don't watch it !!!",
         rating: 3,
-        userId: 5,
+        userId: 2,
         movieId: 66
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
+        userId: 2,
         movieId: 67
       } ,
       {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
-        userId: 1,
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 2,
         movieId: 68
       } ,
       {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 2,
         movieId: 69
       } ,
       {
@@ -2405,15 +1406,15 @@ module.exports = {
         movieId: 70
       } ,
       {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 2,
         movieId: 71
       } ,
       {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 2,
         movieId: 72
       } ,
       {
@@ -2425,882 +1426,856 @@ module.exports = {
       {
         body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
         rating: 3,
-        userId: 5,
+        userId: 2,
         movieId: 74
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 2,
         movieId: 75
       } ,
       {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
+        body: 'I would like to see some new ideas in these horror movies, it was literally a replica of Scream',
+        rating: 1,
+        userId: 2,
         movieId: 76
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
+        body: 'The movie was confusing at times, but the dry humor made it all better',
         rating: 4,
         userId: 2,
         movieId: 77
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
         rating: 2,
-        userId: 3,
+        userId: 2,
         movieId: 78
       } ,
+      { body: 'Loved it !', rating: 4, userId: 2, movieId: 79 } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 79
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
         rating: 2,
-        userId: 4,
+        userId: 2,
         movieId: 80
       } ,
       {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 2,
         movieId: 81
       } ,
       {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
+        userId: 2,
         movieId: 82
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
         rating: 2,
-        userId: 3,
+        userId: 2,
         movieId: 83
       } ,
       {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
+        userId: 2,
         movieId: 84
       } ,
       {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
+        body: 'Prepare to be absolutely terrified! What an experieence',
+        rating: 5,
+        userId: 2,
         movieId: 85
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 2,
         movieId: 86
       } ,
       {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
         userId: 2,
         movieId: 87
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
         rating: 2,
-        userId: 3,
-        movieId: 88
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 89
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 90
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
         userId: 2,
-        movieId: 91
+        movieId: 88
       } ,
       {
         body: 'Excellent movie! One of the best I have seen recently',
         rating: 5,
         userId: 2,
-        movieId: 92
+        movieId: 89
       } ,
       {
         body: 'The premise and idea was good, but what the heck was that ending?!',
         rating: 3,
-        userId: 4,
+        userId: 2,
+        movieId: 90
+      } ,
+      {
+        body: 'The premise and idea was good, but what the heck was that ending?!',
+        rating: 3,
+        userId: 2,
+        movieId: 91
+      } ,
+      {
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 2,
+        movieId: 92
+      } ,
+      {
+        body: 'This was a great film! Although I would have liked to see a little more originality',
+        rating: 4,
+        userId: 2,
         movieId: 93
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
         userId: 2,
         movieId: 94
       } ,
       {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
+        body: 'Awful experience. The plot did not even make sense',
+        rating: 1,
+        userId: 2,
         movieId: 95
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 2,
         movieId: 96
       } ,
       {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 2,
         movieId: 97
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
+        body: 'Awful experience. The plot did not even make sense',
+        rating: 1,
         userId: 2,
         movieId: 98
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        body: 'Awful experience. The plot did not even make sense',
         rating: 1,
-        userId: 3,
+        userId: 2,
         movieId: 99
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 2,
         movieId: 100
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 101
-      } ,
-      {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
-        userId: 3,
-        movieId: 102
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 103
       } ,
       {
         body: 'Props for a scary monster/villian. Everything else was terribly executed.',
         rating: 2,
-        userId: 4,
+        userId: 2,
+        movieId: 101
+      } ,
+      {
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 2,
+        movieId: 102
+      } ,
+      {
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
+        userId: 2,
+        movieId: 103
+      } ,
+      {
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 2,
         movieId: 104
       } ,
       {
-        body: 'Awful experience. The plot did not even make sense',
+        body: 'I would like to see some new ideas in these horror movies, it was literally a replica of Scream',
         rating: 1,
         userId: 2,
         movieId: 105
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        rating: 1,
+        userId: 2,
         movieId: 106
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 107
       } ,
       {
         body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
         rating: 3,
-        userId: 5,
-        movieId: 108
-      } ,
-      {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
-        userId: 3,
-        movieId: 109
+        userId: 2,
+        movieId: 107
       } ,
       {
         body: 'Excellent movie! One of the best I have seen recently',
         rating: 5,
+        userId: 2,
+        movieId: 108
+      } ,
+      {
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 2,
+        movieId: 109
+      } ,
+      {
+        body: 'The premise and idea was good, but what the heck was that ending?!',
+        rating: 3,
         userId: 2,
         movieId: 110
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
+      } ,{
+        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        rating: 1,
+        userId: 3,
         movieId: 1
       } ,
       {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
         userId: 3,
         movieId: 2
       } ,
       {
         body: 'The premise and idea was good, but what the heck was that ending?!',
         rating: 3,
-        userId: 4,
+        userId: 3,
         movieId: 3
       } ,
       {
         body: 'Excellent movie! One of the best I have seen recently',
         rating: 5,
-        userId: 2,
+        userId: 3,
         movieId: 4
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
         userId: 3,
         movieId: 5
       } ,
       {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
+        userId: 3,
         movieId: 6
       } ,
       {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 3,
         movieId: 7
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
+        body: 'This was a great film! Although I would have liked to see a little more originality',
+        rating: 4,
         userId: 3,
         movieId: 8
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
         rating: 3,
         userId: 3,
         movieId: 9
       } ,
       {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        body: 'The movie was confusing at times, but the dry humor made it all better',
         rating: 4,
-        userId: 1,
+        userId: 3,
         movieId: 10
       } ,
       {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
+        body: 'Awful experience. The plot did not even make sense',
+        rating: 1,
+        userId: 3,
         movieId: 11
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 3,
         movieId: 12
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
         userId: 3,
         movieId: 13
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 3,
         movieId: 14
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
         rating: 2,
         userId: 3,
         movieId: 15
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
+        body: 'This was a great film! Although I would have liked to see a little more originality',
+        rating: 4,
+        userId: 3,
         movieId: 16
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
+        rating: 2,
+        userId: 3,
         movieId: 17
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 3,
         movieId: 18
       } ,
       {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 3,
         movieId: 19
       } ,
       {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 3,
         movieId: 20
       } ,
-      {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
-        userId: 3,
-        movieId: 21
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
-        movieId: 22
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 23
-      } ,
+      { body: 'Loved it !', rating: 4, userId: 3, movieId: 21 } ,
       {
         body: 'Prepare to be absolutely terrified! What an experieence',
         rating: 5,
-        userId: 2,
-        movieId: 24
+        userId: 3,
+        movieId: 22
       } ,
       {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 3,
+        movieId: 23
+      } ,
+      {
+        body: 'Excellent movie! One of the best I have seen recently',
         rating: 5,
         userId: 3,
-        movieId: 25
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 26
+        movieId: 24
       } ,
       {
         body: 'Props for a scary monster/villian. Everything else was terribly executed.',
         rating: 2,
-        userId: 4,
+        userId: 3,
+        movieId: 25
+      } ,
+      {
+        body: 'The premise and idea was good, but what the heck was that ending?!',
+        rating: 3,
+        userId: 3,
+        movieId: 26
+      } ,
+      {
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 3,
         movieId: 27
       } ,
       {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
-        userId: 1,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 3,
         movieId: 28
       } ,
       {
         body: 'Excellent film, although I thought that it ended a little too suddenly.',
         rating: 4,
-        userId: 5,
+        userId: 3,
         movieId: 29
       } ,
       {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 3,
         movieId: 30
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 31
       } ,
       {
         body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
         rating: 1,
         userId: 3,
+        movieId: 31
+      } ,
+      {
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
+        rating: 2,
+        userId: 3,
         movieId: 32
       } ,
       {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 3,
         movieId: 33
       } ,
       {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        rating: 4,
+        userId: 3,
         movieId: 34
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 35
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
-        movieId: 36
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 37
       } ,
       {
         body: 'This was a great film! Although I would have liked to see a little more originality',
         rating: 4,
-        userId: 2,
+        userId: 3,
+        movieId: 35
+      } ,
+      {
+        body: 'Excellent movie! One of the best I have seen recently',
+        rating: 5,
+        userId: 3,
+        movieId: 36
+      } ,
+      {
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
+        userId: 3,
+        movieId: 37
+      } ,
+      {
+        body: 'Awful experience. The plot did not even make sense',
+        rating: 1,
+        userId: 3,
         movieId: 38
       } ,
       {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        rating: 4,
         userId: 3,
         movieId: 39
       } ,
       {
         body: 'Props for a scary monster/villian. Everything else was terribly executed.',
         rating: 2,
-        userId: 4,
+        userId: 3,
         movieId: 40
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
+        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        rating: 2,
+        userId: 3,
         movieId: 41
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 42
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 43
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 44
       } ,
       {
         body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
         rating: 5,
+        userId: 3,
+        movieId: 42
+      } ,
+      {
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 3,
+        movieId: 43
+      } ,
+      {
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
+        rating: 2,
+        userId: 3,
+        movieId: 44
+      } ,
+      {
+        body: 'Awful experience. The plot did not even make sense',
+        rating: 1,
         userId: 3,
         movieId: 45
       } ,
       {
         body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
         rating: 4,
-        userId: 1,
+        userId: 3,
         movieId: 46
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 3,
         movieId: 47
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 3,
         movieId: 48
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
-        rating: 5,
-        userId: 2,
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
+        userId: 3,
         movieId: 49
       } ,
       {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
         userId: 3,
         movieId: 50
       } ,
       {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
+        body: 'The movie was confusing at times, but the dry humor made it all better',
         rating: 4,
-        userId: 2,
+        userId: 3,
         movieId: 51
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
         rating: 2,
         userId: 3,
         movieId: 52
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 3,
         movieId: 53
       } ,
       {
-        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
-        rating: 4,
-        userId: 1,
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        rating: 5,
+        userId: 3,
         movieId: 54
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
         userId: 3,
         movieId: 55
       } ,
       {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
+        body: 'Excellent movie! One of the best I have seen recently',
         rating: 5,
         userId: 3,
         movieId: 56
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
         rating: 3,
         userId: 3,
         movieId: 57
       } ,
       {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
         rating: 2,
-        userId: 4,
+        userId: 3,
         movieId: 58
       } ,
       {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
+        body: 'Prepare to be absolutely terrified! What an experieence',
+        rating: 5,
+        userId: 3,
         movieId: 59
       } ,
       {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
+        userId: 3,
         movieId: 60
       } ,
       {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
+        body: 'This was a great film! Although I would have liked to see a little more originality',
+        rating: 4,
+        userId: 3,
         movieId: 61
       } ,
       {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
+        body: "This movie scared me to death, don't watch it !!!",
+        rating: 3,
+        userId: 3,
         movieId: 62
       } ,
       {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
+        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
+        rating: 1,
+        userId: 3,
         movieId: 63
       } ,
       {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 3,
         movieId: 64
       } ,
       {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
+        body: 'This was a great film! Although I would have liked to see a little more originality',
         rating: 4,
-        userId: 4,
+        userId: 3,
         movieId: 65
+      } ,
+      {
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 3,
+        movieId: 66
       } ,
       {
         body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
         rating: 1,
-        userId: 5,
-        movieId: 66
-      } ,
-      {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
+        userId: 3,
         movieId: 67
       } ,
       {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 3,
         movieId: 68
       } ,
       {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
+        body: 'The movie was confusing at times, but the dry humor made it all better',
+        rating: 4,
+        userId: 3,
         movieId: 69
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
+        body: 'This was alright! The main character was just annoying.',
         rating: 3,
         userId: 3,
         movieId: 70
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
         userId: 3,
         movieId: 71
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
+        body: 'This was a quality film. It was not perfect, but overall it fleshed out some new ideas and kept me interested',
+        rating: 4,
         userId: 3,
         movieId: 72
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
-        rating: 3,
+        body: 'This was a great film! Although I would have liked to see a little more originality',
+        rating: 4,
         userId: 3,
         movieId: 73
       } ,
       {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        rating: 4,
+        userId: 3,
         movieId: 74
       } ,
+      { body: 'Loved it !', rating: 4, userId: 3, movieId: 75 } ,
+      { body: 'Loved it !', rating: 4, userId: 3, movieId: 76 } ,
       {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
-        movieId: 75
-      } ,
-      {
-        body: 'Prepare to be absolutely terrified! What an experieence',
+        body: 'Excellent movie! One of the best I have seen recently',
         rating: 5,
-        userId: 2,
-        movieId: 76
-      } ,
-      {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
+        userId: 3,
         movieId: 77
       } ,
       {
-        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
-        rating: 2,
-        userId: 4,
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
+        userId: 3,
         movieId: 78
       } ,
       {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 3,
         movieId: 79
       } ,
       {
         body: 'This was a great film! Although I would have liked to see a little more originality',
         rating: 4,
-        userId: 2,
+        userId: 3,
         movieId: 80
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 81
-      } ,
-      {
-        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
-        rating: 5,
-        userId: 3,
-        movieId: 82
-      } ,
-      {
-        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
-        rating: 2,
-        userId: 4,
-        movieId: 83
       } ,
       {
         body: 'This was a great film! Although I would have liked to see a little more originality',
         rating: 4,
-        userId: 2,
-        movieId: 84
+        userId: 3,
+        movieId: 81
+      } ,
+      {
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 3,
+        movieId: 82
       } ,
       {
         body: 'Excellent film, although I thought that it ended a little too suddenly.',
         rating: 4,
-        userId: 5,
+        userId: 3,
+        movieId: 83
+      } ,
+      {
+        body: 'Prepare to be absolutely terrified! What an experieence',
+        rating: 5,
+        userId: 3,
+        movieId: 84
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 3,
         movieId: 85
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
+        body: 'I would like to see some new ideas in these horror movies, it was literally a replica of Scream',
         rating: 1,
         userId: 3,
         movieId: 86
       } ,
       {
-        body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
-        rating: 1,
+        body: "I loved it but my wife didn't, I'm in trouble.",
+        rating: 4,
         userId: 3,
         movieId: 87
       } ,
       {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
+        body: "I originally gave this movie 4 stars but I can't get the shocking scenes out of my head, you get 2 stars!",
+        rating: 2,
+        userId: 3,
         movieId: 88
       } ,
       {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 3,
         movieId: 89
       } ,
       {
-        body: 'Prepare to be absolutely terrified! What an experieence',
+        body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
         rating: 5,
-        userId: 2,
+        userId: 3,
         movieId: 90
       } ,
       {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
+        body: 'The premise and idea was good, but what the heck was that ending?!',
+        rating: 3,
+        userId: 3,
         movieId: 91
       } ,
       {
-        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
-        rating: 3,
-        userId: 5,
+        body: 'I loved it, it was more funny than scary in my opinion',
+        rating: 4,
+        userId: 3,
         movieId: 92
       } ,
       {
-        body: 'Decent. I went into this with higher expectations than I should have',
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
         rating: 3,
         userId: 3,
         movieId: 93
       } ,
       {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
+        body: 'Prepare to be absolutely terrified! What an experieence',
+        rating: 5,
+        userId: 3,
         movieId: 94
       } ,
       {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
+        body: 'This should only be shown in the morning, I was so scared to leave the theater',
+        rating: 2,
+        userId: 3,
         movieId: 95
+      } ,
+      {
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 3,
+        movieId: 96
+      } ,
+      {
+        body: "This was a waste of time, the movie ended and I still didn't understand what happened !",
+        rating: 2,
+        userId: 3,
+        movieId: 97
+      } ,
+      { body: 'Loved it !', rating: 4, userId: 3, movieId: 98 } ,
+      {
+        body: "The only reason this didn't get 1 star was because they killed off the annoying character quickly",
+        rating: 2,
+        userId: 3,
+        movieId: 99
+      } ,
+      {
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 3,
+        movieId: 100
       } ,
       {
         body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
         rating: 3,
-        userId: 5,
-        movieId: 96
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 97
-      } ,
-      {
-        body: 'The premise and idea was good, but what the heck was that ending?!',
-        rating: 3,
-        userId: 4,
-        movieId: 98
-      } ,
-      {
-        body: 'Pretty great! A few questionable character decisions, but a very enjoyable and fun film to watch with your partner ',
-        rating: 4,
-        userId: 4,
-        movieId: 99
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 100
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
+        userId: 3,
         movieId: 101
       } ,
       {
-        body: 'I would have given this one star, but I have a huge crush on the lead actor. Not their best work at all',
-        rating: 2,
+        body: 'The movie was confusing at times, but the dry humor made it all better',
+        rating: 4,
         userId: 3,
         movieId: 102
-      } ,
-      {
-        body: 'This was a great film! Although I would have liked to see a little more originality',
-        rating: 4,
-        userId: 2,
-        movieId: 103
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 104
-      } ,
-      {
-        body: 'One of the worst horror movies I have ever watched. Stay wway if you value your time.',
-        rating: 1,
-        userId: 5,
-        movieId: 105
-      } ,
-      {
-        body: 'Awful experience. The plot did not even make sense',
-        rating: 1,
-        userId: 2,
-        movieId: 106
-      } ,
-      {
-        body: 'Excellent film, although I thought that it ended a little too suddenly.',
-        rating: 4,
-        userId: 5,
-        movieId: 107
       } ,
       {
         body: "I don't know why I even wasted my time with this. Do yourself a favor and skip it",
         rating: 1,
         userId: 3,
-        movieId: 108
+        movieId: 103
       } ,
       {
-        body: 'Excellent movie! One of the best I have seen recently',
-        rating: 5,
-        userId: 2,
-        movieId: 109
+        body: 'This was a great film! Although I would have liked to see a little more originality',
+        rating: 4,
+        userId: 3,
+        movieId: 104
+      } ,
+      {
+        body: 'Decent. I went into this with higher expectations than I should have',
+        rating: 3,
+        userId: 3,
+        movieId: 105
+      } ,
+      {
+        body: 'This was alright! The main character was just annoying.',
+        rating: 3,
+        userId: 3,
+        movieId: 106
       } ,
       {
         body: 'One of the best movie nights I can remember!! So scary! and it was an absolute blast to watch with my friends',
         rating: 5,
+        userId: 3,
+        movieId: 107
+      } ,
+      {
+        body: 'Excellent film, although I thought that it ended a little too suddenly.',
+        rating: 4,
+        userId: 3,
+        movieId: 108
+      } ,
+      {
+        body: 'Props for a scary monster/villian. Everything else was terribly executed.',
+        rating: 2,
+        userId: 3,
+        movieId: 109
+      } ,
+      {
+        body: 'You can tell they did not have a massivebudget to work with, but overall the film was pretty entertaining',
+        rating: 3,
         userId: 3,
         movieId: 110
       }])

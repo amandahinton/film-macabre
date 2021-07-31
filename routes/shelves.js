@@ -83,12 +83,12 @@ router.get(
 	})
 );
 
-router.post(
-	'/:shelf/:id/delete',
+router.delete(
+	'/:shelf/:id',
 	requireAuth,
 	asyncHandler(async (req, res) => {
 		const { shelf: shelfId, id: movieId } = req.params;
-
+		const userId = (await db.Shelf.findByPk(shelfId)).userId;
 		const entry = await db.Movie_shelf.findOne({
 			where: {
 				shelfId,
@@ -96,7 +96,7 @@ router.post(
 			},
 		});
 
-		if (res.locals.user && shelf.userId == res.locals.user.id) {
+		if (res.locals.user && userId == res.locals.user.id) {
 			await entry.destroy();
 			res.status(200).send('OK');
 		} else {
@@ -105,14 +105,27 @@ router.post(
 	})
 );
 
-router.post(
-	'/:shelfId/delete',
+router.delete(
+	'/:shelfId',
 	requireAuth,
 	asyncHandler(async (req, res) => {
 		const { shelfId } = req.params;
 
-		if (res.locals.user && shelf.userId == res.locals.user.id) {
-			const shelf = await db.Shelf.findByPk(shelfId);
+		const shelf = await db.Shelf.findByPk(shelfId);
+
+		let defaultUserShelves = await db.Shelf.findAll({
+			where: {
+				userId: shelf.userId,
+			},
+			limit: 3,
+			order: [['id', 'ASC']],
+		});
+
+		let isDefault = defaultUserShelves.some((curShelf) => {
+			return parseInt(curShelf.id, 10) == parseInt(shelf.id, 10);
+		});
+
+		if (!isDefault && res.locals.user && shelf.userId == res.locals.user.id) {
 			const shelf_movies = await db.Movie_shelf.findAll({
 				where: {
 					shelfId,

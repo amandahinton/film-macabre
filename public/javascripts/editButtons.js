@@ -1,104 +1,114 @@
-function changeVis(thing1, thing2, thing3, thing4) {
-	const att = thing1[0].style.visibility;
-	Array.from(thing1).forEach((ele) =>
-		ele.setAttribute(
-			'style',
-			`display:${att == 'hidden' ? 'inline-block' : 'none'}`
-		)
-	);
-	Array.from(thing2).forEach((ele) =>
-		ele.setAttribute(
-			'style',
-			`visibility:${att == 'hidden' ? 'visible' : 'hidden'}`
-		)
-	);
-
-	if (thing3) {
-		thing3.setAttribute(
-			'style',
-			`display:${att == 'hidden' ? 'inline-block' : 'none'}`
-		);
-		thing3.childNodes[0].childNodes[1].setAttribute('value', thing4.innerText);
-		thing4.setAttribute(
-			'style',
-			`display:${att == 'hidden' ? 'none' : 'inline-block'}`
-		);
-	}
-}
-
-// Deletes movie from shelf
-async function deleteFromShelf(shelfId, movieId, userId) {
-	const res = await fetch(`/shelves/${shelfId}/${movieId}`, {
-		method: 'DELETE',
-	})
-		.then((res) => res.json)
-		.catch((err) => new Error(err));
-	return res;
-}
-
 document.addEventListener('DOMContentLoaded', (e) => {
-	const editButtons = document.getElementsByClassName('small-button toggle');
-	const deleteButtons = document.getElementsByClassName('small-button toggle');
-	const editButton = document.getElementById('edit-button');
-	const shelfName = document.getElementById('shelf-name');
+	e.stopPropagation();
+	e.preventDefault();
 
-	if (editButton) {
-		const button = document.getElementById('btn-del-shelf');
-		const editShelfNameDiv = document.getElementById('edit-box');
-		const shelfNameSaveBtn = document.getElementById('save-shelf');
+	addButtonFunc();
 
-		if (button) {
-			button.addEventListener('click', async (e) => {
-				const shelfId = document.getElementById('shelfId').innerText;
-				const res = await fetch(`/shelves/${shelfId}/delete`, {
-					method: 'POST',
-				});
-				window.location = '/';
-			});
-		}
-		editButton.addEventListener('click', (e) => {
-			changeVis(editButtons, deleteButtons, editShelfNameDiv, shelfName);
-		});
+	const editShelfButton = document.getElementById('edit-button');
+	const deleteShelfButton = document.getElementById('btn-del-shelf');
+	const saveShelfButton = document.getElementById('save-shelf');
 
-		if (shelfNameSaveBtn) {
-			shelfNameSaveBtn.addEventListener('click', async (e) => {
-				const shelfId = document.getElementById('shelfId').innerText;
-				e.stopPropagation();
-				e.preventDefault();
-
-				const changeHere = document.getElementById('shelf-name');
-				const newNameEle = { name: document.getElementById('newName').value };
-
-				// console.log(newName);
-
-				const res = await fetch(`/shelves/${shelfId}`, {
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					method: 'PUT',
-					body: JSON.stringify(newNameEle),
-				})
-					.then((res) => {
-						changeHere.innerText = newNameEle.name;
-						changeVis(editButtons, deleteButtons, editShelfNameDiv, shelfName);
-					})
-					.catch((err) => console.log(err));
-			});
-		}
-
-		Array.from(deleteButtons).forEach(async (button) => {
-			button.addEventListener('click', async (e) => {
-				e.preventDefault();
-				e.stopPropagation();
-				const [_method, shelfId, movieId] = e.target.id.split('-');
-
-				const movie = document.getElementById(movieId);
-				movie.setAttribute('style', 'display:none');
-
-				const res = await fetch(`/shelves/${shelfId}/${movieId}/delete`, {
-					method: 'POST',
-				});
-			});
-		});
+	if (editShelfButton) {
+		editShelfButton.addEventListener('click', toggleDeleteMovieButtons, false);
+		editShelfButton.addEventListener('click', toggleEditBox, false);
 	}
+
+	if (deleteShelfButton)
+		deleteShelfButton.addEventListener('click', deleteShelf, false);
+
+	if (saveShelfButton)
+		saveShelfButton.addEventListener('click', updateShelf, false);
 });
+
+async function updateShelf(e) {
+	if (e) {
+		e.preventDefault();
+		e.stopPropagation();
+	}
+
+	const editBoxInput = document.getElementById('newName');
+	const shelfTitle = document.getElementById('shelf-name');
+	const newTitle = editBoxInput.value;
+	const shelfId = document.getElementById('shelfId').innerText;
+
+	await fetch(`/shelves/${shelfId}`, {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({ name: newTitle }),
+	});
+
+	shelfTitle.innerText = newTitle;
+
+	toggleEditBox();
+}
+
+function toggleEditBox(e) {
+	if (e) {
+		e.preventDefault();
+		e.stopPropagation();
+	}
+
+	const editBox = document.getElementById('edit-box');
+	const editBoxInput = document.getElementById('newName');
+	const shelfTitle = document.getElementById('shelf-name');
+
+	editBox.style.display = 'visible';
+
+	if (editBox) {
+		const boxVisibility = editBox.style.display;
+		const titleVisibility = shelfTitle.style.display;
+
+		editBox.style.display = boxVisibility == 'none' ? 'inline-block' : 'none';
+		editBoxInput.value = shelfTitle.innerText;
+
+		shelfTitle.style.display =
+			titleVisibility == 'none' ? 'inline-block' : 'none';
+	}
+}
+
+async function deleteShelf(e) {
+	if (e) {
+		e.preventDefault();
+		e.stopPropagation();
+	}
+
+	const shelfId = document.getElementById('shelfId').innerText;
+
+	await fetch(`/shelves/${shelfId}`, { method: 'DELETE' });
+
+	window.location = '/';
+}
+
+function addButtonFunc() {
+	const deleteMovieButtons = document.getElementsByClassName('toggle');
+
+	Array.from(deleteMovieButtons).forEach((btn) => {
+		btn.addEventListener('click', async (e) => {
+			e.stopPropagation();
+			e.preventDefault();
+
+			const [_method, shelfId, movieId] = btn.id.split('-');
+			const movieTile = document.getElementById(movieId);
+
+			await fetch(`/shelves/${shelfId}/${movieId}`, { method: 'DELETE' });
+
+			movieTile.style.display = 'none';
+		});
+	});
+}
+
+function toggleDeleteMovieButtons(e) {
+	if (e) {
+		e.preventDefault();
+		e.stopPropagation();
+	}
+
+	const deleteMovieButtons = document.getElementsByClassName('toggle');
+
+	Array.from(deleteMovieButtons).forEach((btn) => {
+		const attribute = btn.style.visibility;
+		btn.style.visibility = attribute == 'hidden' ? 'visible' : 'hidden';
+	});
+}
