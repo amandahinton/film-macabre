@@ -104,6 +104,7 @@ select {
 	justify-content: center;
 	flex-direction: column;
 	padding: 10px;
+	margin-top: 15px;
 }
 
 .review-group {
@@ -112,6 +113,12 @@ select {
 	justify-content: center;
 	flex-direction: column;
 	padding: 5px;
+	margin-bottom: 10px;
+	border-bottom: .5px solid #ff2800;
+}
+
+.username {
+	margin: 5px 0 15px;
 }
 
 #shelf-name {

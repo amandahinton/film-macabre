@@ -546,10 +546,10 @@ module.exports = {
         },
         {
           title: 'The Host',
-          year: 2013,
-          description: 'When an unseen enemy threatens mankind by taking over their bodies and erasing their memories, Melanie Stryder risks everything to protect the people she cares about.',
-          director: 'Andrew Niccol',
-          cover: 'https://m.media-amazon.com/images/M/MV5BMjMwNDg1MTAzNV5BMl5BanBnXkFtZTcwNTk5ODI3OA@@._V1_SX300.jpg'
+          year: 2006,
+          description: "A monster emerges from Seoul's Han River and begins attacking people. One victim's loving family does what it can to rescue her from its clutches.",
+          director: 'Bong Joon Ho',
+          cover: 'https://m.media-amazon.com/images/M/MV5BMTE3N2IwNmMtOGE0Ny00NWFlLTliNmUtNjY3ODExYjgxNmUyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg'
         },
         {
           title: 'Shaun of the Dead',
