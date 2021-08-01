@@ -547,7 +547,7 @@ module.exports = {
         {
           title: 'The Host',
           year: 2006,
-          description: "A monster emerges from Seoul's Han River and begins attacking people.One victim's loving family does what it can to rescue her from its clutches.",
+          description: "A monster emerges from Seoul's Han River and begins attacking people. One victim's loving family does what it can to rescue her from its clutches.",
           director: 'Bong Joon Ho',
           cover: 'https://m.media-amazon.com/images/M/MV5BMTE3N2IwNmMtOGE0Ny00NWFlLTliNmUtNjY3ODExYjgxNmUyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg'
         },
