@@ -39,7 +39,7 @@ HorrorHost is a website allowing you to curate your own blood-curdling collectio
 * We learned quickly how important it is to ensure that nobody pushes to the main branch without a review process, and to commit early and often to keep all the branches updated.
 * A script we implemented to hide the review edit form until a button is clicked was toggling correctly between hidden and visible, but was incorrectly displaying as visible at first. We fixed this by reordering our css file. Order is important!
 * Implementing a star rating system for each movie was more challenging than expected and we have a new appreciation for that feature in other sites.
-* We also learned how much attention to detail is necessary for styling a consistent experience with good white spacing and alignment, a cohesive visual language, and, . 
+* We also learned how much attention to detail is necessary for styling a consistent experience with good white spacing and alignment and a cohesive visual language. 
 
 ## Code Highlight
 
