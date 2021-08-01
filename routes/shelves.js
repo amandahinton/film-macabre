@@ -30,7 +30,7 @@ router.post(
 				name,
 			});
 			await newShelve.save();
-			res.redirect(`/users/${userId}`);
+			res.redirect(`/shelves/${newShelve.id}`);
 		} catch (err) {
 			throw new Error(err);
 		}
@@ -49,6 +49,7 @@ router.get(
 router.get(
 	'/:id',
 	requireAuth,
+	csrfProtection,
 	asyncHandler(async (req, res) => {
 		try {
 			const { id } = req.params;
@@ -83,6 +84,7 @@ router.get(
 				updated,
 				curId,
 				isDefault,
+				csrfToken: req.csrfToken(),
 			});
 		} catch (err) {
 			res.render('title', {
@@ -174,6 +176,7 @@ router.post(
 
 router.put(
 	'/:id',
+	csrfProtection,
 	asyncHandler(async (req, res) => {
 		const { name } = req.body;
 		const { id } = req.params;

@@ -34,6 +34,7 @@ router.get(
 		res.render('suggestion', {
 			title: 'Suggest a movie',
 			csrfToken: req.csrfToken(),
+			content_container: "suggestion"
 		});
 	})
 );
@@ -99,6 +100,7 @@ router.get(
 			movie,
 			id,
 			csrfToken: req.csrfToken(),
+			content_container: "review"
 		});
 	})
 );

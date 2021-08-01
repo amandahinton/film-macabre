@@ -1,6 +1,6 @@
 /* FULL-WIDTH FOOTER IMAGE IN BODY */
 body {
-	background-color: rgba(0, 0, 0, 0.97);
+	background-color: black;
 	max-width: 100%;
 	overflow-x: hidden;
 }
@@ -19,7 +19,6 @@ body {
 
 .fa-angle-double-right {
 	color: #ff2800;
-	color: red;
 }
 
 /* SPACE AFTER LAST ITEM BEFORE PAGE ENDS  */
@@ -219,7 +218,7 @@ nav.navbar {
 /* ENTIRE SHELF: TITLE AND TILES */
 .shelf {
 	align-items: center;
-	margin-bottom: 75px;
+
 }
 
 /* FROM MIXIN: SHELF TITLE */
@@ -382,9 +381,7 @@ nav.navbar {
 	background-color: #ccc;
 	width: 350px;
 	position: relative;
-	top: 200px;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	margin: 100px auto 0px;
 	border-radius: 4px;
 	display: flex;
 	flex-direction: column;
@@ -394,12 +391,9 @@ nav.navbar {
 
 .demo-box {
 	align-items: center;
+	margin: 50px auto 0px;
 }
 
-.register-box {
-	position: relative;
-	top: 390px;
-}
 
 .form-label {
 	color: black;
@@ -450,9 +444,10 @@ nav.navbar {
 	margin-top: 20px;
 }
 
-#bio {
+.bio {
 	margin-top: -5px;
 	font-size: 14px;
+	min-height: 30px;
 }
 
 #username {
@@ -475,7 +470,6 @@ nav.navbar {
 	height: 100px;
 	border: 3px solid #ff2800;
 	border-radius: 50%;
-
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -498,77 +492,60 @@ li {
 	font-size: 32px;
 }
 
-.suggestionContainer {
-	background-color: #ccc;
-	width: 420px;
-	position: relative;
-	top: 420px;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	border-radius: 4px;
-	display: flex;
-	flex-direction: column;
-	padding: 60px;
-	box-shadow: 5px 5px 10px #ff2800;
-}
-
-.titleDiv,
-.labelDiv,
-.descriptionDiv,
-.directorDiv,
-.linkDiv {
-	display: block;
-	padding-bottom: 20px;
-}
-
-.titleField,
-.yearField,
-.directorField,
-.linkField {
-	width: 300px;
-	height: 30px;
-	border: none;
-	border-radius: 4px;
-}
-
-.descriptionField {
-	width: 300px;
-	height: 60px;
-	border: none;
-	border-radius: 4px;
-}
-
-.titleLabel,
-.yearLabel,
-.descriptionLabel,
-.directorLabel,
-.linkLabel {
-	display: block;
-	padding-bottom: 10px;
-}
-
-.suggestionSubmit {
-	background-color: #ff2800;
-	border: none;
-	color: #000000;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
-	font-weight: 700;
-	padding: 12px 22px;
-	margin: 15px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	border-radius: 8px;
-	cursor: pointer;
-	text-transform: uppercase;
-}
-
-.submitButton {
-	margin-left: 70px;
-}
-
 #created {
 	display: flex;
 	flex-direction: row;
+}
+
+/* BACKGROUND IMAGES */
+.content-container {
+    background-repeat: no-repeat;
+    background-size: 1000px;
+	background-position: top;
+    width: 100%;
+	margin-top: 50px;
+}
+
+/* BACKGROUND IMAGES */
+.choice-scream {
+    background-image: url("../images/scream.png");
+}
+
+.choice-login {
+    background-image: url("../images/skulls.png");
+}
+.choice-register {
+    background-image: url("../images/ghost.png");
+}
+
+.choice-suggestion {
+    background-image: url("../images/window.png");
+}
+
+.choice-review {
+    background-image: url("../images/path3.png");
+}
+
+#created > * {
+	margin-right: 0.5ch;
+}
+
+#edit-box {
+	min-height: 57.5px;
+}
+
+#newName {
+	border-spacing: 50px;
+	margin-bottom: 0px;
+}
+
+#edit-bio-form {
+	display: flex;
+
+	justify-content: center;
+	align-items: flex-end;
+}
+
+#custom-pos {
+	margin-bottom: 18px;
 }
