@@ -1,11 +1,11 @@
 'use strict';
 
 const bcrypt = require('bcryptjs');
-const demoPassword = bcrypt.hashSync(process.env.DEMO_PASSWORD, 12);
-const adminPassword = bcrypt.hashSync(process.env.ADMIN_PASSWORD, 12);
 
 module.exports = {
 	up: (queryInterface, Sequelize) => {
+		const demoPassword = bcrypt.hashSync(process.env.DEMO_PASSWORD, 12);
+		const adminPassword = bcrypt.hashSync(process.env.ADMIN_PASSWORD, 12);
 		return queryInterface.bulkInsert(
 			'Users',
 			[
