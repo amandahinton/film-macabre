@@ -26,13 +26,6 @@ body {
 	margin-bottom: 100px;
 }
 
-/*
-OPEN SANS WEIGHTS:
-    800 - EXTRA BOLD
-    700- BOLD
-    400 - REGULAR
-    300- LIGHT
-*/
 h1 {
 	font-family: 'Pirata One', sans-serif;
 	font-size: 60px;
@@ -246,7 +239,6 @@ nav.navbar {
 	justify-content: center;
 	flex-wrap: wrap;
 	margin-top: 15px;
-	/* justify-content: space-between; */
 }
 
 /* TILE PER MOVIE: IMAGE, TITLE, EDIT/DEL BUTTONS */

@@ -39,7 +39,6 @@ body {
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
 	background-image: url(bg.gif);
-	/* background-position: bottom right; */
 	background-repeat: no-repeat;
 }
 
@@ -59,9 +58,3 @@ body {
 .rating {
     width: 30px;
 }
-
-
-/* #movieContainer img {
-    width: 25%;
-    align-items: center;
-} */

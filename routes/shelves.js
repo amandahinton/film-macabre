@@ -37,6 +37,15 @@ router.post(
 	})
 );
 
+
+router.get(
+	'/',
+	requireAuth,
+	csrfProtection,
+	asyncHandler(async (req, res) => {
+		res.redirect('/shelves/1')
+	})
+);
 router.get(
 	'/:id',
 	requireAuth,

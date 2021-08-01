@@ -5,7 +5,7 @@ const { csrfProtection, asyncHandler } = require('./utils.js');
 const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const e = require('express');
-const { loginUser, logoutUser, restoreUser } = require('../auth');
+const { loginUser, logoutUser, restoreUser, requireAuth } = require('../auth');
 
 async function generateShelf(name, userId, isDemoUser) {
 	const NUM_MOVIES = 10;
@@ -292,6 +292,7 @@ router.post(
 
 router.get(
 	'/my-profile',
+	requireAuth,
 	asyncHandler(async (req, res) => {
 		const user = res.locals.user;
 		if (user) {
@@ -310,6 +311,7 @@ router.get(
 
 router.get(
 	'/:id',
+	requireAuth,
 	csrfProtection,
 	asyncHandler(async (req, res) => {
 		const { id } = req.params;

@@ -85,7 +85,6 @@ router.post(
 		if (review) {
 			await review.destroy();
 			res.redirect(`/movies/${movieId}`);
-			// res.status(204).end()
 		} else {
 			res.send('review not found');
 		}
