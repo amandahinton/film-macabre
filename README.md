@@ -48,7 +48,7 @@ HorrorHost is a website allowing you to curate your own blood-curdling collectio
 * Iterates through all of a user's shelves and displays each available
 * If shelf includes more than six movies, truncate list and add an overlay that links to the shelf
 * Display aggregate star rating for all reviews of each movie
-```
+```pug
 mixin showShelvesPreview(shelves, titles)
     if shelves
         each shelf in shelves
@@ -91,7 +91,7 @@ mixin showShelvesPreview(shelves, titles)
 ```
 
 *Routing for reviews*
-```
+```js
 router.post('/:id(\\d+)', requireAuth, csrfProtection, reviewValidators, asyncHandler(async (req, res) => {
     const id = parseInt(req.params.id, 10);
 
@@ -114,7 +114,7 @@ router.post('/:id(\\d+)', requireAuth, csrfProtection, reviewValidators, asyncHa
 ```
 
 *Routing for shelves*
-```
+```js
 router.get('/:id', requireAuth, csrfProtection, asyncHandler(async (req, res) => {
     try {
         const { id } = req.params;
@@ -142,7 +142,7 @@ router.get('/:id', requireAuth, csrfProtection, asyncHandler(async (req, res) =>
 ```
 
 *Use external API to generate movie seed data(partial code)*
-```
+```js
 function seedTitles(titles) {
     return titles.map(function(title) {
         const formatTitle = title.split(" ").join("+");
