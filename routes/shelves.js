@@ -30,7 +30,7 @@ router.post(
 				name,
 			});
 			await newShelve.save();
-			res.redirect(`/shelves/${newShelve.id}`);
+			res.redirect(`/users/${userId}`);
 		} catch (err) {
 			throw new Error(err);
 		}
