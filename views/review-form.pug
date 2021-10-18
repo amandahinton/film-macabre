@@ -13,7 +13,7 @@ block content
                     li= error
 
     div(id="pageContainer")
-        form(action=`/movies/${id}/reviews/new`, method="post" id="formContainer")
+        form(action=`/movies/${movie.id}/reviews/new`, method="post" id="formContainer")
             div(id="movieContainer")
                 img(src=`${movie.cover}`, alt="Movie Cover")
 
