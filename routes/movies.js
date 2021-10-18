@@ -143,7 +143,7 @@ router.post(
 				review,
 				movie,
 				errors,
-				canReview: false,
+				canReview: canReview,
 				csrfToken: req.csrfToken(),
 			});
 		}
