@@ -267,14 +267,14 @@ router.post(
 				email: `demo${rand}@demo.com`,
 				age: 25,
 				password: hashedPassword,
-				bio: 'Just a demo user 🔪🎃',
+				bio: 'This is a demo user, register your account! 🔪',
 			});
 
 			await newDemo.save();
 
-			await generateShelf('My Top 10 🎃', newDemo.id, true);
-			await generateShelf('Watched 👁️‍🗨️', newDemo.id, true);
-			await generateShelf('Want to Watch 👀', newDemo.id, true);
+			await generateShelf('My Top 10', newDemo.id, true);
+			await generateShelf('Watched', newDemo.id, true);
+			await generateShelf('Want to Watch', newDemo.id, true);
 
 			loginUser(req, res, newDemo);
 

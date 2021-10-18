@@ -33,7 +33,9 @@ block content
                                 -i++
 
     if myShelves
+        
         form(id="add-to-shelf" action=`/shelves/edit`, method="post")
+            a.small-button(style="margin-right: 25px;" href=`/movies/${movie.id}/reviews/new`) Add Review
             input(type="hidden" name="_csrf" value=csrfToken)
             input(type="hidden" name="movieId" value= movie.id)
 
@@ -45,7 +47,7 @@ block content
 
 
                 div.movie-form-container
-            a.small-button(href=`/movies/${movie.id}/reviews/new`) Add Review
+            
         div(id= "reviews-container")
             each review in reviews
                 div(class="review-group")
